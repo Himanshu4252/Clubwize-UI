@@ -193,8 +193,8 @@ function Log() {
         </button>
 
         <p className="text-center text-gray-600 mt-6">
-          Didn`&apos;`t have account?{" "}
-          <a href="#" className="text-button hover:underline">
+          Didn&apos;t have account?{" "}
+          <a href="/onboarding/register" className="text-button hover:underline">
             Get Registered
           </a>
         </p>
