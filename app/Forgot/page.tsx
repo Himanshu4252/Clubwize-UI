@@ -1,5 +1,5 @@
-import Log from "./Components/LFR/Log";
-import OnBoardLeft from "./Components/Onboarding/OnboardLeft/OnBoardLeft";
+import FP from "../Components/LFR/FP";
+import OnBoardLeft from "../Components/Onboarding/OnboardLeft/OnBoardLeft";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
     <OnBoardLeft />
     </div>
     <div className="w-7/12">
-    <Log />
+    <FP />
     </div>
     </main>
   );

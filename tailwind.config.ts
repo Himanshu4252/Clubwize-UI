@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         "onboarding-bg": "#d8fae9",
+        "button":"#22B573"
       },
     },
   },
