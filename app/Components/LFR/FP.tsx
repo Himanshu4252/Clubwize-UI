@@ -32,7 +32,7 @@ function FP() {
           Forgot Password <span>🔓</span>
         </h2>
         <p className="text-center font-normal text-xs text-gray-400 mb-8">
-          No worries. We'll send you reset instructions.
+          No worries. We`&apos;`ll send you reset instructions.
         </p>
 
         <div className="mb-4 relative">
