@@ -24,13 +24,13 @@ const OnBoardLeft = () => {
       </div>
           <div className="absolute  w-full h-[25vh] flex justify-around item-center px-4 mt-4 translate-y-64">
           <div className='self-end'>
-          <ImageCircle imgSrc={image} imgWidth='16' imgHeight='16'/>
+          <ImageCircle imgSrc={image} imgWidth='14' imgHeight='14'/>
           </div>
           <div className='self-start'>
           <ImageCircle imgSrc={image} />
           </div>
           <div className='self-end'>
-          <ImageCircle imgSrc={image} imgWidth='16' imgHeight='16' />
+          <ImageCircle imgSrc={image} imgWidth='14' imgHeight='14' />
           </div>
           <div className='self-start'>
           <ImageCircle imgSrc={image} />
