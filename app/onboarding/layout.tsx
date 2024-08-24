@@ -10,8 +10,8 @@ interface Props{
 const OnboardingLayout = ({children}: Props) => {
   return (
     <div className='flex w-full h-screen' data-theme="night">
-        <aside className='w-2/5 bg- p-5 bg-onboarding-bg'>
-           <OnBoardLeft />
+        <aside className='w-2/5  bg-onboarding-bg'>
+           <OnBoardLeft />  
         </aside>
         <div className="w-3/5 h-screen flex flex-col items-center justify-center bg-white">
         {/* <div className='w-3/5 bg-white p-5'> */}

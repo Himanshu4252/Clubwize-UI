@@ -16,13 +16,14 @@ const ImageCircle = ({imgWidth ,imgHeight, imgSrc=image}: Props) => {
 
   return (
     // <div className={` bg-white rounded-full w-[${imageWidth}] h-[${imageHeight}] shadow-2xl`}>
-    <div>
+    <div className='w-20 h-20 ring-4 ring-white rounded-full shadow-2xl'>
         {/* <div className="rounded-full bg-slate-400 w-20 h-20 border-4 border-white shadow-2xl"> */}
-        <div className={`rounded-full  bg-slate-400 w-${imageWidth} h-${imageWidth} border-4 border-white shadow-2xl `}>
+        {/* <div className={`rounded-full  bg-slate-400 w-${imageWidth} h-${imageWidth} border-4 border-white shadow-2xl `}>
 
-        </div>
+        </div> */}
             {/* <Image className={`w-15 h-15 object-cover rounded-full border-4 border-white shadow-2xl`} src={imgSrc} alt="image"/> */}
     {/* </div> */}
+    <Image src={imgSrc} alt="image" className="w-full h-full rounded-full object-cover"/>
     </div>
     )
 }

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../../../public/LFR/img/logo.png";
+import logo from "../../../public/img/ClubwizeLogoBlack.png";
 import Check from "../../../public/LFR/img/check.png";
 import Exclamation from "../../../public/LFR/img/exclamation.png";
 
@@ -23,8 +23,8 @@ function FP() {
     <div className="h-screen flex items-center justify-center bg-white">
       <div className="bg- p-10 rounded-lg">
         <div className="flex justify-center mb-8">
-          <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-            <Image src={logo} alt="Logo" width={40} height={40} />
+        <div className="w-20 h-20  rounded-full flex items-center justify-center">
+            <Image className="w-full rounded-md" src={logo} alt="Logo" />
           </div>
         </div>
 
