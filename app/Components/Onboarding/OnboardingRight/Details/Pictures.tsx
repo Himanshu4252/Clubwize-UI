@@ -123,7 +123,7 @@ export default function Pictures() {
               />
               {profilePhoto && (
                 <div className="mt-4 flex items-center bg-gray-100 border-2 rounded-md px-5 py-2 justify-between">
-                  <img
+                  <Image
                     src={URL.createObjectURL(profilePhoto)}
                     alt="Profile Preview"
                     className="h-20 w-20 object-cover rounded-md"
@@ -152,7 +152,7 @@ export default function Pictures() {
               />
               {coverPhoto && (
                 <div className="mt-4 flex items-center bg-gray-100 border-2 rounded-md px-5 py-2 justify-between">
-                  <img
+                  <Image
                     src={URL.createObjectURL(coverPhoto)}
                     alt="Cover Preview"
                     className="h-20 w-20 object-cover rounded-md"
