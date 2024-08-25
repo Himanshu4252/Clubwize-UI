@@ -16,6 +16,10 @@ function Email() {
     const isEmailCorrect = email === "test@gmail.com";
 
     setIsEmailValid(isEmailCorrect);
+
+    if (isEmailCorrect) {
+      window.location.href = "/Reset/OTP";
+    }
   };
 
   return (
@@ -82,23 +86,13 @@ function Email() {
             </p>
           )}
         </div>
-        {isEmailValid ? (
-          <a href="/Reset/OTP">
-            <button
-              onClick={handleLoginClick}
-              className="w-full bg-button hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mt-24"
-            >
-              Sent OTP
-            </button>
-          </a>
-        ):(
+        
           <button
             onClick={handleLoginClick}
             className="w-full bg-button hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mt-24"
           >
             Sent OTP
           </button>
-        )}
 
         <p className="text-center text-gray-600 mt-6">
           Remember your Password ?{" "}

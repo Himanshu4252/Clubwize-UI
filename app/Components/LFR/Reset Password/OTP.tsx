@@ -27,6 +27,10 @@ function OTP() {
     const isOtpCorrect = enteredOtp === correctOtp;
 
     setIsOtpValid(isOtpCorrect);
+
+    if (isOtpCorrect) {
+      window.location.href = "/Reset/Password";
+    }
   };
 
   return (
@@ -71,23 +75,13 @@ function OTP() {
             Please enter the correct OTP
           </p>
         )}
-        {isOtpValid ? (
-          <a href="/Reset/Password">
-            <button
-              onClick={handleLoginClick}
-              className="w-full bg-button hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mt-6"
-            >
-              Verify OTP
-            </button>
-          </a>
-        ) : (
+    
           <button
             onClick={handleLoginClick}
             className="w-full bg-button hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mt-6"
           >
             Verify OTP
           </button>
-        )}
 
         <p className="text-center text-gray-600 mt-6">
           Remember your Password ?{" "}

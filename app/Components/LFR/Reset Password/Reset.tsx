@@ -23,18 +23,18 @@ function Reset() {
   const handleLoginClick = () => {
     setLoginAttempted(true);
 
-    // Check if the current password is correct
     const isCurrentPasswordCorrect = currentPassword === "qwerty";
     setIsCurrentPasswordValid(isCurrentPasswordCorrect);
-
-    // Check if the new password matches the confirm password
+    
     const doNewPasswordsMatch = newPassword === confirmPassword;
     setIsNewPasswordValid(doNewPasswordsMatch);
 
     if (isCurrentPasswordCorrect && doNewPasswordsMatch) {
-      // Logic to reset the password (e.g., send the new password to the server)
+      window.location.href = "/Reset/Success";
       console.log("Password reset successful!");
     }
+
+    
   };
 
   const togglePasswordVisibility = () => {
@@ -166,25 +166,12 @@ function Reset() {
           )}
         </div>
         
-        
-        {isCurrentPasswordValid && isNewPasswordValid ? (
-          <a href="/">
-            <button
-              onClick={handleLoginClick}
-              className="w-full bg-button hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg"
-            >
-              Reset Password
-            </button>
-          </a>
-        ) : (
           <button
             onClick={handleLoginClick}
             className="w-full bg-button hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg"
           >
             Reset Password
           </button>
-        )}
-
 
         <p className="text-center text-gray-600 mt-6">
           Remember your Password?{" "}
