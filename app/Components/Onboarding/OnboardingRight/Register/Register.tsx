@@ -42,7 +42,7 @@ function Register() {
     setIsNewPasswordValid(doNewPasswordsMatch);
 
     if (isEmailVerified && doNewPasswordsMatch) {
-      window.location.href = "/Reset/Success";
+      window.location.href = "/onboarding/details";
     }
   };
 
