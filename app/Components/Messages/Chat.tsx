@@ -72,7 +72,7 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
       <div className="flex-1 overflow-y-auto px-4">
         <div className="mt-4">
           {messages
-            .filter(message => message.sender !== 'me')
+            .filter(message => !(contact.id === 4 && message.sender === 'me'))
             .map((message, index) => (
               <div
                 key={index}
