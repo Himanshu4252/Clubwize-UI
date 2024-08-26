@@ -11,13 +11,12 @@ const NodeLeft = () => {
     <div className="relative bg-onboarding-bg w-full h-full flex  flex-col justify-center items-center bg-right-top bg-no-repeat bg-contain"
     style={{ backgroundImage: `url('/assets/Vector 1.png')` }}
     >
-      <h2 className="text-2xl font-bold">What is Node ❓</h2>
+      <h2 className="text-2xl font-bold pt-10">What is Node ❓</h2>
       <p className="w-[65%] text-center mt-4 text-gray-500">
         Lorem ipsum dolor sit amet consectetur. Vitae anunc volutpat. Lorem
         ipsum dolor sit.Lorem ipsum dolor sit amet consectetur. Vitae anunc volutpat. Lorem
         ipsum dolor sit.Lorem ipsum dolor sit amet consectetur. Vitae anunc volutpat. Lorem
-        ipsum dolor sit.Lorem ipsum dolor sit amet consectetur. Vitae anunc volutpat. Lorem
-        ipsum dolor sit.
+        ipsum dolor sit.Lorem ipsum dolor sit amet consectetur.
       </p>
 
       <div className="mt-8 flex flex-nowrap flex-row justify-center items-center">

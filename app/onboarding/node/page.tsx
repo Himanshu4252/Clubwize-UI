@@ -1,4 +1,5 @@
 
+import CNode from "@/app/Components/Onboarding/OnboardingRight/Details/cnode";
 import Node from "@/app/Components/Onboarding/OnboardingRight/Details/node";
 import NodeLeft from "@/app/Components/Onboarding/OnboardLeft/NodeLeft";
 
@@ -10,7 +11,7 @@ export default function Home() {
     <NodeLeft />
     </div>
     <div className="w-7/12">
-    <Node />
+    <CNode />
     </div>
     </main>
   );
