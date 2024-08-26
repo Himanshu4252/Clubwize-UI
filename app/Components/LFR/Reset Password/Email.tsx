@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../../../public/assets/Component 4.png";
-import Check from "../../../public/assets/valid-icon.png";
-import Exclamation from "../../../public/assets/invalid-icon.png";
+import logo from "../../../../public/assets/Component 4.png";
+import Check from "../../../../public/assets/valid-icon.png";
+import Exclamation from "../../../../public/assets/invalid-icon.png";
 
-function FP() {
+function Email() {
   const [email, setEmail] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState<boolean | null>(null);
   const [loginAttempted, setLoginAttempted] = useState<boolean>(false);
@@ -18,7 +18,7 @@ function FP() {
     setIsEmailValid(isEmailCorrect);
 
     if (isEmailCorrect) {
-      window.location.href = "/Reset/Email";
+      window.location.href = "/Reset/OTP";
     }
   };
 
@@ -32,7 +32,7 @@ function FP() {
         </div>
 
         <h2 className="text-center text-3xl font-bold mb-2">
-          Forgot Password <span>🔓</span>
+          Reset Password <span>🔑</span>
         </h2>
         <p className="text-center font-normal text-xs text-gray-400 mb-8">
           No worries. We&apos;ll send you reset instructions.
@@ -91,7 +91,7 @@ function FP() {
             onClick={handleLoginClick}
             className="w-full bg-button hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mt-24"
           >
-            Forgot Password
+            Sent OTP
           </button>
 
         <p className="text-center text-gray-600 mt-6">
@@ -105,4 +105,4 @@ function FP() {
   );
 }
 
-export default FP;
+export default Email;
