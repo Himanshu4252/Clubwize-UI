@@ -1,4 +1,3 @@
-// Created.tsx
 import head from "../../../../../../public/assets/Onboarding/header.png";
 import Image from "next/image";
 

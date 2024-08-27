@@ -1,4 +1,3 @@
-// CNode.tsx
 "use client";
 
 import Image from "next/image";
@@ -9,7 +8,6 @@ import Create from "./Popup/Create";
 import Module from "./Popup/Module";
 import Created from "./Popup/Created";
 
-
 export default function CNode() {
   const [isCreateOpen, setIsCreateOpen] = useState(false);
   const [isModuleOpen, setIsModuleOpen] = useState(false);
@@ -17,24 +15,21 @@ export default function CNode() {
 
   const openCreated = () => setIsCreatedOpen(true);
   const closeCreated = () => setIsCreatedOpen(false);
-  
+
   const openCreate = () => setIsCreateOpen(true);
   const closeCreate = () => setIsCreateOpen(false);
   const openModule = () => setIsModuleOpen(true);
   const closeModule = () => setIsModuleOpen(false);
 
-
   const handleNextClick = () => {
-    closeCreate(); 
-    openModule(); 
+    closeCreate();
+    openModule();
   };
 
-  const handleAfter = () =>{
+  const handleAfter = () => {
     closeModule();
     openCreated();
-  }
-
-
+  };
 
   return (
     <>
@@ -170,10 +165,14 @@ export default function CNode() {
         <Create
           isOpen={isCreateOpen}
           onClose={closeCreate}
-          onNext={handleNextClick} 
+          onNext={handleNextClick}
         />
-        <Module isOpen={isModuleOpen} onClose={closeModule} after={handleAfter}/>
-        <Created isOpen={isCreatedOpen} onClose={closeCreated}/>
+        <Module
+          isOpen={isModuleOpen}
+          onClose={closeModule}
+          after={handleAfter}
+        />
+        <Created isOpen={isCreatedOpen} onClose={closeCreated} />
       </div>
     </>
   );

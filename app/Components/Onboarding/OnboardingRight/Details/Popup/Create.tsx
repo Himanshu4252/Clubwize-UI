@@ -1,8 +1,5 @@
-// Create.tsx
 "use client";
 import React, { useState } from "react";
-import Module from "./Module";
-
 
 interface ModuleProps {
   isOpen: boolean;
@@ -27,10 +24,6 @@ export default function Create({ isOpen, onClose, onNext }: ModuleProps) {
     );
   };
 
-  const [isModelOpen, setIsModelOpen] = useState(false);
-
-  const openModel = () => setIsModelOpen(true);
-  const closeModel = () => setIsModelOpen(false);
 
   if (!isOpen) return null;
 

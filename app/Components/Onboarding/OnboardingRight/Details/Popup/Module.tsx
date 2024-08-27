@@ -1,4 +1,3 @@
-// Module.tsx
 "use client";
 import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
