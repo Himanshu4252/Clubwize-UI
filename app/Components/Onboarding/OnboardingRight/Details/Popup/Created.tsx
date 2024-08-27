@@ -19,7 +19,7 @@ export default function Created({ isOpen, onClose }: ModuleProps) {
               onClick={onClose}
               className="text-gray-500 hover:text-gray-700 mr-5 mt-5"
             >
-              &times;
+              X
             </button>
           </div>
           <div className="flex flex-col justify-center">
