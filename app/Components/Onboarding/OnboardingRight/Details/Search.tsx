@@ -3,18 +3,50 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "../../../../../public/assets/Component 4.png";
+import Create from "./Popup/Create";
+import Module from "./Popup/Module";
+import Created from "./Popup/Created";
+import { useRouter } from "next/router";
 
 export default function Search() {
   const [nodeName, setNodeName] = useState("");
   const [pinCode, setPinCode] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
-
   const isFormValid = nodeName !== "" && pinCode !== "" && termsAccepted;
 
-  const handleSubmit = () => {
+  const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [isModuleOpen, setIsModuleOpen] = useState(false);
+  const [isCreatedOpen, setIsCreatedOpen] = useState(false);
+
+
+  const openCreated = () => setIsCreatedOpen(true);
+  const closeCreated = () => setIsCreatedOpen(false);
+
+  const openCreate = () => setIsCreateOpen(true);
+  const closeCreate = () => setIsCreateOpen(false);
+  const openModule = () => setIsModuleOpen(true);
+  const closeModule = () => setIsModuleOpen(false);
+
+  const handleNextClick = () => {
+    closeCreate();
+    openModule();
+  };
+
+  const handleAfter = () => {
+    closeModule();
+    openCreated();
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (isFormValid) {
-      window.location.href = "/onboarding/node";
+       window.location.href ="/onboarding/node";
     }
+  };
+
+
+  const handleCreateNodeClick = () => {
+    openCreate();
   };
 
   return (
@@ -77,52 +109,53 @@ export default function Search() {
             className="flex flex-col items-center space-y-4"
           >
             <div className="w-full max-w-md">
-    <label className="block font-medium text-base">
-      Enter Your Node Name
-      <input
-        type="text"
-        placeholder="Enter Name"
-        value={nodeName}
-        onChange={(e) => setNodeName(e.target.value)}
-        className="p-2 border rounded-md w-full mt-1 text-base font-light"
-      />
-    </label>
-  </div>
+              <label className="block font-medium text-base">
+                Enter Your Node Name
+                <input
+                  type="text"
+                  placeholder="Enter Name"
+                  value={nodeName}
+                  onChange={(e) => setNodeName(e.target.value)}
+                  className="p-2 border rounded-md w-full mt-1 text-base font-light"
+                />
+              </label>
+            </div>
 
-  <div className="w-full max-w-md">
-    <label className="block font-medium text-base">
-      Pin Code
-      <input
-        type="number"
-        name="pincode"
-        placeholder="Enter Code"
-        min="100000"
-        max="999999"
-        value={pinCode}
-        onChange={(e) => setPinCode(e.target.value)}
-        className="p-2 border rounded-md w-full mt-1 text-base font-light"
-      />
-    </label>
-  </div>
+            <div className="w-full max-w-md">
+              <label className="block font-medium text-base">
+                Pin Code
+                <input
+                  type="number"
+                  name="pincode"
+                  placeholder="Enter Code"
+                  value={pinCode}
+                  onChange={(e) => setPinCode(e.target.value)}
+                  className="p-2 border rounded-md w-full mt-1 text-base font-light"
+                />
+              </label>
+            </div>
 
-  <div className="flex flex-col items-center pt-10 space-y-4 w-full max-w-md ">
-    <button
-      type="submit"
-      onClick={handleSubmit}
-      className={`px-10 py-2 rounded-lg text-white w-full max-w-md ${
-        isFormValid
-          ? "bg-green-500 text-white"
-          : "bg-green-300 text-gray-400 cursor-not-allowed"
-      }`}
-      disabled={!isFormValid}
-    >
-      Search node
-    </button>
+            <div className="flex flex-col items-center pt-10 space-y-4 w-full max-w-md ">
+              <button
+                type="submit"
+                className={`px-10 py-2 rounded-lg text-white w-full max-w-md ${
+                  isFormValid
+                    ? "bg-green-500 text-white"
+                    : "bg-green-300 text-gray-400 cursor-not-allowed"
+                }`}
+                disabled={!isFormValid}
+              >
+                Search node
+              </button>
 
-    <a href="" className="text-green-500">
-      + Create a node
-    </a>
-  </div>
+              <button
+                type="button"
+                onClick={handleCreateNodeClick}
+                className="text-green-500"
+              >
+                + Create a node
+              </button>
+            </div>
 
             <div className="flex flex-col w-full">
               <div className="mb-6 flex mt-10 ">
@@ -160,6 +193,17 @@ export default function Search() {
             </div>
           </form>
         </div>
+        <Create
+          isOpen={isCreateOpen}
+          onClose={closeCreate}
+          onNext={handleNextClick}
+        />
+        <Module
+          isOpen={isModuleOpen}
+          onClose={closeModule}
+          after={handleAfter}
+        />
+        <Created isOpen={isCreatedOpen} onClose={closeCreated} />
       </div>
     </>
   );
