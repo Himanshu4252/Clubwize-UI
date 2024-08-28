@@ -26,6 +26,11 @@ function Log() {
 
     setIsEmailValid(isEmailCorrect);
     setIsPasswordValid(isPasswordCorrect);
+
+    if (isEmailCorrect && isPasswordCorrect) {
+      window.location.href = "/clubwise";
+    }
+
   };
 
   const togglePasswordVisibility = () => {
