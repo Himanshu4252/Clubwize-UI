@@ -1,0 +1,14 @@
+.testingWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.siderBar{
+    height: 110vh;
+    width: 6vw;
+    border: 2px solid;
+}
+.searchPanel{
+    height: 100vh;
+    width: 94vw;
+}
