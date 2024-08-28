@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import facebook from "../../../public/LFR/img/facebook.png";
-import google from "../../../public/LFR/img/google.png";
-import apple from "../../../public/LFR/img/apple-logo.png";
-import logo from "../../../public/img/ClubwizeLogoBlack.png";
-import Check from "../../../public/LFR/img/check.png";
-import Exclamation from "../../../public/LFR/img/exclamation.png";
-import eye from "../../../public/LFR/img/eye.png";
-import view from "../../../public/LFR/img/view.png";
+import facebook from "../../../public/assets/LFR/img/facebook.png";
+import google from "../../../public/assets/LFR/img/google.png";
+import apple from "../../../public/assets/LFR/img/apple-logo.png";
+import logo from "../../../public/assets/Component 4.png";
+import Check from "../../../public/assets/valid-icon.png";
+import Exclamation from "../../../public/assets/invalid-icon.png";
+import eye from "../../../public/assets/LFR/img/eye.png";
+import view from "../../../public/assets/LFR/img/view.png";
 
 function Log() {
   const [email, setEmail] = useState<string>("");
@@ -36,8 +36,8 @@ function Log() {
     <div className="h-screen flex items-center justify-center bg-white">
       <div className="bg- p-10 rounded-lg">
         <div className="flex justify-center mb-8">
-        <div className="w-20 h-20  rounded-full flex items-center justify-center">
-            <Image className="w-full rounded-md" src={logo} alt="Logo" />
+          <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
+            <Image src={logo} alt="Logo" width={40} height={40} />
           </div>
         </div>
 
@@ -114,16 +114,16 @@ function Log() {
                 <Image
                   src={Check}
                   alt="check"
-                  width={45}
-                  height={45}
+                  width={20}
+                  height={20}
                   className="text-green-500"
                 />
               ) : (
                 <Image
                   src={Exclamation}
                   alt="Exclamation"
-                  width={25}
-                  height={25}
+                  width={20}
+                  height={20}
                   className="text-red-500"
                 />
               )}
@@ -194,7 +194,9 @@ function Log() {
 
         <p className="text-center text-gray-600 mt-6">
           Didn&apos;t have account?{" "}
+
           <a href="/onboarding/register" className="text-button hover:underline">
+
             Get Registered
           </a>
         </p>
