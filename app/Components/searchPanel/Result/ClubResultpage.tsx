@@ -4,6 +4,7 @@ import Image, {StaticImageData} from 'next/image'
 import { Cross, proImage, CoverPhoto, Colon, NodeOne, NodeTwo, NodeThree, NodeFour, Online, Lock } from '../photos'
 interface childProps{
   onChange: (newState: boolean) => void;
+  
 }
 interface UserProfiles {
   id: number;
