@@ -77,7 +77,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
         <input
           type="text"
           placeholder="Search for..."
-          className="flex-1 p-2 border border-gray-300 rounded-lg text-sm"
+          className="flex-1 p-2 border border-gray-300 rounded-lg text-sm bg-gray-100"
         />
         <div className="w-8 h-8 flex items-center justify-center bg-gray-200 border border-gray-300 rounded-lg ml-3">
           <Image
@@ -90,7 +90,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
       </div>
 
       {!isSelecting && (
-        <div className="w-full p-4 flex items-center gap-2 border-b border-gray-300">
+        <div className="w-full p-4 flex items-center gap-2 border-b border-gray-200">
           <div className="flex items-center gap-2 flex-1">
             <div className="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-300">
               <Image
@@ -112,12 +112,14 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
               />
             </div>
             <div className="w-8 h-8 flex items-center justify-center">
+            <button className=" rounded-full hover:bg-gray-100 focus:outline-none">
               <Image
                 src="/MsgImages/arrow.png"
                 alt="Arrow"
-                width={4}
-                height={16}
+                width={5}
+                height={25}
               />
+              </button>
             </div>
           </div>
         </div>
@@ -127,7 +129,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
         {contacts.map((contact) => (
           <li
             key={contact.id}
-            className={`flex items-center p-4 cursor-pointer border-b border-gray-300 ${
+            className={`flex items-center p-4 cursor-pointer border-b border-gray-200 ${
               activeContactId === contact.id ? 'bg-green-100' : 'hover:bg-green-100'
             }`}
             onClick={() => handleClick(contact.id)}

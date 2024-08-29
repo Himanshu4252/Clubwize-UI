@@ -3,12 +3,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-interface ChatProps {
+interface TeamProps {
   messages: { sender: string; text: string; timestamp: string }[];
   contact: { name: string; avatar: string; id: number };
 }
 
-const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
+const Team: React.FC<TeamProps> = ({ messages, contact }) => {
   const [isPopupVisible, setPopupVisible] = useState<boolean>(false);
 
   const togglePopup = () => {
@@ -44,13 +44,8 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
           <div className="flex flex-col">
             <span className="font-semibold text-md">{contact.name}</span>
             <div className="flex items-center mt-1">
-              <Image
-                src="/MsgImages/online.png"
-                alt="Online"
-                width={8}
-                height={8}
-              />
-              <span className="text-xs text-gray-500 ml-1">Online</span>
+             
+              <span className="text-xs text-gray-500 ml-1">Private . 2k Members</span>
             </div>
           </div>
         </div>
@@ -66,7 +61,7 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
           {isPopupVisible && (
             <div className="absolute right-0 top-full mt-2 bg-white shadow-lg rounded-lg border border-gray-200 w-[160px]">
               <button className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">
-                Info
+                Team info
               </button>
               <button className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">
                 Mute
@@ -74,8 +69,8 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
               <button className="block w-full text-left px-4 py-2 text-red-600 hover:bg-red-100 text-sm">
                 Delete
               </button>
-              <button className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">
-                Archive
+              <button className="block w-full text-left px-4 py-2 text-red-600 hover:bg-red-100 text-sm">
+                Leave team
               </button>
               <button className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">
                 Report/Block
@@ -90,10 +85,10 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
           {dateHeaders.map((date) => (
             <div key={date} className="mb-4">
               {date && (
-                <div className="flex items-center justify-center text-gray-300 text-xs mb-2">
-                  <div className="flex border-t border-gray-100" style={{ width: '15%'}}  />
-                  <span className="px-2">{date}</span>
-                  <div className="flex border-t border-gray-100" style={{ width: '15%'}}/>
+                <div className="flex items-center justify-center text-gray-300 text-xs  mb-2">
+                  <div className="flex border-t border-gray-100" style={{ width: '15%' }} />
+                  <span className="px-2 ">{date}</span>
+                  <div className="flex border-t border-gray-100" style={{ width: '15%' }} />
                 </div>
               )}
               {groupedMessages[date].map((message, index) => {
@@ -119,52 +114,6 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
             </div>
           ))}
         </div>
-
-        {contact.id === 4 && (
-          <div className="flex flex-col items-center justify-center mt-4">
-            <Image
-              src="/MsgImages/msgRequest.png"
-              alt="Chat Icon"
-              width={234}
-              height={156}
-            />
-            <h2 className="font-semibold text-md mt-4">Do you know Brooklyn?</h2>
-            <p className="text-center text-gray-600 mt-2 text-sm">
-              Brooklyn just wants to chat with you. Evaluate and decide on requests by either approving or rejecting them.
-            </p>
-            <div className="flex gap-4 mt-4">
-              <button className="bg-white text-red-500 border border-red-500 px-3 py-1.5 rounded text-sm flex items-center gap-2 hover:bg-red-100">
-                <Image
-                  src="/MsgImages/reject.png"
-                  alt="Reject"
-                  width={12}
-                  height={12}
-                />
-                Reject
-              </button>
-              <button className="bg-white text-[#22B573] border border-[#22B573] px-3 py-1.5 rounded text-sm flex items-center gap-2 hover:bg-[#e6f6f0]">
-                <Image
-                  src="/MsgImages/accept.png"
-                  alt="Accept"
-                  width={12}
-                  height={12}
-                />
-                Accept
-              </button>
-            </div>
-          </div>
-        )}
-        {contact.id === 2 && (
-    <div className="mt-4 flex items-center text-xs" style={{ color: '#22B573' }}>
-      <Image
-        src="/MsgImages/typing.png"
-        alt="Typing"
-        width={20}
-        height={20}
-      />
-      <span className="ml-2">{contact.name.split(' ')[0]} is typing...</span>
-    </div>
-  )}
       </div>
       <div className="border-t mt-4 px-4 py-2 flex items-center border border-gray-300 rounded m-5">
         <div className="flex items-center">
@@ -190,21 +139,20 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
           />
           <div className="border-r border-gray-300 mx-2 h-6"></div>
         </div>
-  <input
-    type="text"
-    placeholder="Write your comment..."
-    className="flex-1 p-2 text-sm"
-    style={{ boxSizing: 'border-box' }}
-  />
-  <button
-    className="bg-[#22B573] text-white w-[20vw] max-w-[97px] h-[8vh] max-h-[34px] px-2 py-1 rounded border border-transparent ml-2 text-sm"
-  >
-    Send
-  </button>
-</div>
-
+        <input
+          type="text"
+          placeholder="Write your comment..."
+          className="flex-1 p-2 text-sm"
+          style={{ boxSizing: 'border-box' }}
+        />
+        <button
+          className="bg-[#22B573] text-white w-[20vw] max-w-[97px] h-[8vh] max-h-[34px] px-2 py-1 rounded border border-transparent ml-2 text-sm"
+        >
+          Send
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Chat;
+export default Team;
