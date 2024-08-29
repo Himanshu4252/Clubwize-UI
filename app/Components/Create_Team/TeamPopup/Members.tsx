@@ -41,7 +41,7 @@ export default function Members({ isOpen, onClose, onNext }: ModuleProps) {
 
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center z-50">
-      <div className="bg-white p-10">
+      <div className="bg-white p-10 rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold">Create new team</h2>
           <button onClick={onClose} className="text-gray-400">
