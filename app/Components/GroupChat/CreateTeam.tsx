@@ -70,7 +70,7 @@ const CreateTeam: React.FC<CreateTeamProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white w-[28%] max-h-fit rounded-lg shadow-lg flex flex-col">
         <div className="flex justify-between items-center p-2 mb-2 border-b border-gray-300">
           <h2 className="text-lg font-semibold flex-1">Create new team</h2>

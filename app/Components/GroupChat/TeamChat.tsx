@@ -107,22 +107,15 @@ const TeamList: React.FC<TeamListProps> = ({ teams, onSelectTeam }) => {
             <div className="flex items-center ml-4">
               {team.id === 1 && (
                 <div className="w-8 h-8 flex items-center justify-center mr-2">
-                  <Image
-                    src="/GrpChatImg/unreadbadge.png"
-                    alt="Unread Badge"
-                    width={43}
-                    height={31}
-                  />
+                  <div className="flex items-center justify-center w-38px] h-[26px] p-1.5 bg-[#22B573]  rounded-[43px] text-white text-xs hover:bg-gray-800 hover:text-white ">15+</div>
                 </div>
               )}
               {team.id === 2 && (
                 <div className="w-8 h-8 flex items-center justify-center mr-2">
-                  <Image
-                    src="/GrpChatImg/badge2.png"
-                    alt="Badge 2"
-                    width={43}
-                    height={31}
-                  />
+                 <div className="w-[35px] h-[31px] p-1 gap-2 rounded-[43px] bg-[#22B573] text-white flex items-center justify-center text-xs hover:bg-gray-800">
+  8+
+</div>
+
                 </div>
               )}
               <div className="w-8 h-8 flex items-center justify-center">
