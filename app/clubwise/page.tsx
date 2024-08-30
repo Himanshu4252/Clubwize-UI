@@ -2,7 +2,7 @@ import Team from "../Components/Create_Team/Team";
 
 export default function Home() {
   return (
-    <main className="w-full flex gap-5">
+    <main className="w-full flex gap-5 bg-gray-200">
       <div className="w-1/12 bg-gray-300"></div>
       <div className="w-2/12 bg-gray-300"></div>
       <div className="w-6/12 bg-gray-300">
