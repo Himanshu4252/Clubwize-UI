@@ -10,25 +10,36 @@ import SearchBar from "../Components/searchPanel/SearchBar";
 
 const Feed = () => {
   return (
-    <div className="inline-flex gap-4">
-      {/* Sidebar */}
-      <div className="inline-flex ">
-        <Side_Bar />
+    <div className="flex gap-4">
+      <div>
+      <Side_Bar />  
       </div>
+      
 
       <div className="flex flex-col">
+        <SearchBar />
 
-<SearchBar /> 
-
-        <div className="flex flex-row gap-4">
-          <Profile />
+        <div className="flex flex-row justify-evenly">
+        <div className="w-2/12">
+           <Profile />
+        </div>
+         
 
           {/* Feed */}
-          <div className='flex flex-col gap-4 items-center h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
-            <ModuleBar />
-            <PostCard />
-            <PostCard2 />
-            <Comments />
+          <div className='flex flex-col w-6/12 gap-4 items-center h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
+            <div className="w-full">
+              <ModuleBar />
+            </div>
+            <div>
+              <PostCard />
+            </div>
+            <div className="w-full">
+              <PostCard2 />
+            </div>
+            <div>
+              {" "}
+              <Comments />
+            </div>
           </div>
 
           {/* Team */}
