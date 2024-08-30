@@ -1,21 +1,24 @@
 .searchWrapper{
     display: flex;
+    min-width: 700px;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 10vh;
-    background-color: rgb(225 226 227);
+    height: 8vh;
+    /* background-color: rgb(225 226 227); */
     font-size: 0.8rem;
+    gap: 20px;
 }
 .searchBar{
     display: flex;
-    width: 60%;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
-    height: 6vh;
-    border-radius: 2vh;
+    height: 48px;
     background-color: rgb(255, 255, 255);
     padding: 4px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .searchBar:hover{
     transform: scale(1.005);
@@ -40,26 +43,32 @@
     outline: none;
 }
 .messageDiv{
-    width: 10%; 
+    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 6vh;
-    border-radius: 2vh;
+    height: 48px;
     background-color: rgb(255, 255, 255);
     cursor: pointer;
+    gap: 10px;
+    
     font-size: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
 }
 .notificationDiv{
     display: flex;
     align-items: center;
     justify-content: center; 
     cursor: pointer;
-    width: 4%;
+    width: 60px;
     border-radius: 2vh;
-    height: 6vh;
+    height: 48px;
     background-color: rgb(255, 255, 255);
     position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .notificationAlert{
     font-size: 0.8rem;
@@ -83,12 +92,14 @@
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer; 
-    height: 6vh;
-    width: 15%;
+    height: 48px;
+    width: 150px;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     font-size: 0.8rem;
     padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .profileDropdown{
     outline: none;

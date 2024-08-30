@@ -127,7 +127,7 @@ const [inputValue, setInputValue] = useState('');
   return (
 <>
 <div className={style.searchWrapper}>
-    <div className={style.searchBar}>
+    <div className={style.searchBar} >
       {searchIcon? (<Image src={SearchIcon} alt='searchICon' className={style.magnifyingGlass} />):(null)}
       {selectedButton?(<button className={`${style.selectedButton} ${style.inputFieldButton}`}>
             <Image src={selectedButton.photo} alt={selectedButton.alt} />
@@ -137,7 +137,9 @@ const [inputValue, setInputValue] = useState('');
       <input name='searchBox' className={style.searchInput} placeholder='Search for node, club, peoples, tags etc...' value={inputValue} onClick={handleInputClick} onChange={handleInputChange} />
       {crossIcon? (<button className={style.crossButton} onClick={clickedCross}><Image src={Cross} alt='cross icon' className={style.crossIcon} /></button> ):(null)}
     </div>
-    <div className={style.messageDiv}>
+
+    <div className="inline-flex w-3/12 gap-4"> 
+    <div className={style.messageDiv }>
       <Image src={Chat} alt='chat icon' />
       <p>Message</p>
     </div>
@@ -155,6 +157,7 @@ const [inputValue, setInputValue] = useState('');
               <li><a href="">Menu Item 3</a></li>
             </ul>):(null)}
       </div>
+    </div>  
     </div>
   </div>
     {searchField ? (  <div className={style.searchField}>

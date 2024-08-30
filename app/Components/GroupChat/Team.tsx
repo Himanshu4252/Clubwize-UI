@@ -48,8 +48,8 @@ const Team: React.FC<TeamProps> = ({ messages, contact, member }) => {
   const dateHeaders = Object.keys(groupedMessages);
 
   return (
-    <div className="flex-1 bg-white flex flex-col border border-gray-200 shadow-[0px_2px_4px_0px_#00000013] rounded-[10px]">
-      <div className="h-[10vh] max-h-[76px] mb-4 border-b border-gray-200 flex items-center px-4 gap-4">
+    <div className="flex-1 bg-white flex flex-col border border-gray-200 shadow-[0px_2px_4px_0px_#00000013] rounded-[10px] :">
+      <div className="h-[10vh] max-h-[76px] mb-4 border-b border-gray-200 flex items-center px-4 gap-4 min-w-[30vw]">
         <div className="flex items-center gap-4 flex-1">
           <Image
             src={contact.avatar}

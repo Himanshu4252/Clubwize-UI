@@ -26,7 +26,6 @@ function Profile() {
     <div className={styles.profile_card}>
         <div className={styles.background_img_cnt}>
             <Image src={backG} alt='images' />
-
         </div>
         <div className={styles.profile_pic_cnt}>
             <div className={styles.main_cnt}>

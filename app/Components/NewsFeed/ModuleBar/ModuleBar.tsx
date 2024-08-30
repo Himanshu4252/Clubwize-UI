@@ -45,7 +45,7 @@ const AddSvg = `<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmln
 
 
   return (
-    <div className='w-[941px] h-[75px] border border-1 flex items-center rounded-lg shadow-md'>
+    <div className='w-[941px] h-[7fe5px] border border-1 flex items-center rounded-lg shadow-md'>
         <ModuleBox notifyCount="1" moduleIcon={RulesSvg} moduleTitle='Rules'  />
         <ModuleBox notifyCount="" moduleIcon={MarketPlaceSvg} moduleTitle='Market Place'  />
         <ModuleBox notifyCount="" moduleIcon={DebateSvg} moduleTitle='Debate'  />

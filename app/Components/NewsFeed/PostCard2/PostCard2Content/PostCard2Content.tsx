@@ -6,9 +6,9 @@ import CardImage from '../../../../../public/img/PostCard2/CardImage.png'
 
 const PostCard2Content = () => {
   return (
-    <div className='relative flex flex-col justify-center items-center h-full'>
+    <div className='relative flex flex-col justify-center items-center h-full '>
 
-        <div className="flex flex-col text- justify-center items-center z-1">
+        <div className="flex flex-col text- justify-center items-center z-1 pb-6">
 
             <div className="flex rounded-full ">
               <Image className='rounded-full w-[123px] h-[123px]  mt-4' src={CardImage} alt="CardImage"/>
@@ -30,7 +30,7 @@ const PostCard2Content = () => {
             </div>
         </div>
         {/* <Image className='' src={Background} alt="Background"/> */}
-        <div className="w-full h-full absolute bg-[url('/img/PostCard2/Background.png')] z-[-1]"></div>
+        <div className="w-full h-full absolute bg-[url('/img/PostCard2/Background.png')] z-[-1] "></div>
     </div>
   )
 }
