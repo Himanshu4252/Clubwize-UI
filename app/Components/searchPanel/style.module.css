@@ -289,8 +289,9 @@
 }
 .activeSearch{
     margin-left: 20px;
+    margin-top: 70px;
     position: absolute;
-    width: 60%;
+    width: 50%;
     min-height: 200px;
     padding: 20px;
     display: flex;
