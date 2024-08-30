@@ -8,6 +8,10 @@
     /* background-color: rgb(225 226 227); */
     font-size: 0.8rem;
     gap: 20px;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    background-color: #fff;
 }
 .searchBar{
     display: flex;
