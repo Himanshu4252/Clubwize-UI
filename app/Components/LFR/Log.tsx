@@ -28,7 +28,7 @@ function Log() {
     setIsPasswordValid(isPasswordCorrect);
 
     if (isEmailCorrect && isPasswordCorrect) {
-      window.location.href = "/clubwise";
+      window.location.href = "/Feed";
     }
 
   };

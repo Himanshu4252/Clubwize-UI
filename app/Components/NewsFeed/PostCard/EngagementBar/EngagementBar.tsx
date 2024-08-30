@@ -74,7 +74,7 @@ const EngagementBar = () => {
       </div>
 
       {/* comment */}
-      <div className="py-6 w-full flex flex-row justify-center items-center ">
+      <div className="pt-6 pb-0 w-full flex flex-row justify-center items-center ">
         <div className="flex flex-row gap-2 items-center w-full h-10 bg-gray-100 rounded-md p-3 justify-between">
           <input
             type="text"
