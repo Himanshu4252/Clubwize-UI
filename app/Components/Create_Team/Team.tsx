@@ -138,7 +138,7 @@ export default function Team() {
   const closeChat = () => setIsChatOpen(false);
 
   return (
-    <div className="max-w-md mx-auto p-4 pb-0 bg-white rounded-lg shadow-lg">
+    <div className="max-w-md mx-auto p-4 pb-0 bg-white rounded-lg shadow-lg sticky top-[8vh]">
 
       <div className="flex justify-between items-center mb-4">
         <div className="flex w-auto">
