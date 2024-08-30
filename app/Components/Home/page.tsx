@@ -1,5 +1,5 @@
 import React from 'react'
-import Side_Bar from '../Sub_Component/Side_Bar'
+import Side_Bar from '../Sub_Componet/Side_Bar'
 import styles from './page.module.css'
 import Profile from '../Profile/Profile'
 
