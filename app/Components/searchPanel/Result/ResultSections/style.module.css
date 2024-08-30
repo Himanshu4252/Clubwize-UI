@@ -1,0 +1,61 @@
+.overViewContainer{
+    height: 42%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.overviewDescription{
+    font-size: 14px;
+    line-height: 16px;
+    color: #6C757D;
+}
+.overViewHR{
+    height: 2px;
+    color:#6C757D;
+}
+.overviewMembers{
+    height: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    font-family: sans-serif;
+}
+.membersText{
+    font-size: 15px;
+    color: #343A40;
+}
+.date{
+    font-size: 10px;
+    color: #b6b6b6;
+}
+.connectionsDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.userConnection{
+    display: flex;
+    flex-direction: row;
+
+}
+.seeAllButton{
+    border: 1px solid #343A40;
+    height: 30px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 8px;
+
+}
+.memberPhotos{
+    height: 30px;
+    margin-left: -15px;
+    width: auto;
+
+}
