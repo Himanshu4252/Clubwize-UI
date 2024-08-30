@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 
@@ -12,6 +14,22 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
   const togglePopup = () => {
     setPopupVisible(!isPopupVisible);
   };
+
+  const formatDate = (timestamp: string) => {
+    const [date, time] = timestamp.split(', ');
+    return { date, time };
+  };
+
+  const groupedMessages = messages.reduce((acc, message) => {
+    const { date } = formatDate(message.timestamp);
+    if (!acc[date]) {
+      acc[date] = [];
+    }
+    acc[date].push(message);
+    return acc;
+  }, {} as Record<string, typeof messages>);
+
+  const dateHeaders = Object.keys(groupedMessages);
 
   return (
     <div className="flex-1 bg-white flex flex-col border border-gray-200 shadow-[0px_2px_4px_0px_#00000013] rounded-[10px]">
@@ -46,9 +64,7 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
             onClick={togglePopup}
           />
           {isPopupVisible && (
-            <div
-              className="absolute right-0 top-full mt-2 bg-white shadow-lg rounded-lg border border-gray-200 w-[160px]"
-            >
+            <div className="absolute right-0 top-full mt-2 bg-white shadow-lg rounded-lg border border-gray-200 w-[160px]">
               <button className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">
                 Info
               </button>
@@ -71,21 +87,46 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
 
       <div className="flex-1 overflow-y-auto px-4">
         <div className="mt-4">
-          {messages
-            .filter(message => !(contact.id === 4 && message.sender === 'me'))
-            .map((message, index) => (
-              <div
-                key={index}
-                className={`mb-4 ${message.sender === 'me' ? 'text-right' : 'text-left'}`}
-              >
-                <div
-                  className={`inline-block p-2 rounded-lg ${message.sender === 'me' ? 'bg-green-500 text-white' : 'bg-gray-200'} text-sm`}
-                >
-                  {message.text}
+          {dateHeaders.map((date) => (
+            <div key={date} className="mb-4">
+              {date && (
+                <div className="flex items-center justify-center text-gray-300 text-xs mb-2">
+                  <div className="flex border-t border-gray-100" style={{ width: '15%'}}  />
+                  <span className="px-2">{date}</span>
+                  <div className="flex border-t border-gray-100" style={{ width: '15%'}}/>
                 </div>
-                <div className="text-xs text-gray-500">{message.timestamp}</div>
-              </div>
-            ))}
+              )}
+              {groupedMessages[date].map((message, index) => {
+                const { time } = formatDate(message.timestamp);
+                const isMe = message.sender === 'me';
+                return (
+                  
+                   <div key={index} className={`flex items-center mb-3 ${isMe ? 'justify-end' : 'justify-start'}`}
+                        style={{ marginLeft: isMe ? 'auto' : '0' }}>
+                        {isMe ? (
+                          <>
+                            <div className="text-gray-300 text-xs mr-2 text-[0.60rem] flex items-center">
+                              {time}
+                            </div>
+                            <div className={`inline-flex items-center p-2 rounded-lg ${isMe ? 'bg-[#22B57333] text-[#198754]' : 'bg-gray-200'} text-sm`}>
+                              {message.text}
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <div className={`inline-flex items-center p-2 rounded-lg ${isMe ? 'bg-[#22B57333] text-[#198754]' : 'bg-gray-200'} text-sm`}>
+                              {message.text}
+                            </div>
+                            <div className="text-gray-300 text-xs ml-2 text-[0.60rem] flex items-center">
+                              {time}
+                            </div>
+                          </>
+                        )}
+                      </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
 
         {contact.id === 4 && (
@@ -122,8 +163,18 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
             </div>
           </div>
         )}
+        {contact.id === 2 && (
+    <div className="mt-4 flex items-center text-xs" style={{ color: '#22B573' }}>
+      <Image
+        src="/MsgImages/typing.png"
+        alt="Typing"
+        width={20}
+        height={20}
+      />
+      <span className="ml-2">{contact.name.split(' ')[0]} is typing...</span>
+    </div>
+  )}
       </div>
-
       <div className="border-t mt-4 px-4 py-2 flex items-center border border-gray-300 rounded m-5">
         <div className="flex items-center">
           <Image
@@ -148,18 +199,19 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
           />
           <div className="border-r border-gray-300 mx-2 h-6"></div>
         </div>
-        <input
-          type="text"
-          placeholder="Write your comment..."
-          className="flex-1 p-2 text-sm"
-          style={{ boxSizing: 'border-box' }}
-        />
-        <button
-          className="bg-[#22B573] text-white w-[20vw] max-w-[97px] h-[8vh] max-h-[34px] px-2 py-1 rounded border border-transparent ml-2 text-sm"
-        >
-          Send
-        </button>
-      </div>
+  <input
+    type="text"
+    placeholder="Write your comment..."
+    className="flex-1 p-2 text-sm"
+    style={{ boxSizing: 'border-box' }}
+  />
+  <button
+    className="bg-[#22B573] text-white w-[20vw] max-w-[97px] h-[8vh] max-h-[34px] px-2 py-1 rounded border border-transparent ml-2 text-sm"
+  >
+    Send
+  </button>
+</div>
+
     </div>
   );
 };

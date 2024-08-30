@@ -77,7 +77,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
         <input
           type="text"
           placeholder="Search for..."
-          className="flex-1 p-2 border border-gray-300 rounded-lg text-sm"
+          className="flex-1 p-2 border border-gray-300 rounded-lg text-sm bg-gray-100"
         />
         <div className="w-8 h-8 flex items-center justify-center bg-gray-200 border border-gray-300 rounded-lg ml-3">
           <Image
@@ -90,7 +90,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
       </div>
 
       {!isSelecting && (
-        <div className="w-full p-4 flex items-center gap-2 border-b border-gray-300">
+        <div className="w-full p-4 flex items-center gap-2 border-b border-gray-200">
           <div className="flex items-center gap-2 flex-1">
             <div className="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-300">
               <Image
@@ -104,20 +104,21 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
           </div>
           <div className="flex items-center gap-4">
             <div className="w-8 h-8 flex items-center justify-center">
-              <Image
-                src="/MsgImages/badge.png"
-                alt="Badge"
-                width={35}
-                height={31}
-              />
+            <div className="w-[35px] h-[31px] px-2 py-1 gap-2 rounded-full bg-[#FD7E14] text-white flex items-center justify-center text-xs hover:bg-gray-800">
+  3+
+</div>
+
+
             </div>
             <div className="w-8 h-8 flex items-center justify-center">
+            <button className=" rounded-full hover:bg-gray-100 focus:outline-none">
               <Image
                 src="/MsgImages/arrow.png"
                 alt="Arrow"
-                width={4}
-                height={16}
+                width={5}
+                height={25}
               />
+              </button>
             </div>
           </div>
         </div>
@@ -127,7 +128,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
         {contacts.map((contact) => (
           <li
             key={contact.id}
-            className={`flex items-center p-4 cursor-pointer border-b border-gray-300 ${
+            className={`flex items-center p-4 cursor-pointer border-b border-gray-200 ${
               activeContactId === contact.id ? 'bg-green-100' : 'hover:bg-green-100'
             }`}
             onClick={() => handleClick(contact.id)}
@@ -156,12 +157,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
             <div className="flex items-center ml-4">
               {contact.id === 1 && (
                 <div className="w-8 h-8 flex items-center justify-center mr-2">
-                  <Image
-                    src="/MsgImages/unreadbadge.png"
-                    alt="Unread Badge"
-                    width={43}
-                    height={31}
-                  />
+                 <div className="flex items-center justify-center w-38px] h-[26px] p-1.5 bg-[#22B573]  rounded-[43px] text-white text-xs hover:bg-gray-800 hover:text-white ">15+</div>
                 </div>
               )}
               <div className="w-8 h-8 flex items-center justify-center">
