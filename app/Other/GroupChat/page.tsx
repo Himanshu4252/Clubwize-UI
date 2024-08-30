@@ -60,7 +60,8 @@ const GroupChat = () => {
         { sender: 'Brooklyn Simmons', text: 'Lorem ipsum dolor sit amet consectetur.', timestamp: 'Yesterday, 8:53 PM' },
     ],
   };
-  
+  const member = { id: 1, name: 'Brooklyn Simmons', avatar: '/GrpChatImg/avatar4.png' }
+
   const handleSelectTeam = (id: number) => {
     setSelectedTeam(id);
   };
@@ -74,6 +75,7 @@ const GroupChat = () => {
         <Team 
           messages={chatMessages[selectedTeam] || []}
           contact={selectedTeamDetails} 
+          member={member}
         />
       )}
     </div>
