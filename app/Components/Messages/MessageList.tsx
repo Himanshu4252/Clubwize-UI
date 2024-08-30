@@ -104,12 +104,11 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
           </div>
           <div className="flex items-center gap-4">
             <div className="w-8 h-8 flex items-center justify-center">
-              <Image
-                src="/MsgImages/badge.png"
-                alt="Badge"
-                width={35}
-                height={31}
-              />
+            <div className="w-[35px] h-[31px] px-2 py-1 gap-2 rounded-full bg-[#FD7E14] text-white flex items-center justify-center text-xs hover:bg-gray-800">
+  3+
+</div>
+
+
             </div>
             <div className="w-8 h-8 flex items-center justify-center">
             <button className=" rounded-full hover:bg-gray-100 focus:outline-none">
@@ -158,12 +157,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
             <div className="flex items-center ml-4">
               {contact.id === 1 && (
                 <div className="w-8 h-8 flex items-center justify-center mr-2">
-                  <Image
-                    src="/MsgImages/unreadbadge.png"
-                    alt="Unread Badge"
-                    width={43}
-                    height={31}
-                  />
+                 <div className="flex items-center justify-center w-38px] h-[26px] p-1.5 bg-[#22B573]  rounded-[43px] text-white text-xs hover:bg-gray-800 hover:text-white ">15+</div>
                 </div>
               )}
               <div className="w-8 h-8 flex items-center justify-center">

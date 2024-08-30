@@ -98,22 +98,31 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
               )}
               {groupedMessages[date].map((message, index) => {
                 const { time } = formatDate(message.timestamp);
+                const isMe = message.sender === 'me';
                 return (
-                  <div
-                    key={index}
-                    className={`mb-4 flex ${message.sender === 'me' ? 'justify-end' : 'justify-start'}`}
-                  >
-                    <div className={`flex ${message.sender === 'me' ? 'flex-row-reverse' : ''} items-center`}>
-                      <div
-                        className={`inline-flex items-center p-2 rounded-lg ${message.sender === 'me' ? 'bg-[#22B57333] text-[#198754]' : 'bg-gray-200'} text-sm`}
-                      >
-                        {message.text}
+                  
+                   <div key={index} className={`flex items-center mb-3 ${isMe ? 'justify-end' : 'justify-start'}`}
+                        style={{ marginLeft: isMe ? 'auto' : '0' }}>
+                        {isMe ? (
+                          <>
+                            <div className="text-gray-300 text-xs mr-2 text-[0.60rem] flex items-center">
+                              {time}
+                            </div>
+                            <div className={`inline-flex items-center p-2 rounded-lg ${isMe ? 'bg-[#22B57333] text-[#198754]' : 'bg-gray-200'} text-sm`}>
+                              {message.text}
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <div className={`inline-flex items-center p-2 rounded-lg ${isMe ? 'bg-[#22B57333] text-[#198754]' : 'bg-gray-200'} text-sm`}>
+                              {message.text}
+                            </div>
+                            <div className="text-gray-300 text-xs ml-2 text-[0.60rem] flex items-center">
+                              {time}
+                            </div>
+                          </>
+                        )}
                       </div>
-                      <div className={`text-xs ${message.sender === 'me' ? 'ml-4' : 'mr-4'} flex items-center`} style={{ color: '#6b7280', fontSize: '0.65rem' }}>
-                        {time}
-                      </div>
-                    </div>
-                  </div>
                 );
               })}
             </div>
