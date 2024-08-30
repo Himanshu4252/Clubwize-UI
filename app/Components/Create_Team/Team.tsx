@@ -14,6 +14,7 @@ import Name from "./TeamPopup/Name";
 import Picture from "./TeamPopup/Picture";
 import Created from "./TeamPopup/Created";
 import Chat from "./Chat";
+import Side_Bar from "../Sub_Componet/Side_Bar";
 
 interface Team {
   name: string;
@@ -138,6 +139,7 @@ export default function Team() {
 
   return (
     <div className="max-w-md mx-auto p-4 pb-0 bg-white rounded-lg shadow-lg">
+
       <div className="flex justify-between items-center mb-4">
         <div className="flex w-auto">
           <Image src={logo} alt="logo" width={20} />
