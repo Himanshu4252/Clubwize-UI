@@ -145,6 +145,9 @@
     z-index: 5;
     margin-left: 1vw;
     font-family: sans-serif;
+    position: fixed;
+    top: 9vh;
+    background-color: white;
 }
 .searchCategories{
     display: flex;
