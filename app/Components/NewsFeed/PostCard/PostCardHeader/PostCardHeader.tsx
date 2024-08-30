@@ -22,7 +22,7 @@ const PostCardHeader = () => {
             <p className="leading-none text-base text-gray-500">
               UI UX Designer
             </p>{" "}
-            <div className=" w-1 h-1 bg-gray7-700  rounded-full"></div>
+            <div className=" w-1 h-1 bg-gray-700  rounded-full"></div>
             <a href="#" className="underline text-green-500">
               <p className="leading-none text-base ">News & events</p>
             </a>{" "}

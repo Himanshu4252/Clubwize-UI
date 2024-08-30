@@ -37,8 +37,8 @@ function Side_Bar() {
   const [changeBg,setChangeBg] = useState(false)
 
   return (
-    <div>
-
+    <div className='sticky top-0'>
+ 
 <div className={styles.sidebar}>
      
      <div className={styles.logo_cnt}>

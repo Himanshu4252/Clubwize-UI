@@ -1,14 +1,14 @@
 import React from "react";
-import Comments from "../Components/NewsFeed/Comments/Comments";
-import ModuleBar from "../Components/NewsFeed/ModuleBar/ModuleBar";
-import PostCard from "../Components/NewsFeed/PostCard/PostCard";
-import PostCard2 from "../Components/NewsFeed/PostCard2/PostCard2";
-import Team from "../Components/Create_Team/Team";
-import Profile from "../Components/Profile/Profile";
-import Side_Bar from "../Components/Sub_Componet/Side_Bar";
-import SearchBar from "../Components/searchPanel/SearchBar";
+import Team from "../Create_Team/Team";
+import SearchBar from "../searchPanel/SearchBar";
+import Side_Bar from "../Sub_Componet/Side_Bar";
+import Comments from "../NewsFeed/Comments/Comments";
+import ModuleBar from "../NewsFeed/ModuleBar/ModuleBar";
+import PostCard from "../NewsFeed/PostCard/PostCard";
+import PostCard2 from "../NewsFeed/PostCard2/PostCard2";
+import Profile from "../Profile/Profile";
 
-const Feed = () => {
+const MainPageLayout = () => {
   return (
     <div className="flex gap-4">
       <div>
@@ -52,4 +52,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default MainPageLayout;

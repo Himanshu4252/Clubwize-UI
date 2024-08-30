@@ -19,10 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+
         {children}
 
 
-<div className="fixed bottom-0 opacity-70 bg-orange-300 rounded-lg">
+<div className="fixed bottom-0 opacity-70 bg-orange-300 rounded-lg z-[99999]">
 <PageNavigation />
 </div>
       </body>

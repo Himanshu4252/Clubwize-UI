@@ -22,11 +22,11 @@ import group9 from './Assets/Group 633674.png'
 
 function Profile() {
   return (
-    <div>
+    <div className='sticky top-[8vh]'>
     <div className={styles.profile_card}>
         <div className={styles.background_img_cnt}>
             <Image src={backG} alt='images' />
-        </div>
+        </div>  
         <div className={styles.profile_pic_cnt}>
             <div className={styles.main_cnt}>
                 <Image src={profile} alt='Images' />

@@ -12,6 +12,8 @@ export default function Home() {
     <Log />
     </div> */}
 
+    
+
     </main>
   );
 }
