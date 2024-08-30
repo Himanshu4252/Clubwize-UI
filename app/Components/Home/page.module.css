@@ -1,0 +1,8 @@
+.home_cnt{
+
+    width: 100%;
+    height: max-content;
+
+    background-color: aqua;
+    display: flex;
+}
