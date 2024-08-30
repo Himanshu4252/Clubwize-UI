@@ -18,4 +18,14 @@ import NodeThree from './photos/nodeThree.png'
 import NodeFour from './photos/nodeFour.png'
 import Online from './photos/online.svg'
 import Lock from './photos/Variant4.svg'
-export {Bell, Chat, SearchIcon, UserIcon, dropIcon, Cross, ClubIcon, NodeIcon, PeopleIcon, UserPhoto, Recent, CoverPhoto, proImage, Colon, NodeOne, NodeTwo, NodeThree, NodeFour, Online, Lock}
+import prof1 from './photos/prof.png';
+import prof2 from './photos/prof2.png';
+import prof3 from './photos/prof3.png'
+import prof4 from './photos/prof4.png'
+import prof5 from './photos/prof5.png'
+import prof6 from './photos/prof6.png'
+import prof7 from './photos/prof7.png'
+import prof8 from './photos/prof8.png'
+import prof9 from './photos/prof9.png'
+
+export {Bell, Chat, SearchIcon, UserIcon, dropIcon, Cross, ClubIcon, NodeIcon, PeopleIcon, UserPhoto, Recent, CoverPhoto, proImage, Colon, NodeOne, NodeTwo, NodeThree, NodeFour, Online, Lock, prof1, prof2, prof3, prof4, prof5, prof6, prof7, prof8, prof9}

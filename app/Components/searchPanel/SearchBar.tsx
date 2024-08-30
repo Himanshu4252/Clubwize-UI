@@ -89,6 +89,8 @@ const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+    setNodeResultDiv(false);
+    setClubResultDiv(false);
     setInputValue(value);
 
     if (value.trim() === '') {
