@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import ClubwizeGreenLogo from '../../../../../public/img/clubwizeGreenLogo.png'
+import ClubwizeGreenLogo from '../../../../../public/img/ClubwizeGreenLogo.png'
 
 const PostCard2Header = () => {
   return (
