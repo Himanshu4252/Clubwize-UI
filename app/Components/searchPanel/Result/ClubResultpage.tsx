@@ -90,6 +90,7 @@ type ButtonType = 'overView' | 'Modules' | 'Chapters';
 
 const Result = ({onChange}:childProps) => {
   const userProfiles = UserProfile[0];
+  console.log("its being clicked successfully...")
   const [selectedButton, setSelectedButton] = useState<ButtonType>('overView');
 
   const handleButtonClick = (button: ButtonType) => {
