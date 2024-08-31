@@ -145,7 +145,7 @@ const [inputValue, setInputValue] = useState('');
       {crossIcon? (<button className={style.crossButton} onClick={clickedCross}><Image src={Cross} alt='cross icon' className={style.crossIcon} /></button> ):(null)}
     </div>
 
-    <div className="inline-flex w-3/12" style={{width:"40%", gap:'20px'}}> 
+    <div className={style.searchBarOptions}> 
     <div className={style.messageDiv }>
       <Image src={Chat} alt='chat icon' />
       <p>Message</p>
