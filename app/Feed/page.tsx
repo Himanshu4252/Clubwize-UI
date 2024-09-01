@@ -19,7 +19,7 @@ const Feed = () => {
       <div className="flex flex-col">
         <SearchBar />
 
-        <div className="flex flex-row justify-evenly">
+        <div className="flex flex-row justify-evenly" >
         <div className="w-2/12">
            <Profile />
         </div>
