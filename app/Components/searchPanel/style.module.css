@@ -4,7 +4,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    height: 8vh;
+    height: 9vh;
     /* background-color: rgb(225 226 227); */
     font-size: 0.8rem;
     gap: 20px;
@@ -289,8 +289,9 @@
 }
 .activeSearch{
     margin-left: 20px;
+    margin-top: 70px;
     position: absolute;
-    width: 60%;
+    width: 50%;
     min-height: 200px;
     padding: 20px;
     display: flex;

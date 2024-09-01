@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import style from './style.module.css'
 import Image, {StaticImageData} from 'next/image'
+import OverView from './ResultSections/OverView'
 import { Cross, proImage, CoverPhoto, Colon, NodeOne, NodeTwo, NodeThree, NodeFour, Online, Lock } from '../photos'
 interface childProps{
   onChange: (newState: boolean) => void;
@@ -85,12 +86,12 @@ const userConnections = [
   }
 ];
 
-type ButtonType = 'Nodes' | 'Clubs' | 'Chapters';
+type ButtonType = 'overView' | 'Modules' | 'Chapters';
 
 const Result = ({onChange}:childProps) => {
   const userProfiles = UserProfile[0];
-  const[ResultDiv, setResultDiv] = useState<boolean>(true);
-  const [selectedButton, setSelectedButton] = useState<ButtonType>('Nodes');
+  console.log("its being clicked successfully...")
+  const [selectedButton, setSelectedButton] = useState<ButtonType>('overView');
 
   const handleButtonClick = (button: ButtonType) => {
     setSelectedButton(button);
@@ -128,20 +129,12 @@ const Result = ({onChange}:childProps) => {
                 <div className={style.userAct}><p className={style.userActivityCount}>{userProfiles.userActivityCount}</p><p className={style.userActivity}>{userProfiles.userActivity}</p></div>
               </div>
               <div className={style.userConNavigator}>
-                  <button className={getButtonClass('Nodes')} onClick={() => handleButtonClick('Nodes')} > Nodes </button>
-                  <button className={getButtonClass('Clubs')} onClick={() => handleButtonClick('Clubs')}> Clubs </button>
+                  <button className={getButtonClass('overView')} onClick={() => handleButtonClick('overView')} >Overview</button>
+                  <button className={getButtonClass('Modules')} onClick={() => handleButtonClick('Modules')}>Modules</button>
                   <button className={getButtonClass('Chapters')} onClick={() => handleButtonClick('Chapters')} >Chapters</button>
               </div>
               <hr className={style.navDivider}/>
-              <div className={style.userConnections}>
-                {userConnections.map((connection) => (
-               <div key={connection.id} className={style.connectionCard}>
-               <Image src={connection.image} alt='User image' />
-                <p className={style.nodeName}>{connection.nodeName}</p>
-                <p className={style.nodeDescription}>{connection.nodeDescription}</p>
-               </div>
-                ))}
-              </div>
+              {selectedButton === 'overView' ? (<OverView />):(null)}
               </div>
             </div>
   )
