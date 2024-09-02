@@ -93,6 +93,11 @@ const handleButtonClick = (button: searchBtn) => {
 
 const SearchHistClick =(id: number, term : string) =>{
   //User clicked history can be used here...
+  //if user clicks his previous search it will redirect him to search suggestion.
+  setInputValue('');
+  setInputValue(term);
+  setSearchField(false);
+  setActiveSearch(true);
   console.log(term);
 }
 const [inputValue, setInputValue] = useState('');
@@ -150,7 +155,7 @@ const [inputValue, setInputValue] = useState('');
       {crossIcon? (<button className={style.crossButton} onClick={clickedCross}><Image src={Cross} alt='cross icon' className={style.crossIcon} /></button> ):(null)}
     </div>
 
-    <div className="inline-flex w-3/12 gap-4"> 
+    <div className={style.searchBarOptions}> 
     <div className={style.messageDiv }>
       <Image src={Chat} alt='chat icon' />
       <p>Message</p>
@@ -231,7 +236,7 @@ const [inputValue, setInputValue] = useState('');
     </div>)
     :(null)}
     {nodeResultDiv?(< NodeResult onChange={(newState:boolean) =>{setNodeResultDiv(newState)}} />):(null)}
-    {clubResultDiv?(< ClubResult onChange={(newState:boolean) =>{setNodeResultDiv(newState)}} />):(null)}
+    {clubResultDiv?(< ClubResult onChange={(newState:boolean) =>{setClubResultDiv(newState)}} />):(null)}
 
   </>
   )

@@ -138,6 +138,16 @@ export default function Team() {
   const closeChat = () => setIsChatOpen(false);
 
   return (
+    <>
+      {selectedTeam && (
+        <Chat
+          isOpen={isChatOpen}
+          onClose={closeChat}
+          teamName={selectedTeam.name}
+          teamImage={selectedTeam.image}
+          teamMessages={selectedTeam.messages}
+        />
+      )}
     <div className="max-w-md mx-auto p-4 pb-0 bg-white rounded-lg shadow-lg sticky top-[8vh]">
 
       <div className="flex justify-between items-center mb-4">
@@ -207,15 +217,8 @@ export default function Team() {
 
       <Created isOpen={isCreatedOpen} onClose={closeCreated} />
 
-      {selectedTeam && (
-        <Chat
-          isOpen={isChatOpen}
-          onClose={closeChat}
-          teamName={selectedTeam.name}
-          teamImage={selectedTeam.image}
-          teamMessages={selectedTeam.messages}
-        />
-      )}
+      
     </div>
+    </>
   );
 }
