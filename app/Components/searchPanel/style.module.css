@@ -141,7 +141,6 @@
     height: fit-content;
     width: 550px;
     padding-block: 20px;
-    border: 1px solid rgb(128, 128, 128);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -173,6 +172,7 @@
 .searchFieldButtons{
     width: 90px;
     height: 34px;
+    color: #495057;
     border: 2px solid #CED4DA ;
     display: flex;
     flex-direction: row;
@@ -187,6 +187,11 @@
 .selected{
     background-color: #d6d6d6;
     border: 2px solid  #a9aaac ;
+}
+.selectedButton{
+    color: #495057;
+    height: 80%;
+    width: 100px;
 }
 .historySection{
     width: 100%;
@@ -246,6 +251,7 @@
         background-color: #d6d6d6;
 }
 .searchItem{
+    color: #6C757D;
     width: 98%;
     padding: 5px;
     display: flex;
@@ -256,8 +262,6 @@
     display: flex;
     flex-direction: row;
     height: 20px;
-    padding: 5px;
-    color: rgb(56, 56, 56);
     justify-content: space-between;
     align-items: center;
 }
@@ -273,16 +277,17 @@
     width: 10px;
 }
 .inputFieldButton{
-    height: 25px;
+    height: 38px;
     width: 100px;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border:#CED4DA ;
-    background-color: #e3e5e7 ;
+    border: 1px solid #b4bbc1;
+    background-color: #ffffff;
     align-items: center;
     padding: 5px;
+    color: #495057;
 }
 .cutButton{
     display: flex;

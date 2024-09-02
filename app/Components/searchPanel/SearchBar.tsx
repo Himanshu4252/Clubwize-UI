@@ -60,6 +60,9 @@ const searchTerms: SearchItem[] = [
   { id: 1, term: 'Gillete' },
   { id: 2, term: 'Darell Stiward' },
   { id: 3, term: 'sony adward' },
+  { id: 4, term: 'facebook' },
+  { id: 5, term: 'kristin wattson' },
+  { id: 6, term: 'joe biden' },
 ];
 const searchBtns: searchBtn[] =[
   {id:1, photo:NodeIcon, Btn:'Node', alt:'Node Icon'},
@@ -139,7 +142,7 @@ const [inputValue, setInputValue] = useState('');
       {selectedButton?(<button className={`${style.selectedButton} ${style.inputFieldButton}`}>
             <Image src={selectedButton.photo} alt={selectedButton.alt} />
             {selectedButton.Btn}
-            <div onClick={()=>{setSelectedButton(null)}} className={style.cutButton}><Image src={Cross} alt='cross icon' /></div>
+            <div onClick={()=>{setSelectedButton(null)}} className={style.cutButton}><Image src={Cross} alt='cross icon' style={{height:"10px"}} /></div>
           </button>):''}
       <input name='searchBox' className={style.searchInput} placeholder='Search for node, club, peoples, tags etc...' value={inputValue} onClick={handleInputClick} onChange={handleInputChange} />
       {crossIcon? (<button className={style.crossButton} onClick={clickedCross}><Image src={Cross} alt='cross icon' className={style.crossIcon} /></button> ):(null)}
