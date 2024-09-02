@@ -285,9 +285,9 @@
     justify-content: space-around;
     border: 1px solid #b4bbc1;
     background-color: #ffffff;
+    color: #495057;
     align-items: center;
     padding: 5px;
-    color: #495057;
 }
 .cutButton{
     display: flex;
