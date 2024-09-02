@@ -31,11 +31,14 @@ function Profile() {
             <div className={styles.main_cnt}>
                 <Image src={profile} alt='Images' />
             </div>
+            <div className={styles.btn_cnt}>
            
-           <div className={styles.btn_cnt}>
-           <Image src={buttum} alt='Images' />
-           <Image src={pin} alt='Images' />
+           <button className={styles.btn}><Image src={buttum} alt='Images' /></button>
+           <button className={styles.btn}><Image src={pin} alt='Images' /></button>
+
            </div>
+           
+          
 
            
 

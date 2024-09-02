@@ -28,6 +28,10 @@ import node9 from './Assets/Rectangle 3064 (11).png'
 import node10 from './Assets/Rectangle 3064.png'
 import popup1 from './Assets/popover.png'
 import popup2 from './Assets/popover (1).png'
+import icon2 from './Assets/Icon ionic-ios-arrow-forward (2).png'
+import Profile from '../Profile/Profile'
+import node21 from './Assets/Node (2).png'
+import pin from './Assets/push_pin.png'
 
 function Side_Bar() {
 
@@ -35,23 +39,27 @@ function Side_Bar() {
   const [isModel2,setIsModel2] = useState(false)
   const [isModel3,setIsModel3] = useState(false)
   const [changeBg,setChangeBg] = useState(false)
+  const [isExpend,setIsExpend] = useState(false)
 
   return (
     <div className='sticky top-0'>
  
-<div className={styles.sidebar}>
+<div className={`${isExpend ? styles.expend_slider  :  styles.sidebar}`}>
      
      <div className={styles.logo_cnt}>
          <Image src={img1} alt='img' />
+         <div className={`${isExpend ? styles.text_cnt_home : styles.text_cnt_not_home}`}>Clubwise</div>
      </div>
+    
      <div className={styles.btn_upper}>
         <div className={styles.line}></div>
-        <div className={styles.circule_btn}>
-        <Image src={arrow} alt='image' />
+        <div onClick={()=>{setIsExpend(!isExpend)}}  className={styles.circule_btn}>
+        {isExpend ?  <Image src={icon2} alt='image'  /> :  <Image src={arrow} alt='image'  />}
         </div>
      </div>
      <div className={styles.home_nav_cnt}>
   <Image src={logo} alt='imge' />
+  <div className={`${isExpend ? styles.text_cnt_home : styles.text_cnt_not_home}`}>Dashboard</div>
      </div>
      <div className={styles.home_lines}>
       <div className={styles.lines}></div>
@@ -64,25 +72,62 @@ function Side_Bar() {
 
 
      <div  className={styles.img_cnt_}>
-      <Link href='/Components/Home' className={styles.img1_cnt}  > 
-      <Image src={img01} alt='image'  />
-      </Link>
+      <div className={styles.img_box}>
+       {/* <div className={styles.img1_cnt}> */}
+          <Image src={img01} alt='images'  />
+       {/* </div> */}
 
-      <div className={styles.img1_cnt}> 
-      <Image src={img02} alt='image'  />
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Gretchen&nbsp;Leaner
+        <div className={styles.pin_cnt}><Image src={pin} alt='images'  /></div>
+      </div>
+     
+
       </div>
 
-      <div className={styles.img1_cnt}> 
-      <Image src={img03} alt='image'  />
+
+      <div className={styles.img_box}>
+       {/* <div className={styles.img1_cnt}> */}
+          <Image src={img02} alt='images'  />
+       {/* </div> */}
+
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Aerline&nbsp;McOye
+      <div className={styles.pin_cnt}><Image src={pin} alt='images'  /></div>
+      </div>
+      
+
       </div>
 
-      <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img1_cnt}> 
+
+      <div className={styles.img_box}>
+       {/* <div className={styles.img1_cnt}> */}
+          <Image src={node21} alt='images'  />
+       {/* </div> */}
+
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Brokyyn&nbsp;somons</div>
+     
+
+      </div>
+
+
+      <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img_box}>
+       {/* <div className={styles.img1_cnt}> */}
+       <div  className={styles.internsl_img}><Image src={plus} alt='img' /></div>
+       <Image src={img04} alt='image'  />
+       {/* </div> */}
+
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Colonery&nbsp;Heanry</div>
+     
+
+      </div>
+       
+
+      {/* <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img1_cnt}> 
       <div  className={styles.internsl_img}><Image src={plus} alt='img' /></div>
-      <Image src={img04} alt='image'  />
+      <Image src={img04} alt='image'  /> */}
 
 
       
-      </div>
+     
 
       {isModel ?
        <div className={styles.model_cnt}>
@@ -202,32 +247,60 @@ function Side_Bar() {
      </div>
 
      <div  className={styles.img_cnt_}>
-      <Link href='/Components/Home' className={styles.img1_cnt}> 
-      <Image src={img03} alt='image'  />
-      </Link>
+      <div className={styles.img_box}>
+       {/* <div className={styles.img1_cnt}> */}
+          <Image src={img01} alt='images'  />
+       {/* </div> */}
 
-      <div onClick={()=>{setIsModel2(!isModel2)}}   className={styles.img1_cnt} > 
-      <Image src={node3} alt='image'  />
-      {isModel2 ?  <div className={styles.model_2_cnt}>
-      <Image src={popup1} alt='image' />
-      </div> : " "}
-      </div>
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Gretchen&nbsp;Leaner</div>
      
 
-      <div className={styles.img1_cnt}> 
-      <Image src={img03} alt='image'  />
-      </div>
-      
-
-      
-
-      <div className={styles.img1_cnt}> 
-      <div className={styles.internsl_img}><Image src={plus} alt='img' /></div>
-      <Image src={img04} alt='image'  />
-      
       </div>
 
+
+      <div className={styles.img_box}>
+        
+       {/* <div className={styles.img1_cnt}> */}
+          <Image src={img02} alt='images'  />
+       {/* </div> */}
+
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Aerline&nbsp;McOye</div>
+     
+
+      </div>
+
+
+      <div className={styles.img_box}>
+       {/* <div className={styles.img1_cnt}> */}
+          <Image src={node21} alt='images'  />
+       {/* </div> */}
+
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Brokyyn&nbsp;somons</div>
+     
+
+      </div>
+
+
+      <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img_box}>
+       {/* <div className={styles.img1_cnt}> */}
+       <div  className={styles.internsl_img}><Image src={plus} alt='img' /></div>
+       <Image src={img04} alt='image'  />
+       {/* </div> */}
+
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Colonery</div>
+     
+
+      </div>
+       
+
+      {/* <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img1_cnt}> 
+      <div  className={styles.internsl_img}><Image src={plus} alt='img' /></div>
+      <Image src={img04} alt='image'  /> */}
+
+
       
+     
+
 
 
      </div>
@@ -237,19 +310,24 @@ function Side_Bar() {
      </div>
 
     <div className={styles.nav_footer}>
-      <button className={styles.btn1}>
+      <button className={styles.img_box}>
       <Image src={btn1} alt='image' />
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>My&nbsp;Activity</div>
       </button>
 
-      <button onClick={()=>{setIsModel3(!isModel3)}} className={styles.btn1}>
+
+      <button onClick={()=>{setIsModel3(!isModel3)}} className={styles.img_box}>
       <Image src={btn3} alt='image' />
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>My&nbsp;Items</div>
       {isModel3 ?  <div className={styles.model_2_cnt2}>
       <Image src={popup2} alt='image' />
       </div> : " "}
       </button>
 
-      <button className={styles.btn1}>
+      <button className={styles.img_box}>
       <Image src={btn2} alt='image' />
+      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Setting</div>
+     
       </button>
 
       

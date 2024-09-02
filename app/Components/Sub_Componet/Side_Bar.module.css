@@ -3,27 +3,65 @@
 
 
 .sidebar {
-    width: 60px;
+    width: 65px;
     
     height: max-content;
    
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top-right-radius: 20px;
+    border-top-right-radius: 10px;
   
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     position: fixed;
     top: 0;
     left: 0;
     
     transition: all 0.3s ease;
     position: sticky;
-    z-index: 1000;
+    
+    z-index: 10000;
+    
 
 
 
   }
+
+
+  /* //expend slider */
+
+  .expend_slider{
+
+    width: 200px;
+    
+    height: max-content;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+  
+    background-color: white;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    transition: all 0.3s ease;
+    position: sticky;
+    z-index: 9999;
+    
+    padding-left: 6px;
+
+   
+
+  }
+
+
+
+
+
+
 
   .logo_cnt{
 
@@ -31,14 +69,35 @@
     height: 60px;
     
     display: flex;
-    align-items: last baseline;
-    text-align: left;
-    justify-content: center;
+  
+    
+    text-align: center;
+    text-align: center;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 5px 10px;
 
+
+
+}
+
+.text_cnt_logo{
+
+  width: 80%;
+  height: 100%;
+  display: flex;
+  
+  font-size: 20px;
+  font-weight: bolder;
+  justify-content: left;
+
+  align-items: center;
+  text-align: center;
 
 }
   
   .logo_cnt image{
+
 
 
   }
@@ -55,7 +114,7 @@
   }
 
   .line{
-    width: 46px;
+    width: 90%;
     height: 1px;
     border: 1px solid rgba(212, 198, 198, 0.73);
 
@@ -65,12 +124,13 @@
     width: 25px;
     height: 25px;
     
-    margin-left: 46px;
+    margin-left: 90%;
     border-radius: 50%;
     border-left: 2px solid rgb(7, 194, 7);
   
     position: absolute;
     background-color: aliceblue;
+    cursor: pointer;
     display: flex;
     align-items: center;
     text-align: center;
@@ -87,13 +147,39 @@
     height: 40px;
     
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    overflow: hidden;
     align-items: center;
     text-align: center;
     cursor: pointer;
-    padding: 10px 10px;
+    padding: 1px 15px;
+    
 
   }
+
+  .text_cnt_home{
+
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    text-align: left;
+    
+    justify-content: left;
+    font-size: 17px;
+    font-weight: bold;
+    
+  }
+
+  .text_cnt_not_home{
+
+    display: none;
+
+  }
+
+
+
   .home_nav_cnt{
 
   }
@@ -114,10 +200,10 @@
 
     width: 100%;
     height: 25px;
-
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    padding-left: 20px;
     text-align: center;
 
   }
@@ -125,22 +211,32 @@
 
     width: 100%;
     height: 200px;
-    /* border: 2px solid black; */
+    
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    padding: 2px 2px;
-    margin-bottom: 8px;
+    gap: 5px;
+   
+    
     position: relative;
+
+  }
+
+  .img_box{
+
+    width: 100%;
+    height: 45px;
+    
+    padding: 0px 7px;
+    position: relative;
+    display: flex;
 
   }
   .img1_cnt{
 
-    width: 80%;
-    height: 43px;
+    width: 45px;
+    height: 42px;
    
+    
     border-radius: 2px;
     position: relative;
     cursor: pointer;
@@ -148,16 +244,43 @@
     border-radius: 6px;
     
   }
+
+  .text_box{
+
+    width: 80%;
+    height: 100%;
+  
+   margin-left: 10px;
+   font-size: 12px;
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   position: relative;
+   text-align: center;
+   justify-content: left;
+  
+
+  }
+
+  .pin_cnt{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: 82%;
+  }
+
+
   .img1_cnt Image{
-    background-size: cover;
+    
   }
   .internsl_img{
-    width: 100%;
-    height: 100%;
+    width: 45px;
+    height: 42px;
     position: absolute;
     display: flex;
     align-items: center;
     text-align: center;
+   
     justify-content: center;
     z-index: 1;
   }
@@ -171,8 +294,9 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+   
     justify-content: space-between;
-    padding: 4px 12px;
+    padding: 4px 0px;
     
 
   }
@@ -181,7 +305,7 @@
 
     width: 100%;
     height: 38px;
-    border: 1px solid rgb(138, 127, 127);
+   
 
 
   }
@@ -191,12 +315,12 @@
 
     width: 500px;
     height: 400px;
-    margin-left: 100px !important;
+    margin-left: -160px !important;
     margin-bottom: 100px;
     
     position: absolute;
     box-sizing: content-box;
-    z-index: 1000; /* A high z-index to ensure it appears on top */
+    z-index: 100000;
     
     
   }
@@ -291,9 +415,11 @@
     text-align: center;
     justify-content: center;
     padding-top: 10px;
+    
     margin-top: -45px;
     margin-left: 40px;
     position: absolute;
+    
     
   }
 
@@ -310,6 +436,7 @@
     padding-right: 20px;
     margin-left: 35px;
     position: absolute;
+    border: 2px solid black;
     
   }
 
