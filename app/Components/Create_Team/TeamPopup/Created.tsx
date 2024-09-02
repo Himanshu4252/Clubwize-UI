@@ -29,7 +29,7 @@ export default function Created({ isOpen, onClose }: ModuleProps) {
                 Creating a code of conduct for a social media group is essential
                 to maintain a positive and respectful online{" "}
               </p>
-              <a href="/clubwise">
+              <a href="/Feed">
               <button className="border p-2 rounded-xl text-sm mb-4">View Node</button>
               </a>
               
