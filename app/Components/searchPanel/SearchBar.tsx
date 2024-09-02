@@ -5,6 +5,7 @@ import Image, { StaticImageData} from 'next/image'
 import style from './style.module.css'
 import NodeResult from './Result/NodeResultpage'
 import ClubResult from './Result/ClubResultpage'
+import Popup from '../Notifications/Popup'
 
 const SearchBar = () => {
   //useStates for the search component
@@ -17,6 +18,8 @@ const SearchBar = () => {
   const[activeSearch, setActiveSearch] = useState<boolean>(false);
   const[nodeResultDiv, setNodeResultDiv] = useState<boolean>(false);
   const[clubResultDiv, setClubResultDiv] = useState<boolean>(false);
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
 
   //type def
   interface UserProfile {
@@ -51,6 +54,13 @@ const SearchBar = () => {
     setCrossIcon(true);
     setSearchField(true);
   }
+  const handleNotifButtonClick = () => {
+    setPopupVisible(true);
+  };
+
+  const handleClosePopup = () => {
+    setPopupVisible(false);
+  };
 const userProfiles: UserProfile[] = [
   { photo: UserPhoto, name: 'Kristin Watson', alt: 'Kristin Watson profile' },
   { photo: UserPhoto, name: 'Katherene Kinny', alt: 'Katherene Kinny profile' },
@@ -145,9 +155,17 @@ const [inputValue, setInputValue] = useState('');
       <Image src={Chat} alt='chat icon' />
       <p>Message</p>
     </div>
-    <div className={style.notificationDiv}>
-      <Image src={Bell} alt='notifications' />
-      <div className={style.notificationAlert}>2</div>
+    <div>
+      <button
+        className={style.notificationDiv}
+        onClick={handleNotifButtonClick}
+      >
+        <Image src={Bell} alt="notifications" width={24} height={24} />
+        <div className={style.notificationAlert}>
+          2
+        </div>
+      </button>
+      <Popup isVisible={isPopupVisible} onClose={handleClosePopup} />
     </div>
     <div className={style.userDiv} onClick={handleProfClick}>
       <Image src={UserIcon} alt='userIcon' />
