@@ -1,7 +1,7 @@
 .resultWrapper{
     height: 70vh;
-    margin-top: 8vh;
-    height: 94vh;
+    margin-top: 5vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -11,9 +11,8 @@
     z-index: 200;
 }
 .closeBtn{
-    border: 1px solid;
-    height: 40px;
-    margin-bottom: 20px;
+    height: 50px;
+    margin-bottom: 10px;
     width: 100px;
     border-radius: 20px;
     display: flex;
@@ -21,19 +20,21 @@
     justify-content: space-around;
     align-items: center;
     font-weight: 600;
+    position: relative;
+    z-index: 10;
     background-color: rgb(233, 245, 255);
 }
 .result{
-    border: 2px solid;
     border-radius: 15px;
     background-size: contain;
-    width:80vh;
-    height: 120vh;
+    width: 550px;
+    height: 700px;
     display:flex;
     flex-direction: column;
     overflow: hidden;
     margin-bottom: 20px;
     background-color: white;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.2);
 }
 .profilePhotoDiv{
     position:absolute;
