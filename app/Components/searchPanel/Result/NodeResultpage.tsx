@@ -84,7 +84,6 @@ type ButtonType = 'Nodes' | 'Clubs' | 'Chapters';
 
 const Result = ({onChange}:childProps) => {
   const userProfiles = UserProfile[0];
-  const[ResultDiv, setResultDiv] = useState<boolean>(true);
   const [selectedButton, setSelectedButton] = useState<ButtonType>('Nodes');
 
   const handleButtonClick = (button: ButtonType) => {

@@ -42,7 +42,7 @@
     border-radius: 10px;
   
     background-color: white;
-   
+
     position: fixed;
     top: 0;
     left: 0;
@@ -251,7 +251,7 @@
 
     width: 80%;
     height: 100%;
-  
+  overflow: hidden;
    margin-left: 10px;
    font-size: 12px;
    font-weight: bold;
