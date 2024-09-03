@@ -10,17 +10,17 @@ import SearchBar from "../Components/searchPanel/SearchBar";
 
 const Feed = () => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4" style={{zIndex:'1000'}}>
       <div>
       <Side_Bar />  
       </div>
       
 
-      <div className="flex flex-col">
+      <div className="flex flex-col" >
         <SearchBar />
 
         <div className="flex flex-row justify-evenly" >
-        <div className="w-2/12">
+        <div className="w-2/12" style={{zIndex:'-1'}}>
            <Profile />
         </div>
          
