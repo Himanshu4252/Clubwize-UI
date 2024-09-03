@@ -25,7 +25,7 @@ const Feed = () => {
          
 
           {/* Feed */}
-          <div className='flex flex-col w-6/12 gap-4 items-center h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
+          <div className='flex flex-col w-6/12 gap-4 items-center my-1 '>
             <div className="w-full">
               <ModuleBar />
               <All />
