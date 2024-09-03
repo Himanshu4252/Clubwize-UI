@@ -200,15 +200,16 @@ const [inputValue, setInputValue] = useState('');
                 </button>
               ))}
               </div>
-            </div>
-            <div className={style.historySection}>
-                <div className={style.historyControls}>
+              <div className={style.historyControls}>
                   <p className={style.historyText}>Recent Search</p>
                   <button className={style.clearBtn}>Clear all</button>
                 </div>
+            </div>
+            <div className={style.historySection}>
                 <div className={style.userContainer}>
                   {userProfiles.map((profile, index) => (
                     <div key={index} className={style.UserProfile}>
+                  <div className={style.userContainerDivider}></div>
                       <Image src={profile.photo} className={style.userPhoto} alt={profile.alt} />
                       <p className={style.userName}>{profile.name}</p>
                     </div>
