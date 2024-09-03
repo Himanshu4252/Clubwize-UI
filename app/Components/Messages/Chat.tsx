@@ -44,12 +44,7 @@ const Chat: React.FC<ChatProps> = ({ messages, contact }) => {
           <div className="flex flex-col">
             <span className="font-semibold text-md">{contact.name}</span>
             <div className="flex items-center mt-1">
-              <Image
-                src="/MsgImages/online.png"
-                alt="Online"
-                width={8}
-                height={8}
-              />
+            <div className="w-2 h-2 bg-[#198754] rounded-full flex items-center justify-center"></div>
               <span className="text-xs text-gray-500 ml-1">Online</span>
             </div>
           </div>
