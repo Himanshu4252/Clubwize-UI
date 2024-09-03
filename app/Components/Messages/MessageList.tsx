@@ -54,7 +54,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
           />
           {isPopupVisible && (
             <div 
-              className="absolute right-0 top-full mt-2 bg-white shadow-lg rounded-lg border border-gray-300 w-[160px]"
+              className="absolute right-0 top-full mt-2 bg-white shadow-lg rounded-lg border border-gray-300 w-[160px] z-50"
             >
               <button
                 className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm"
@@ -74,11 +74,20 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
       </div>
 
       <div className="w-full p-4 flex items-center ">
-        <input
-          type="text"
-          placeholder="Search for..."
-          className="flex-1 p-2 border border-gray-300 rounded-lg text-sm bg-gray-100"
-        />
+      <div className="relative w-full flex items-center">
+  <Image
+    src="/GrpChatImg/searchicon.png"
+    alt="Search Icon"
+    width={16}
+    height={16}
+    className="absolute left-3 w-5 h-5"
+  />
+  <input
+    type="text"
+    placeholder="Search for..."
+    className="pl-10 p-2 border border-gray-300 rounded-lg w-full text-sm bg-gray-100 "
+  />
+</div>
         <div className="w-8 h-8 flex items-center justify-center bg-gray-200 border border-gray-300 rounded-lg ml-3">
           <Image
             src="/MsgImages/search.png"
@@ -129,7 +138,7 @@ const MessageList: React.FC<MessageListProps> = ({ contacts, onSelectContact }) 
           <li
             key={contact.id}
             className={`flex items-center p-4 cursor-pointer border-b border-gray-200 ${
-              activeContactId === contact.id ? 'bg-green-100' : 'hover:bg-green-100'
+              activeContactId === contact.id ? 'bg-[#22B57314]' : 'hover:bg-[#22B57314]'
             }`}
             onClick={() => handleClick(contact.id)}
           >
