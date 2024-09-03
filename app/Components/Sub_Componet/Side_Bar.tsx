@@ -131,7 +131,7 @@ function Side_Bar() {
 
       {isModel ?
        <div className={styles.model_cnt}>
-        <div className={styles.mail_cnt_model} >
+        <div className={`${isExpend ? styles.mail_cnt_model_2 : styles.mail_cnt_model}`} >
           <div className={styles.node_heading}>
             <div className={styles.node_logo}>
               <Image src={star} alt='image' />

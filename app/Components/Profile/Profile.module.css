@@ -4,17 +4,18 @@
     height: max-content;
     margin-left: -30px;
     margin-top: 5px;
-    position: relative;
+   
     background-color: white;
     border-radius: 10px;   
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
     
     position: -webkit-sticky;
     position: sticky;
     top: 80px;
+    z-index: -1;
 
-    z-index: 0;
+    
 }
 
 .background_img_cnt{
@@ -34,9 +35,10 @@
     position: absolute;
    margin-top: -40px;
    display: flex;
-   align-items: center;
+   align-items: end;
    justify-content: space-between;
    padding-right: 5px;
+   
 
 
 }
@@ -50,6 +52,7 @@
     align-items: end;
     justify-content: baseline;
     justify-content: space-between;
+    
     margin-left: 10px;
     
 }
