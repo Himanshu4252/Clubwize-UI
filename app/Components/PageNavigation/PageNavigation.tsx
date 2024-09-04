@@ -9,6 +9,7 @@ const PageNavigation = () => {
         <a className="bg-gray-600 text-white p-2 px-4 rounded-lg" href="/Other/GroupChat"><li>GroupChat</li></a>
         <a className="bg-gray-600 text-white p-2 px-4 rounded-lg" href="/Other/Message"><li>Message</li></a>
         <a className="bg-gray-600 text-white p-2 px-4 rounded-lg" href="/Other/BookMarks"><li>Bookmarks</li></a>
+        <a className="bg-gray-600 text-white p-2 px-4 rounded-lg" href="/debate/all"><li>Debate</li></a>
         {/* <a href=""><li></li></a> */}
         
     </div>
