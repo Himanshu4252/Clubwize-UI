@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import eye from "../../../../../public/assets/LFR/img/eye.png";
 import view from "../../../../../public/assets/LFR/img/view.png";
+import Link from "next/link";
+import { routes } from "@/app/Routes/routes";
 
 function Register() {
   const [email, setEmail] = useState<string>("");
@@ -51,7 +53,7 @@ function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-white">
+    <div className=" w-full flex items-center justify-center bg-white">
       <div className="w-full">
         <div className="mb-4 relative">
           <label
@@ -170,9 +172,9 @@ function Register() {
 
         <p className="text-center text-gray-600 mt-6">
           Already have account?{" "}
-          <a href="/" className="text-button hover:underline">
+          <Link href={routes.onboarding} className="text-button hover:underline">
             Login
-          </a>
+          </Link>
         </p>
       </div>
     </div>

@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Logo from "../../../../../public/assets/Component 4.png";
 import Image from "next/image";
+import Link from "next/link";
+import { routes } from "@/app/Routes/routes";
 
 export default function Details() {
   const [formData, setFormData] = useState({
@@ -223,14 +225,14 @@ export default function Details() {
 
           {/* Buttons */}
           <div className="mt-6 flex justify-end gap-5 col-span-2">
-            <a href="/onboarding/register">
+            <Link href={routes.register}>
               <button
                 type="button"
                 className="px-10 py-2 bg-gray-200 text-gray-700 rounded-lg"
               >
                 Back
               </button>
-            </a>
+            </Link>
 
             <button
               type="submit"
