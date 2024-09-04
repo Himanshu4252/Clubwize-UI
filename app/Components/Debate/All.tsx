@@ -1,14 +1,16 @@
-import React from "react";
-import Image,{ StaticImageData } from "next/image";
-import A1 from "../../../public/assets/debate/Avatar1.png"
-import A2 from "../../../public/assets/debate/Avatar2.png"
-import A3 from "../../../public/assets/debate/Avatar3.png"
-import A4 from "../../../public/assets/debate/Avatar4.png"
-import A5 from "../../../public/assets/debate/Avatar5.png"
-import A6 from "../../../public/assets/debate/Avatar6.png"
-import A7 from "../../../public/assets/debate/Avatar7.png"
-import A8 from "../../../public/assets/debate/Avatar8.png"
-import A9 from "../../../public/assets/debate/Avatar9.png"
+"use client";
+import React, { useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import A1 from "../../../public/assets/debate/Avatar1.png";
+import A2 from "../../../public/assets/debate/Avatar2.png";
+import A3 from "../../../public/assets/debate/Avatar3.png";
+import A4 from "../../../public/assets/debate/Avatar4.png";
+import A5 from "../../../public/assets/debate/Avatar5.png";
+import A6 from "../../../public/assets/debate/Avatar6.png";
+import A7 from "../../../public/assets/debate/Avatar7.png";
+import A8 from "../../../public/assets/debate/Avatar8.png";
+import A9 from "../../../public/assets/debate/Avatar9.png";
+import CreateDebate from "./Create_Debate";
 
 const debates = [
   {
@@ -20,7 +22,7 @@ const debates = [
     statusColor: "green",
     date: "Jan 13, 2022",
     posterName: "Marvin",
-    posterImage: A1, 
+    posterImage: A1,
   },
 
   {
@@ -32,7 +34,7 @@ const debates = [
     statusColor: "green",
     date: "November 7, 2017",
     posterName: "Arlene",
-    posterImage: A2, 
+    posterImage: A2,
   },
 
   {
@@ -44,7 +46,7 @@ const debates = [
     statusColor: "gray",
     date: "July 24, 2013",
     posterName: "Guy Hawkins",
-    posterImage: A3, 
+    posterImage: A3,
   },
 
   {
@@ -56,7 +58,7 @@ const debates = [
     statusColor: "green",
     date: "July 14, 2015",
     posterName: "Devon",
-    posterImage: A4, 
+    posterImage: A4,
   },
 
   {
@@ -68,7 +70,7 @@ const debates = [
     statusColor: "gray",
     date: "May 6, 2012",
     posterName: "Savannah",
-    posterImage: A5, 
+    posterImage: A5,
   },
 
   {
@@ -80,7 +82,7 @@ const debates = [
     statusColor: "gray",
     date: "August 7, 2017",
     posterName: "Cody Fisher",
-    posterImage: A6, 
+    posterImage: A6,
   },
 
   {
@@ -92,7 +94,7 @@ const debates = [
     statusColor: "green",
     date: "March 13, 2014",
     posterName: "Kristin",
-    posterImage: A7, 
+    posterImage: A7,
   },
 
   {
@@ -104,7 +106,7 @@ const debates = [
     statusColor: "gray",
     date: "OCtober 30, 2017",
     posterName: "Cameron",
-    posterImage: A8, 
+    posterImage: A8,
   },
 
   {
@@ -116,15 +118,22 @@ const debates = [
     statusColor: "green",
     date: "March 13, 2014",
     posterName: "Floyd Miles",
-    posterImage: A9, 
+    posterImage: A9,
   },
-
 ];
 
-
-
 function All() {
-  return (
+  const [isFormVisible, setFormVisible] = useState(false);
+
+  const handleCreateDebateClick = () => {
+    setFormVisible(true);
+  };
+
+  const handleCloseForm = () => {
+    setFormVisible(false);
+  };
+
+  const add = (
     <>
       <div className="my-6">
         <h1 className="text-xl font-semibold pb-2">Community Debate ?</h1>
@@ -135,25 +144,27 @@ function All() {
       </div>
       <div className="flex space-x-8">
         <button className="text-gray-500 text-sm">Ongoing Debates (182)</button>
-        <button className=" text-green-600 border-b-2 border-green-600 text-sm">
+        <button className="text-green-600 border-b-2 border-green-600 text-sm">
           All Debates (652)
         </button>
         <button className="text-gray-500 text-sm">Global Debates (45k)</button>
         <button className="text-gray-500 text-sm">My Debates (2.36k)</button>
       </div>
-      <hr className="mb-4 "/>
+      <hr className="mb-4 " />
       <div className="flex items-center justify-between mb-4 space-x-2">
-        <button className="bg-green-500 text-white px-4 py-2 w-48 rounded-lg text-sm font-light hover:bg-black">
+        <button
+          onClick={handleCreateDebateClick}
+          className="bg-green-500 text-white px-4 py-2 w-48 rounded-lg text-sm font-light hover:bg-black"
+        >
           + Create New Debate
         </button>
-        
-          <input
-            type="text"
-            placeholder="Search for debates..."
-            className="border p-2 rounded-lg w-96 focus:ring-2  focus:ring-green-500"
-          />
-          <button className="bg-gray-200 p-2 rounded-lg">Filter</button>
-        
+
+        <input
+          type="text"
+          placeholder="Search for debates..."
+          className="border p-2 rounded-lg w-96 focus:ring-2  focus:ring-green-500"
+        />
+        <button className="bg-gray-200 p-2 rounded-lg">Filter</button>
       </div>
 
       <div className="overflow-x-auto">
@@ -161,12 +172,22 @@ function All() {
           <thead>
             <tr>
               <th className="text-left p-4 text-gray-400 font-normal">No.</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Debates</th>
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Debates
+              </th>
               <th className="text-left p-4 text-gray-400 font-normal">For</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Against</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Status</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Posted Date</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Posted by</th>
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Against
+              </th>
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Status
+              </th>
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Posted Date
+              </th>
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Posted by
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -180,7 +201,9 @@ function All() {
                 <td className="p-4 text-blue-600 text-xs">{debate.for}</td>
                 <td className="p-4 text-red-600 text-xs">{debate.against}</td>
                 <td className="p-4 text-xs">
-                  <span className={`text-${debate.statusColor}-600 border-${debate.statusColor}-600 bg-${debate.statusColor}-100 border-2  py-1 px-2 rounded-2xl`}>
+                  <span
+                    className={`text-${debate.statusColor}-600 border-${debate.statusColor}-600 bg-${debate.statusColor}-100 border-2  py-1 px-2 rounded-2xl`}
+                  >
                     {debate.status}
                   </span>
                 </td>
@@ -217,8 +240,13 @@ function All() {
       </div>
     </>
   );
+
+  return (
+    <>
+      {!isFormVisible && add}
+      {isFormVisible && <CreateDebate onClose={handleCloseForm} />}
+    </>
+  );
 }
 
 export default All;
-
-
