@@ -11,7 +11,6 @@ import A7 from "../../../public/assets/debate/Avatar7.png";
 import A8 from "../../../public/assets/debate/Avatar8.png";
 import A9 from "../../../public/assets/debate/Avatar9.png";
 import CreateDebate from "./Create_Debate";
-import Ongoing from "./Ongoing";
 
 const debates = [
   {
@@ -22,7 +21,7 @@ const debates = [
     status: "Ongoing",
     statusColor: "green",
     date: "Jan 13, 2022",
-    posterName: "Marvin",
+    posterName: "Marvin McKinney",
     posterImage: A1,
   },
 
@@ -34,7 +33,7 @@ const debates = [
     status: "Ongoing",
     statusColor: "green",
     date: "November 7, 2017",
-    posterName: "Arlene",
+    posterName: "Arlene McCoy",
     posterImage: A2,
   },
 
@@ -58,7 +57,7 @@ const debates = [
     status: "Ongoing",
     statusColor: "green",
     date: "July 14, 2015",
-    posterName: "Devon",
+    posterName: "Devon Lane",
     posterImage: A4,
   },
 
@@ -70,7 +69,7 @@ const debates = [
     status: "Ended",
     statusColor: "gray",
     date: "May 6, 2012",
-    posterName: "Savannah",
+    posterName: "Savannah Nguyen",
     posterImage: A5,
   },
 
@@ -94,7 +93,7 @@ const debates = [
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
-    posterName: "Kristin",
+    posterName: "Kristin Watson",
     posterImage: A7,
   },
 
@@ -106,7 +105,7 @@ const debates = [
     status: "Ended",
     statusColor: "gray",
     date: "OCtober 30, 2017",
-    posterName: "Cameron",
+    posterName: "Cameron Williamson",
     posterImage: A8,
   },
 
@@ -123,27 +122,22 @@ const debates = [
   },
 ];
 
-function All() {
+interface OngoingProps {
+    onClose: () => void;
+  }
+  
+const Ongoing : React.FC<OngoingProps> = ({ onClose }) => {
   const [isFormVisible, setFormVisible] = useState(false);
-  const [isOngoingVisible, setOngoingVisible] = useState(false);
 
   const handleCreateDebateClick = () => {
     setFormVisible(true);
-  };
-
-  const handleOngoingClick = () => {
-    setOngoingVisible(true);
   };
 
   const handleCloseForm = () => {
     setFormVisible(false);
   };
 
-  const handleCloseOngoing = () => {
-    setOngoingVisible(false);
-  };
-
-  const add = (
+  const Going = (
     <>
       <div className="my-6">
         <h1 className="text-xl font-semibold pb-2">Community Debate ?</h1>
@@ -153,13 +147,10 @@ function All() {
         </p>
       </div>
       <div className="flex space-x-8">
+        <button className=" text-green-600 border-b-2 border-green-600 text-sm">Ongoing Debates (182)</button>
         <button 
-          onClick={handleOngoingClick} 
-          className="text-gray-500 text-sm"
-        >
-          Ongoing Debates (182)
-        </button>
-        <button className="text-green-600 border-b-2 border-green-600 text-sm">
+        onClick={onClose}
+        className="text-gray-500 text-sm">
           All Debates (652)
         </button>
         <button className="text-gray-500 text-sm">Global Debates (45k)</button>
@@ -187,12 +178,20 @@ function All() {
           <thead>
             <tr>
               <th className="text-left p-4 text-gray-400 font-normal">No.</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Debates</th>
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Debates
+              </th>
               <th className="text-left p-4 text-gray-400 font-normal">For</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Against</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Status</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Posted Date</th>
-              <th className="text-left p-4 text-gray-400 font-normal">Posted by</th>
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Against
+              </th>
+              
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Posted Date
+              </th>
+              <th className="text-left p-4 text-gray-400 font-normal">
+                Posted by
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -205,13 +204,6 @@ function All() {
                 </td>
                 <td className="p-4 text-blue-600 text-xs">{debate.for}</td>
                 <td className="p-4 text-red-600 text-xs">{debate.against}</td>
-                <td className="p-4 text-xs">
-                  <span
-                    className={`text-${debate.statusColor}-600 border-${debate.statusColor}-600 bg-${debate.statusColor}-100 border-2  py-1 px-2 rounded-2xl`}
-                  >
-                    {debate.status}
-                  </span>
-                </td>
                 <td className="p-4 text-xs">{debate.date}</td>
                 <td className="p-4 flex items-center space-x-2">
                   <Image
@@ -243,16 +235,16 @@ function All() {
           </select>
         </div>
       </div>
+      
     </>
   );
-
   return (
     <>
-      {!isFormVisible && !isOngoingVisible && add}
+      {!isFormVisible && Going }
       {isFormVisible && <CreateDebate onClose={handleCloseForm} />}
-      {isOngoingVisible && <Ongoing onClose={handleCloseOngoing} />} 
     </>
-  );
+  )
+  
 }
 
-export default All;
+export default Ongoing;
