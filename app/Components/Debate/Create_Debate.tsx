@@ -6,17 +6,16 @@ interface CreateDebateProps {
 }
 
 const CreateDebate: React.FC<CreateDebateProps> = ({ onClose }) => {
-
-
   return (
     <div className="p-8   max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-semibold">Community Debate ?</h1>
+        <h1 className="text-xl font-semibold pb-2">Community Debate ?</h1>
+
         <button onClick={onClose} className="text-gray-500 text-lg">
           &times;
         </button>
       </div>
-      <p className="text-gray-600 text-sm mb-8">
+      <p className="text-gray-600 text-xs">
         Lorem ipsum dolor sit amet consectetur. Congue varius lorem at egestas.
         Iaculis semper risus sit egestas.
       </p>
@@ -105,12 +104,7 @@ const CreateDebate: React.FC<CreateDebateProps> = ({ onClose }) => {
             ?
           </div>
           <div className="border-dashed border-2 rounded-lg p-4 text-center">
-            <input
-              id="files"
-              type="file"
-              className="w-full"
-            />
-
+            <input id="files" type="file" className="w-full" />
           </div>
         </div>
 
@@ -145,10 +139,7 @@ const CreateDebate: React.FC<CreateDebateProps> = ({ onClose }) => {
 
       <div className="mt-4">
         <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            className="form-checkbox"
-          />
+          <input type="checkbox" className="form-checkbox" />
           <span className="ml-2">Make this Debate public</span>
         </label>
       </div>
@@ -157,12 +148,17 @@ const CreateDebate: React.FC<CreateDebateProps> = ({ onClose }) => {
         <button className="text-red-500" onClick={onClose}>
           Cancel
         </button>
-        <button className="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg">
+        <button
+          className="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg"
+          onClick={onClose}
+        >
           Save draft
         </button>
-        <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
-          Publish
-        </button>
+        <a href="/debate/all">
+          <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
+            Publish
+          </button>
+        </a>
       </div>
     </div>
   );
