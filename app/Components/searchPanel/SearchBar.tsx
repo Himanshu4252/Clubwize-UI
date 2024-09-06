@@ -1,13 +1,15 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Chat, Bell, UserIcon, SearchIcon, dropIcon, Cross, NodeIcon, PeopleIcon, ClubIcon, UserPhoto, Recent} from './photos'
 import Image, { StaticImageData} from 'next/image'
 import style from './style.module.css'
 import NodeResult from './Result/NodeResultpage'
 import ClubResult from './Result/ClubResultpage'
 import Popup from '../Notifications/Popup'
+import { useRouter } from 'next/navigation';
 
 const SearchBar = () => {
+  const router = useRouter();
   //useStates for the search component
 
   const [profileDropdown, setProfileDropdown] = useState<boolean>(false);
@@ -144,6 +146,25 @@ const [inputValue, setInputValue] = useState('');
     setClubResultDiv(false);
     setInputValue('');
   }
+
+
+  const [searchTermsState, setSearchTermsState] = useState(userProfiles);
+  const [searchQueryState, setSearchQueryState] = useState<SearchItem[]>(searchTerms);
+
+const clearSearches =() =>{
+  setSearchTermsState([]);
+}
+
+
+const removeSearchTerm = (id: number) => {
+  const updatedSearchTerms = searchQueryState.filter(term => term.id !== id);
+  setSearchQueryState(updatedSearchTerms);
+};
+
+const handleMessageClick =() =>{
+  router.push('/Other/Message');
+}
+
   return (
 <>
 <div className={style.searchWrapper}>
@@ -159,7 +180,7 @@ const [inputValue, setInputValue] = useState('');
     </div>
 
     <div className={style.searchBarOptions}> 
-    <div className={style.messageDiv }>
+    <div className={style.messageDiv } onClick={handleMessageClick}>
       <Image src={Chat} alt='chat icon' />
       <p>Message</p>
     </div>
@@ -202,12 +223,12 @@ const [inputValue, setInputValue] = useState('');
               </div>
               <div className={style.historyControls}>
                   <p className={style.historyText}>Recent Search</p>
-                  <button className={style.clearBtn}>Clear all</button>
+                  <button className={style.clearBtn} onClick={clearSearches}>Clear all</button>
                 </div>
             </div>
             <div className={style.historySection}>
                 <div className={style.userContainer}>
-                  {userProfiles.map((profile, index) => (
+                  {searchTermsState.map((profile, index) => (
                     <div key={index} className={style.UserProfile}>
                   <div className={style.userContainerDivider}></div>
                       <Image src={profile.photo} className={style.userPhoto} alt={profile.alt} />
@@ -218,14 +239,14 @@ const [inputValue, setInputValue] = useState('');
             </div>
             
             <div className={style.recentSearches}>
-      {searchTerms.map(({ id, term }) => (
+      {searchQueryState.map(({ id, term }) => (
         <div className={style.searchItem} key={id}>
           <div onClick={() =>SearchHistClick(id, term) }className={style.recentSearch}>
             <Image src={Recent} alt='recent search' />
             <p>{term}</p>
           </div>
           <button className={style.closeBtn}>
-            <Image src={Cross} alt='cross icon' />
+            <Image src={Cross} alt='cross icon' onClick={() => removeSearchTerm(id)}/>
           </button>
         </div>
       ))}
