@@ -1,13 +1,15 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Chat, Bell, UserIcon, SearchIcon, dropIcon, Cross, NodeIcon, PeopleIcon, ClubIcon, UserPhoto, Recent} from './photos'
 import Image, { StaticImageData} from 'next/image'
 import style from './style.module.css'
 import NodeResult from './Result/NodeResultpage'
 import ClubResult from './Result/ClubResultpage'
 import Popup from '../Notifications/Popup'
+import { useRouter } from 'next/navigation';
 
 const SearchBar = () => {
+  const router = useRouter();
   //useStates for the search component
 
   const [profileDropdown, setProfileDropdown] = useState<boolean>(false);
@@ -159,6 +161,9 @@ const removeSearchTerm = (id: number) => {
   setSearchQueryState(updatedSearchTerms);
 };
 
+const handleMessageClick =() =>{
+  router.push('/Other/Message');
+}
 
   return (
 <>
@@ -175,7 +180,7 @@ const removeSearchTerm = (id: number) => {
     </div>
 
     <div className={style.searchBarOptions}> 
-    <div className={style.messageDiv }>
+    <div className={style.messageDiv } onClick={handleMessageClick}>
       <Image src={Chat} alt='chat icon' />
       <p>Message</p>
     </div>
