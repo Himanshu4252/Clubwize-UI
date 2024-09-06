@@ -7,6 +7,8 @@ import rect from "../../../../../public/assets/Onboarding/Rect.png";
 import Create from "./Popup/Create";
 import Module from "./Popup/Module";
 import Created from "./Popup/Created";
+import Link from "next/link";
+import { routes } from "@/app/Routes/routes";
 
 export default function CNode() {
   const [isCreateOpen, setIsCreateOpen] = useState(false);
@@ -151,14 +153,14 @@ export default function CNode() {
           </div>
 
           <div className="mt-6 flex justify-end gap-5 col-span-2">
-            <a href="/onboarding/search">
+            <Link href={routes.search}>
               <button
                 type="button"
                 className="px-10 py-2 bg-gray-200 text-gray-700 rounded-lg"
               >
                 Back
               </button>
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -10,6 +10,7 @@ import Check from "../../../public/assets/valid-icon.png";
 import Exclamation from "../../../public/assets/invalid-icon.png";
 import eye from "../../../public/assets/LFR/img/eye.png";
 import view from "../../../public/assets/LFR/img/view.png";
+import Link from "next/link";
 
 function Log() {
   const [email, setEmail] = useState<string>("");
@@ -184,9 +185,9 @@ function Log() {
                 Stay Signed In
               </label>
             </div>
-            <a href="/Forgot" className="text-sm text-blue-500 hover:underline">
+            <Link href="/onboarding/Forgot" className="text-sm text-blue-500 hover:underline">
               Forgot Password?
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -200,10 +201,10 @@ function Log() {
         <p className="text-center text-gray-600 mt-6">
           Didn&apos;t have account?{" "}
 
-          <a href="/onboarding/register" className="text-button hover:underline">
+          <Link href="/onboarding/register" className="text-button hover:underline">
 
             Get Registered
-          </a>
+          </Link>
         </p>
       </div>
     </div>
