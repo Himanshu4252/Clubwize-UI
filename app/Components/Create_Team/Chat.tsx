@@ -23,7 +23,7 @@ export default function Chat({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed top-2/4 left-3/4 transform -translate-x-full translate-y-[-50%] p-5 pb-0 w-80 bg-white rounded-lg shadow-lg z-50">
+    <div className="fixed top-2/4 transform -translate-x-full translate-y-[-50%] p-5 pb-0 w-80 bg-white rounded-lg shadow-lg z-50">
       <div className="flex justify-between items-center py-4 px-0 border-b">
         <div className="flex items-center">
           <Image
