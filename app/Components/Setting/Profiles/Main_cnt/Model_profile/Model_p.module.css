@@ -15,10 +15,11 @@
     background: white;
 
     border-radius: 8px;
-    max-width: 800px;
+    max-width: 600px;
     height: 500px;
     width: 100%;
     position: relative;
+    border: 1px solid black;
   }
   
   .closeButton {
@@ -31,7 +32,9 @@
   .model_upper_cnt{
 
     width: 100%;
-    height: 40px;
+    height: 60px;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +46,7 @@
   .model_lower_cnt{
 
     width: 100%;
-    height: 200px;
+    height: 400px;
    
     padding: 10px 10px;
     display: flex;
@@ -59,7 +62,7 @@
   .pic_cnt{
 
     width: 100%;
-    height: 100px;
+    height: 90px;
    
     display: flex;
     align-items: center;
@@ -70,16 +73,18 @@
 
   .pic_cnt_1{
 
-    width: 45%;
+    width: 48%;
     height: 100%;
-    border: 1px solid gray;
+ 
+    box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
     border-radius: 8px;
     display: flex;
-    display: flex;
+    text-align: center;
     align-items: center;
     justify-content: left;
+   
     text-align: center;
-    padding: 2px 2px;
+    padding: 5px 5px;
     gap: 5px;
     
   }
@@ -150,8 +155,10 @@
 
     width: 60px;
     height: 100%;
-   
+    box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
     border-radius: 8px;
+    padding: 2px 2px;
+
 }
 
 .fileld_cnt{
@@ -162,6 +169,74 @@
     text-align: center;
     overflow: hidden;
     align-items: center;
+    display: flex;
     padding: 1px 2px;
 }
 
+.full_name{
+
+  width: 100%;
+  height: 80px;
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 3px 0px;
+  gap: 10px;
+}
+
+/* components/InputForm.css */
+
+.input_1{
+
+  width: 45%;
+  height: 100%;
+  
+  
+  padding: 2px 10px;
+  border-radius: 12px;
+  text-align: left;
+
+}
+
+.input_1 input{
+
+  border: 1px solid gray;
+  width: 100%;
+  border-radius: 8px;
+  padding-left: 3px;
+  height: 30px;
+}
+
+.firstName{
+
+  width: 100%;
+  border-radius: 8px;
+  height: 40px;
+ 
+}
+
+.full_name_{
+
+  width: 100%;
+  height: 100px;
+  
+  padding: 15px 30px;
+}
+
+.input_1_{
+
+  width: 100%;
+  height: 100%;
+  
+}
+
+.full_name_ input{
+
+  width: 100%;
+  height: 40px;
+  border: 1px solid black;
+  padding: 3px;
+  border-radius: 8px;
+}

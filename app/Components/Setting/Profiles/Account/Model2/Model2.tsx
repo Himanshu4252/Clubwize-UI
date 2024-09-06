@@ -36,7 +36,7 @@ interface ChildComponentProps {
       <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
        <div className={styles.model_upper_cnt}> 
-        <h2>Language</h2>
+        <h2>password</h2>
         <button className={styles.closeButton} onClick={()=>{closeModal2()}}>
           &times;
         </button></div>

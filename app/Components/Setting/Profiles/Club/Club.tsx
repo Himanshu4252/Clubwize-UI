@@ -58,7 +58,7 @@ function Club() {
 
   return (
     <div className={styles.node_cnt}>
-    <div className={styles.container}>
+    <div className={`${styles.container} no-scrollbar `}>
       <div className={styles.header}>
         <h2>All Club</h2>
         <button className={styles.createNodeButton}>+ Create node</button>

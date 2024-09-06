@@ -29,11 +29,11 @@ function Peppole() {
     <table className={styles.memberTable}>
       <thead>
         <tr>
-          <th>Member's name</th>
+          <th>Members name</th>
           <th>Node</th>
           <th>Club</th>
           <th>Contributions</th>
-          <th></th>
+          
         </tr>
       </thead>
       <tbody>

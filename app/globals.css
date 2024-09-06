@@ -25,3 +25,13 @@
 body{
   background-image: url("/img/FeebBackground.png");
 }
+
+/* Hide scrollbar for elements with the "no-scrollbar" class */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+

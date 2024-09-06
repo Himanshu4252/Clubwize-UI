@@ -49,7 +49,7 @@ function Blocked() {
       <div className={Styles.upper_cnt}>
         Blocked
       </div>
-      <div className={Styles.Lower_cnt}>
+      <div className={`${Styles.Lower_cnt} no-scrollbar`}>
      <div className={Styles.button_cnt}>
       <button onClick={()=>{changeComp(1)}}  className={`${Styles.btn_1} ${component == 1 ? Styles.bg_color : ''}`}>Pepole</button>
       <button onClick={()=>{changeComp(2)}} className={`${Styles.btn_1} ${component == 2 ? Styles.bg_color : ''}`}>Club</button>

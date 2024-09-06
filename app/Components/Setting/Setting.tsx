@@ -35,6 +35,7 @@ import pin from './Assets/push_pin.png'
 
 
 import SearchBar from '../searchPanel/SearchBar'
+import  './Setting.module.css'
 import Setting_bar from './Profiles/Setting_bar'
 import Main_cnt from './Profiles/Main_cnt/Main_cnt'
 import Comments from '../NewsFeed/Comments/Comments'
@@ -48,6 +49,7 @@ import Notification from './Profiles/Notification/Notification'
 import Nodes from './Profiles/Nodes/Nodes'
 import Club from './Profiles/Club/Club'
 import Blocked from './Profiles/Blocked/Blocked'
+import Side_Bar from '../Sub_Componet/Side_Bar'
 
 
 
@@ -111,347 +113,41 @@ function Setting() {
     }
 
   return (
-    <div className="flex gap-4" style={{zIndex:'1000'}}>
-      <div>
-      <div className='sticky top-0'>
- 
- <div className={`${isExpend ? styles.expend_slider  :  styles.sidebar}`}>
-      
-      <div className={styles.logo_cnt}>
-          <Image src={img1} alt='img' />
-          <div className={`${isExpend ? styles.text_cnt_home : styles.text_cnt_not_home}`}>Clubwise</div>
-      </div>
+    <div className="flex gap-4" style={{ zIndex: '1000' }}>
+    {/* Sidebar */}
+    <div className="sticky top-0 z-50" >
+     <Side_Bar />
      
-      <div className={styles.btn_upper}>
-         <div className={styles.line}></div>
-         <div onClick={()=>{setIsExpend(!isExpend)}}  className={styles.circule_btn}>
-         {isExpend ?  <Image src={icon2} alt='image'  /> :  <Image src={arrow} alt='image'  />}
-         </div>
-      </div>
-      <div className={styles.home_nav_cnt}>
-   <Image src={logo} alt='imge' />
-   <div className={`${isExpend ? styles.text_cnt_home : styles.text_cnt_not_home}`}>Dashboard</div>
-      </div>
-      <div className={styles.home_lines}>
-       <div className={styles.lines}></div>
-      </div>
- 
- 
-      <div  className={styles.star_cnt}>
-       <Image src={star} alt='image' />
-      </div>
- 
- 
-      <div  className={styles.img_cnt_}>
-       <div className={styles.img_box}>
-        {/* <div className={styles.img1_cnt}> */}
-           <Image src={img01} alt='images'  />
-        {/* </div> */}
- 
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Gretchen&nbsp;Leaner
-         <div className={styles.pin_cnt}><Image src={pin} alt='images'  /></div>
-       </div>
-      
- 
-       </div>
- 
- 
-       <div className={styles.img_box}>
-        {/* <div className={styles.img1_cnt}> */}
-           <Image src={img02} alt='images'  />
-        {/* </div> */}
- 
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Aerline&nbsp;McOye
-       <div className={styles.pin_cnt}><Image src={pin} alt='images'  /></div>
-       </div>
-       
- 
-       </div>
- 
- 
-       <div className={styles.img_box}>
-        {/* <div className={styles.img1_cnt}> */}
-           <Image src={node21} alt='images'  />
-        {/* </div> */}
- 
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Brokyyn&nbsp;somons</div>
-      
- 
-       </div>
- 
- 
-       <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img_box}>
-        {/* <div className={styles.img1_cnt}> */}
-        <div  className={styles.internsl_img}><Image src={plus} alt='img' /></div>
-        <Image src={img04} alt='image'  />
-        {/* </div> */}
- 
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Colonery&nbsp;Heanry</div>
-      
- 
-       </div>
-        
- 
-       {/* <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img1_cnt}> 
-       <div  className={styles.internsl_img}><Image src={plus} alt='img' /></div>
-       <Image src={img04} alt='image'  /> */}
- 
- 
-       
-      
- 
-       {isModel ?
-        <div className={styles.model_cnt}>
-         <div className={`${isExpend ? styles.mail_cnt_model_2 : styles.mail_cnt_model}`} >
-           <div className={styles.node_heading}>
-             <div className={styles.node_logo}>
-               <Image src={star} alt='image' />
-               <h3>Nodes</h3>
-             </div>
-             <div className={styles.node_logo}>
-               <h5>see all</h5>
-               <h4 style={{cursor:'pointer'}} onClick={()=>{setIsmodel(false)}}>X</h4>
-               
-             </div>
-           </div>
-           <div className={styles.body_nodes}>
-           <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node1} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>Raghu pandey</div>
-             </div>
-          
-           
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node2} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>Rahul deshai</div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node3} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>nareen</div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node4} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>rahul prasad</div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node5} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>salt alt man</div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node6} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>sunder pichai</div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node7} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>rajesh jhunjhun</div>
-             </div>
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node8} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>Prashant Pandey</div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node9} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>Gourav Prasad</div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node10} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>Ritu Singh </div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node2} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>Sachin Singh</div>
-             </div>
- 
-             <div className={styles.img_text_cnt}>
-               <div className={styles.img_cnt}>
-               <Image src={node5} alt='image' />
-               </div>
-               <div className={styles.text_cnt}>Preeti singh</div>
-             </div>
-            
-           </div>
-         </div>
-       </div> 
-         : ' '} 
- 
- 
-      </div>
- 
- 
-      <div className={styles.home_lines}>
-       <div className={styles.lines}></div>
-      </div>
- 
- 
-      <div className={styles.star_cnt}>
-       <Image src={club} alt='image' />
-      </div>
- 
-      <div  className={styles.img_cnt_}>
-       <div className={styles.img_box}>
-        {/* <div className={styles.img1_cnt}> */}
-           <Image src={img01} alt='images'  />
-        {/* </div> */}
- 
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Gretchen&nbsp;Leaner</div>
-      
- 
-       </div>
- 
- 
-       <div className={styles.img_box}>
-         
-        {/* <div className={styles.img1_cnt}> */}
-           <Image src={img02} alt='images'  />
-        {/* </div> */}
- 
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Aerline&nbsp;McOye</div>
-      
- 
-       </div>
- 
- 
-       <div className={styles.img_box}>
-        {/* <div className={styles.img1_cnt}> */}
-           <Image src={node21} alt='images'  />
-        {/* </div> */}
- 
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Brokyyn&nbsp;somons</div>
-      
- 
-       </div>
- 
- 
-       <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img_box}>
-        {/* <div className={styles.img1_cnt}> */}
-        <div  className={styles.internsl_img}><Image src={plus} alt='img' /></div>
-        <Image src={img04} alt='image'  />
-        {/* </div> */}
- 
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Colonery</div>
-      
- 
-       </div>
-        
- 
-       {/* <div onClick={()=>{setIsmodel(!isModel)}} style={{cursor:'pointer'}} className={styles.img1_cnt}> 
-       <div  className={styles.internsl_img}><Image src={plus} alt='img' /></div>
-       <Image src={img04} alt='image'  /> */}
- 
- 
-       
-      
- 
- 
- 
-      </div>
- 
-      <div className={styles.home_lines}>
-       <div className={styles.lines}></div>
-      </div>
- 
-     <div className={styles.nav_footer}>
-       <button className={styles.img_box}>
-       <Image src={btn1} alt='image' />
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>My&nbsp;Activity</div>
-       </button>
- 
- 
-       <button onClick={()=>{setIsModel3(!isModel3)}} className={styles.img_box}>
-       <Image src={btn3} alt='image' />
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>My&nbsp;Items</div>
-       {isModel3 ?  <div className={styles.model_2_cnt2}>
-       <Image src={popup2} alt='image' />
-       </div> : " "}
-       </button>
- 
-       <button className={styles.img_box}>
-       <Image src={btn2} alt='image' />
-       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Setting</div>
-      
-       </button>
- 
-       
-       </div> 
- 
- 
- 
- 
- 
- 
-     </div>
- 
-        
-     </div>
-      </div>
-      
-
-      <div className="flex flex-col" >
-        <SearchBar />
-        
-
-        <div className="flex flex-row justify-evenly" >
-        <div className="w-2/12 "  >
-          <Setting_bar  handleComponent={handleComponent}  />
-         
-          
+    </div>
+  
+    {/* Main Content Area */}
+    <div className="flex flex-col w-full">
+      <SearchBar />
+  
+      <div className="flex flex-row justify-evenly">
+        {/* Setting Sidebar */}
+        <div className="w-2/12">
+          <Setting_bar handleComponent={handleComponent} />
         </div>
-         
-
-          {/* Feed */}
-          <div className='flex flex-col w-6/12 gap-4 items-center h-screen bg-[url("/img/FeedBackground.png")] my-1'>
-            <div className="w-full">
-              {/* <ModuleBar /> */}
-            </div>
-            <div className={styles.comp_bar}>
-              {RenderCopmponent()}
-            </div>
-            <div className="w-full " >
-              <PostCard2 />
-            </div>
-            <div>
-              {" "}
-              <Comments />
-            </div>
+  
+        {/* Main Feed Area */}
+        <div className="flex flex-col w-6/12 gap-4 items-center h-screen bg-[url('/img/FeedBackground.png')] my-1">
+          <div className="w-full">
+            {/* ModuleBar (optional) */}
           </div>
-
-          {/* Team */}
-          <div className="w-3/12 ">
+          <div className={styles.comp_bar}>
+            {RenderCopmponent()}
+          </div>
+        </div>
+  
+        {/* Team Section */}
+        <div className="w-3/12">
           <Team />
-          </div>
         </div>
       </div>
     </div>
+  </div>
+  
   )
 }
 

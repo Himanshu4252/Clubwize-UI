@@ -36,7 +36,7 @@ const Nodes = () => {
 
   return (
     <div className={styles.node_cnt}>
-    <div className={styles.container}>
+    <div className={`${styles.container} no-scrollbar`}>
       <div className={styles.header}>
         <h2>All Nodes</h2>
         <button className={styles.createNodeButton}>+ Create node</button>
