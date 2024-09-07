@@ -1,8 +1,60 @@
-import React from 'react'
+"use client"
+import React, { forwardRef } from 'react'
 import style from './style.module.css'
 import Image, {StaticImageData} from 'next/image'
-import { Contributions, Impressions, GraphCont, GraphImp } from '../photo'
+import { Contributions, Impressions, GraphCont, GraphImp, RVClub, RVNode, DebateIcon, RulesIcon, Mplace, ForwardIcon} from '../photo'
+import PostCard from '../../NewsFeed/PostCard/PostCard'
 
+interface VisitedItem {
+  id: number;
+  icon: StaticImageData;
+  visitedSection: string;
+  visitClass: StaticImageData;
+  visitedAccount: string;
+  visitTime: string;
+}
+const visitedItems: VisitedItem[] = [
+  {
+    id: 1,
+    icon: Mplace,
+    visitedSection: 'Market Place in',
+    visitClass: RVClub,
+    visitedAccount: 'Vichithram',
+    visitTime: '2 min ago',
+  },
+  {
+    id: 2,
+    icon: RulesIcon,
+    visitedSection: 'Auction House in',
+    visitClass: RVClub,
+    visitedAccount: 'Artistic Haven',
+    visitTime: '10 min ago',
+  },
+  {
+    id: 3,
+    icon: Mplace,
+    visitedSection: 'Shop in',
+    visitClass: RVNode,
+    visitedAccount: 'Mystique Bazaar',
+    visitTime: '5 hours ago',
+  },
+  {
+    id: 4,
+    icon: RulesIcon,
+    visitedSection: 'Gallery in',
+    visitClass: RVClub,
+    visitedAccount: 'Avant-Garde',
+    visitTime: '1 day ago',
+  },
+  {
+    id: 5,
+    icon: DebateIcon,
+    visitedSection: 'Exhibition in',
+    visitClass: RVClub,
+    visitedAccount: 'Curio Chronicles',
+    visitTime: '2 days ago',
+  },
+];
 const LeftPanel = () => {
   return (
   <div className={style.leftPanelWrapper} >
@@ -36,6 +88,34 @@ const LeftPanel = () => {
         <Image src={GraphCont} alt='Contributions Graph' className={style.widthFixer} />
       </div>
     
+    </div>
+
+    <div className={style.recentVisits}>
+      <div className={style.recentvisitsText}>Recently Visited</div>
+      {visitedItems.map((item) => (
+        <div key={item.id} className={style.recentvisited}>
+          <button className={style.RVcontent}>
+            <div className={style.leftContent}>
+              <Image src={item.icon} alt="Icon" />
+              <p className={style.VisitedSection}>{item.visitedSection}</p>
+              <Image src={item.visitClass} alt="Visited Class Icon" />
+              <a className={style.visitedAccount}>{item.visitedAccount}</a>
+              <p className={style.visitTime}> • {item.visitTime}</p>
+            </div>
+            <Image src={ForwardIcon} alt="forward button" />
+          </button>
+        </div>
+      ))}
+
+    </div>
+    <div className={style.myContributions}>
+      <div className={style.myContributionsText}>My Contributions (1.23K)</div>
+      <div className={style.contributions}>
+        <PostCard />
+      </div>
+      <div className={style.contributions}>
+        <PostCard />
+      </div>
     </div>
 
   </div>
