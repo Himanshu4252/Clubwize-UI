@@ -7,19 +7,7 @@ interface CreateDebateProps {
 
 const CreateDebate: React.FC<CreateDebateProps> = ({ onClose }) => {
   return (
-    <div className="p-8   max-w-4xl mx-auto">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-xl font-semibold pb-2">Community Debate ?</h1>
-
-        <button onClick={onClose} className="text-gray-500 text-lg">
-          &times;
-        </button>
-      </div>
-      <p className="text-gray-600 text-xs">
-        Lorem ipsum dolor sit amet consectetur. Congue varius lorem at egestas.
-        Iaculis semper risus sit egestas.
-      </p>
-
+    <>
       <div className="grid grid-cols-2 gap-8 p-5">
         <div className="col-span-2">
           <div className="flex justify-between items-center mb-2">
@@ -136,14 +124,12 @@ const CreateDebate: React.FC<CreateDebateProps> = ({ onClose }) => {
           />
         </div>
       </div>
-
       <div className="mt-4">
         <label className="inline-flex items-center">
           <input type="checkbox" className="form-checkbox" />
           <span className="ml-2">Make this Debate public</span>
         </label>
       </div>
-
       <div className="flex justify-end mt-8 space-x-4">
         <button className="text-red-500" onClick={onClose}>
           Cancel
@@ -160,7 +146,7 @@ const CreateDebate: React.FC<CreateDebateProps> = ({ onClose }) => {
           </button>
         </a>
       </div>
-    </div>
+    </> 
   );
 };
 
