@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  <div className="flex gap-4">
+  <div className="flex gap-4" style={{backgroundColor:"aliceblue"}}>
     <div>
     <Side_Bar />  
     </div>

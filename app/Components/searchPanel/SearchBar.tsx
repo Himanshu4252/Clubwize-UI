@@ -9,6 +9,8 @@ import Popup from '../Notifications/Popup'
 import { useRouter } from 'next/navigation';
 
 const SearchBar = () => {
+  //using nextNavigation for routing
+  //between different components
   const router = useRouter();
   //useStates for the search component
 
