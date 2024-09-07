@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './style.module.css'
-import { PeoplesIcon, LocationIcon, NodeProf1} from '../photo'
+import { PeoplesIcon, LocationIcon, NodeProf1, NodeProf2, NodeProf3, ClubProf1, ClubProf2, ClubProf3, ClubProf4, ClubProf5} from '../photo'
 import { ClubIcon, Lock, NodeIcon} from '../../searchPanel/photos'
 import Image, { StaticImageData } from 'next/image'
 
@@ -31,8 +31,15 @@ const Nodeprofiles: NodeProfileData[] = [
     {
       id: 2,
       name: 'Tech Conference 2024',
-      profileImage: NodeProf1,
+      profileImage: NodeProf2,
       connections: '10.2k',
+      location: 'Noida, India',
+    },
+    {
+      id: 3,
+      name: 'Tech Conference 2024',
+      profileImage: NodeProf3,
+      connections: '18.2k',
       location: 'Noida, India',
     },
   ];
@@ -41,29 +48,36 @@ const Nodeprofiles: NodeProfileData[] = [
     {
       id: 1,
       name: 'Montreal Canadiens',
-      profileImage: NodeProf1,
+      profileImage: ClubProf1,
       connections: '162',
       isPrivate: true,
     },
     {
       id: 2,
       name: 'Tech Innovators',
-      profileImage: NodeProf1,
+      profileImage: ClubProf2,
       connections: '10.5k',
       isPrivate: true,
     },
     {
         id: 3,
         name: 'Montreal Canadiens',
-        profileImage: NodeProf1,
+        profileImage: ClubProf3,
         connections: '162',
         isPrivate: true,
       },
       {
         id: 4,
         name: 'Tech Innovators',
-        profileImage: NodeProf1,
+        profileImage: ClubProf4,
         connections: '10.5k',
+        isPrivate: true,
+      },
+      {
+        id: 5,
+        name: 'Deliver Conference',
+        profileImage: ClubProf5,
+        connections: '1.2k',
         isPrivate: true,
       }
   ];

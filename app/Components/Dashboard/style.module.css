@@ -3,13 +3,12 @@
     flex-direction: row;
     gap: 1%;
     width: 100%;
+    background-color: rgb(227, 242, 255);
     position: relative;
-    height: 120vh;
 }
 
 .leftPanel {
     width: 70%;
-    border: 2px solid;
     height: 100%;
     overflow-y: scroll;
     scrollbar-width: none;
@@ -17,7 +16,7 @@
 
 .rightPanel {
     width: 30%;
-    height: 95vh; 
     position: sticky;
+    height: fit-content;
     top: 60px;
 }
