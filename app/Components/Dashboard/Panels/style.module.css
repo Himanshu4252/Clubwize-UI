@@ -1,0 +1,212 @@
+/* right panels styling */
+.RightPanelWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+.RightPanelButtonNode{
+    width: 100%;
+    height: 40px;
+    background-color: #212529;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.RightPanelButtonClub{
+    width: 100%;
+    height: 40px;
+    background-color: #22B573;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.suggested{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+.suggestion{
+    font-size: 16px;
+    font-weight: 500;
+    color: #212529;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding-left: 15px;
+    height: 35px;
+    align-items: center;
+}
+.Container{
+    height: 55px;
+    border: 1px solid #E9ECEF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 5px;
+}
+.Profile{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+
+.Node{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    justify-content: center;
+}
+
+.Name{
+    text-wrap: nowrap;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.Connections{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.Connection{
+    font-weight: 400;
+    color: #6C757D;
+}
+
+.LocationContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.about{
+    margin-left: 5px;
+}
+
+.Location{
+    font-size: 13px;
+    color: #6C757D;
+    text-wrap: nowrap;
+}
+.PrivacyStatus{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+}
+.Private{
+    font-size: 13px;
+    color: #6C757D;
+    text-wrap: nowrap;
+}
+
+/* left panels styling -  */
+.insights{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    height: 22vh;
+    width: 100%;
+}
+
+.impressions{
+    display: flex;
+    width: 49%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color:white;
+    border-radius: 15px;
+}
+
+.impressionCountBox{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    height: 80%;
+    justify-content: space-between;
+}
+
+.impressionCounts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.totalImpressions{
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529
+}
+.increment{
+    font-size: 13px;
+    font-weight: 400;
+    color: #22B573;
+
+}
+.widthFixer{
+    width: 205px;
+}
+
+.impressionText{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.Contributions{
+    display: flex;
+    width: 49%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.contriCountBox{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    height: 80%;
+    justify-content: space-between;
+}
+
+.contriCounts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.totalcontributions{
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529
+}
+.decrement{
+    font-size: 13px;
+    font-weight: 400;
+    color: #FD7E14;
+
+}
+.widthFixer{
+    width: 205px;
+}
+
+.contributionText{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}

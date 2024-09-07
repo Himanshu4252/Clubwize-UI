@@ -4,14 +4,7 @@ import OnBoardLeft from "../Components/Onboarding/OnboardLeft/OnBoardLeft";
 
 const OnboardingPage = () => {
   return (
-    <div className="w-full flex">
-      <div className="w-5/12">
-        <OnBoardLeft />
-      </div>
-      <div className="w-7/12">
         <Log />
-      </div>
-    </div>
   );
 };
 

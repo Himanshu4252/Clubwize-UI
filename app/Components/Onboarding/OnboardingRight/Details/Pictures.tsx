@@ -3,6 +3,8 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Logo from "../../../../../public/assets/Component 4.png";
+import Link from "next/link";
+import { routes } from "@/app/Routes/routes";
 
 export default function Pictures() {
   const [profilePhoto, setProfilePhoto] = useState<File | null>(null);
@@ -191,14 +193,14 @@ export default function Pictures() {
           </div>
 
           <div className="mt-6 flex justify-end gap-5 col-span-2">
-            <a href="/onboarding/details">
+            <Link href={routes.details}>
               <button
                 type="button"
                 className="px-10 py-2 bg-gray-200 text-gray-700 rounded-lg"
               >
                 Back
               </button>
-            </a>
+            </Link>
 
             <button
               type="submit"

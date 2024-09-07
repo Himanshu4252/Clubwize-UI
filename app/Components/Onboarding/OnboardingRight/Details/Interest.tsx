@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "../../../../../public/assets/Component 4.png";
 import search from "../../../../../public/assets/Onboarding/search.png";
+import Link from "next/link";
+import { routes } from "@/app/Routes/routes";
 
 export default function Interest() {
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -185,14 +187,14 @@ export default function Interest() {
           </div>
 
           <div className="mt-6 flex justify-end gap-5 col-span-2">
-            <a href="/onboarding/pictures">
+            <Link href={routes.pictures}>
               <button
                 type="button"
                 className="px-10 py-2 bg-gray-200 text-gray-700 rounded-lg"
               >
                 Back
               </button>
-            </a>
+            </Link>
 
             <button
               type="submit"

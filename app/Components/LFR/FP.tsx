@@ -5,6 +5,8 @@ import Image from "next/image";
 import logo from "../../../public/assets/Component 4.png";
 import Check from "../../../public/assets/valid-icon.png";
 import Exclamation from "../../../public/assets/invalid-icon.png";
+import Link from "next/link";
+import { routes } from "@/app/Routes/routes";
 
 function FP() {
   const [email, setEmail] = useState<string>("");
@@ -96,9 +98,9 @@ function FP() {
 
         <p className="text-center text-gray-600 mt-6">
           Remember your Password ?{" "}
-          <a href="/" className="text-button hover:underline">
+          <Link href={routes.onboarding} className="text-button hover:underline">
             Back
-          </a>
+          </Link>
         </p>
       </div>
     </div>

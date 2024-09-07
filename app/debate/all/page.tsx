@@ -6,6 +6,7 @@ import Side_Bar from "../../Components/Sub_Componet/Side_Bar";
 import SearchBar from "../../Components/searchPanel/SearchBar";
 import ModuleBar from "@/app/Components/NewsFeed/ModuleBar/ModuleBar";
 import All from "@/app/Components/Debate/All";
+import Debate from "@/app/Components/Debate/Debate";
 
 const Feed = () => {
   return (
@@ -25,10 +26,10 @@ const Feed = () => {
          
 
           {/* Feed */}
-          <div className='flex flex-col w-6/12 gap-4 items-center h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
+          <div className='flex flex-col w-6/12 gap-4 items-center my-1 '>
             <div className="w-full">
               <ModuleBar />
-              <All />
+              <Debate />
             </div>
           </div>
           {/* Team */}
