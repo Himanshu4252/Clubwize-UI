@@ -1,0 +1,126 @@
+.node_cnt{
+  width: 650px;
+  border-radius: 8px;
+    height: max-content;
+    border: 2px solid rgb(252, 250, 250);
+    box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+    
+}
+.container {
+    padding: 20px;
+    background-color: #f8f9fa; /* Adjust according to the background color */
+    width: 100%;
+    height: 85vh;
+    overflow-y: scroll;
+    
+    
+  }
+
+  .container_2 {
+    padding: 20px;
+    background-color: #f8f9fa; /* Adjust according to the background color */
+    width: 100%;
+    height: 30vh;
+    
+  }
+
+
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+
+  .header h2{
+
+    font-size: 19px;
+    font-weight: bolder;
+
+
+  }
+  .createNodeButton {
+    padding: 10px 15px;
+    color: rgb(15, 15, 15);
+    border: 1px solid gray;
+    background: #a3b2e13f;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .searchBar {
+    margin-bottom: 20px;
+
+  }
+  
+  .searchInput {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  .btn_1{
+
+    width: 10%;
+    padding: 10px 20px;
+    
+    
+    margin: 0px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    
+    align-items: center;
+    text-align: center;
+    
+  }
+  
+  .nodeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .nodeCard {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nodeCard h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .members {
+    font-size: 0.9em;
+    color: #6c757d;
+  }
+  
+  .location {
+    font-size: 0.8em;
+    height: 30px;
+    width:  100%;
+    
+    border-radius: 8px;
+    color: #adb5bd;
+    display: flex;
+    gap: 4px;
+    background-color: #F6F6F6;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+  }

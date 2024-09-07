@@ -1,0 +1,197 @@
+
+
+.Account_cnt{
+
+    width: 650px;
+    height: 500px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    border-radius: 8px;
+    
+    padding: 9px 9px;
+    box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
+    position: relative;
+}
+
+.account_cnt_2{
+
+    width: 100%;
+    height: 28%;
+    border: 0.30px solid gray;
+  
+    border-radius: 8px;
+    overflow: hidden;
+
+
+
+}
+
+.account_cnt_3{
+
+    width: 100%;
+    height: 20%;
+    border: 0.30px solid gray;
+    border-radius: 8px;
+    overflow: hidden;
+
+
+
+}
+
+.upper_cnt_3{
+
+    width: 100%;
+    height: 30%;
+   
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: left;
+    padding: 1px 10px;
+    background-color: #F8F9FA;
+    border-bottom: 1px solid gray;
+}
+
+.edit_cnt{
+
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    margin-left: 85%;
+    cursor: pointer;
+    
+    color: rgb(21, 183, 21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-size: 13px;
+}
+
+.img_cnt{
+
+    width: 15px;
+    height: 15px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+
+.upper_cnt{
+
+    width: 100%;
+    height: 20%;
+   
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+    padding: 1px 10px;
+    background-color: #F8F9FA;
+    border-bottom: 1px solid gray;
+}
+
+.Lower_cnt{
+
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding-top: 8px;
+    padding-left: 10px;
+    text-align: center;
+    justify-content: left;
+    
+  
+}
+
+.password_cnt{
+
+    width: 100%;
+    height: 80%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 1px 0px;
+}
+
+.password_cnt_1{
+    width: 30%;
+    height: 100%;
+   
+   padding: 1px 3px;
+
+}
+
+.line{
+
+    width: 2px;
+    height: 42%;
+    background-color: gray;
+}
+.password_cnt_2{
+    width: 60%;
+    height: 100%;
+    
+
+}
+
+.authentication_cnt{
+
+    width: 100%;
+    height: 45%;
+    
+    display: flex;
+    padding: 1px 0px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    
+    
+}
+
+.authentication_cnt h2{
+
+    margin-left: 10px;
+
+}
+
+.auth_img_cnt{
+
+    width: 6%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.sing_box{
+    position: absolute;
+    width: 25%;
+    height: 50%;
+    border: 1px solid gray;
+    margin-left: 70%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+}
