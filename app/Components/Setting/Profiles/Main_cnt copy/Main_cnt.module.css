@@ -1,0 +1,183 @@
+.profile_cnt{
+
+    width: 100%;
+    height: max-content;
+   
+    
+    
+}
+.profile_card{
+
+  width: 100%;
+  height: max-content;
+  box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: #ffff;
+}
+.bg_image{
+
+  width: 100%;
+  height: 135px;
+  
+}
+
+.profile_img{
+
+  width: 80px;
+  height: 80px;
+  
+  position:absolute;
+  margin-left: 20px;
+  margin-top: -34px;
+}
+
+.edit{
+  width: 60px;
+  height: 20px;
+  position: absolute;
+  cursor: pointer;
+  margin-left: 85%;
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(24, 194, 24);
+  text-align: center;
+  gap: 5px;
+
+}
+
+.lower_cnt{
+
+  width: 100%;
+  height: 130px;
+  background: #ffff;
+
+
+  
+}
+
+.text_box{
+
+  width: 100%;
+  height: 70%;
+  margin-top: 6%;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: left;
+  padding: 1px 20px;
+}
+
+.text_box p{
+  font-size: 12px;
+  color: gray;
+}
+.text_box p span{
+  font-size: 16px;
+  color: rgb(5, 5, 5);
+}
+
+.info_card{
+
+  width: 100%;
+  height: 420px;
+  box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
+  margin-top: 20px;
+  background: #ffff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.text_cnt{
+
+  width: 95%;
+  height: max-content;
+  border: 1px solid gray;
+  border-radius: 8px;
+  
+}
+
+.upper_cnt{
+
+  width: 100%;
+  height: 40px;
+ 
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  background-color: rgba(205, 190, 190, 0.321);
+  padding: 1px 10px;
+  font-weight: bold;
+}
+
+.lower_box{
+
+  width: 100%;
+  height: max-content;
+  
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 10px;
+  gap: 10px;
+
+}
+
+.btn{
+
+  width: max-content;
+  height: max-content;
+  padding: 5px 5px;
+  font-size: 14px;
+
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+
+.edis{
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  gap: 5px;
+  color: rgb(35, 177, 35);
+  cursor: pointer;
+}
+
+.password_cnt_1{
+  width: 30%;
+  height: 100%;
+  text-align: left;
+ padding: 1px 3px;
+
+}
+
+.line{
+
+  width: 2px;
+  height: 20px;
+  margin-top: 15px;
+  background-color: gray;
+}
+.password_cnt_2{
+  width: 60%;
+  height: 100%;
+  text-align: left;
+  margin-left: 30px;
+  
+
+}
