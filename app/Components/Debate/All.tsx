@@ -1,6 +1,5 @@
-"use client";
-import React, { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import React from "react";
+import Image from "next/image";
 import A1 from "../../../public/assets/debate/Avatar1.png";
 import A2 from "../../../public/assets/debate/Avatar2.png";
 import A3 from "../../../public/assets/debate/Avatar3.png";
@@ -10,8 +9,6 @@ import A6 from "../../../public/assets/debate/Avatar6.png";
 import A7 from "../../../public/assets/debate/Avatar7.png";
 import A8 from "../../../public/assets/debate/Avatar8.png";
 import A9 from "../../../public/assets/debate/Avatar9.png";
-import CreateDebate from "./Create_Debate";
-import Ongoing from "./Ongoing";
 
 const debates = [
   {
@@ -124,64 +121,9 @@ const debates = [
 ];
 
 function All() {
-  const [isFormVisible, setFormVisible] = useState(false);
-  const [isOngoingVisible, setOngoingVisible] = useState(false);
 
-  const handleCreateDebateClick = () => {
-    setFormVisible(true);
-  };
-
-  const handleOngoingClick = () => {
-    setOngoingVisible(true);
-  };
-
-  const handleCloseForm = () => {
-    setFormVisible(false);
-  };
-
-  const handleCloseOngoing = () => {
-    setOngoingVisible(false);
-  };
-
-  const add = (
-    <>
-      <div className="my-6">
-        <h1 className="text-xl font-semibold pb-2">Community Debate ?</h1>
-        <p className="text-gray-600 text-xs">
-          Lorem ipsum dolor sit amet consectetur. Congue varius lorem at
-          egestas. Iaculis semper risus sit egestas.
-        </p>
-      </div>
-      <div className="flex space-x-8">
-        <button 
-          onClick={handleOngoingClick} 
-          className="text-gray-500 text-sm"
-        >
-          Ongoing Debates (182)
-        </button>
-        <button className="text-green-600 border-b-2 border-green-600 text-sm">
-          All Debates (652)
-        </button>
-        <button className="text-gray-500 text-sm">Global Debates (45k)</button>
-        <button className="text-gray-500 text-sm">My Debates (2.36k)</button>
-      </div>
-      <hr className="mb-4 " />
-      <div className="flex items-center justify-between mb-4 space-x-2">
-        <button
-          onClick={handleCreateDebateClick}
-          className="bg-green-500 text-white px-4 py-2 w-48 rounded-lg text-sm font-light hover:bg-black"
-        >
-          + Create New Debate
-        </button>
-
-        <input
-          type="text"
-          placeholder="Search for debates..."
-          className="border p-2 rounded-lg w-96 focus:ring-2  focus:ring-green-500"
-        />
-        <button className="bg-gray-200 p-2 rounded-lg">Filter</button>
-      </div>
-
+  return (
+      <>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white">
           <thead>
@@ -226,32 +168,8 @@ function All() {
           </tbody>
         </table>
       </div>
-
-      <div className="flex items-center justify-between mt-4">
-        <p>Total 85 items</p>
-        <div className="flex items-center space-x-2">
-          <button className="px-3 py-1 bg-gray-200 rounded">1</button>
-          <button className="px-3 py-1 bg-gray-200 rounded">...</button>
-          <button className="px-3 py-1 bg-gray-200 rounded">5</button>
-          <button className="px-3 py-1 bg-gray-200 rounded">6</button>
-          <button className="px-3 py-1 bg-gray-200 rounded">7</button>
-          <button className="px-3 py-1 bg-gray-200 rounded">...</button>
-          <select className="border p-2 rounded-lg">
-            <option>10 / page</option>
-            <option>20 / page</option>
-            <option>30 / page</option>
-          </select>
-        </div>
-      </div>
     </>
-  );
 
-  return (
-    <>
-      {!isFormVisible && !isOngoingVisible && add}
-      {isFormVisible && <CreateDebate onClose={handleCloseForm} />}
-      {isOngoingVisible && <Ongoing onClose={handleCloseOngoing} />} 
-    </>
   );
 }
 

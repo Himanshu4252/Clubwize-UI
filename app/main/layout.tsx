@@ -35,7 +35,7 @@ export default function RootLayout({
           <div className="w-full">
             <ModuleBar />
           </div>
-          <div>
+          <div className="w-full">
             {children}
           </div>
         </div>

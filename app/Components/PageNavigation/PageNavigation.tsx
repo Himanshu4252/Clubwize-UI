@@ -11,6 +11,7 @@ const PageNavigation = () => {
         <Link className="bg-gray-600 text-white p-2 px-4 rounded-lg" href="/Other/Message"><li>Message</li></Link>
         <Link className="bg-gray-600 text-white p-2 px-4 rounded-lg" href="/Other/BookMarks"><li>Bookmarks</li></Link>
         <Link className="bg-gray-600 text-white p-2 px-4 rounded-lg" href="/main/Debate"><li>Debate</li></Link>
+        <Link className="bg-gray-600 text-white p-2 px-4 rounded-lg" href="/main/ProfileFeed"><li>Profile</li></Link>
         {/* <a href=""><li></li></a> */}
         
     </div>
