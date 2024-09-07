@@ -10,6 +10,7 @@ import A7 from "../../../public/assets/debate/Avatar7.png";
 import A8 from "../../../public/assets/debate/Avatar8.png";
 import A9 from "../../../public/assets/debate/Avatar9.png";
 
+
 const debates = [
   {
     title: "Climate Change Regulations",
@@ -120,10 +121,11 @@ const debates = [
   },
 ];
 
-function Ongoing() {
+function Global(){
 
   return (
     <>
+
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white">
           <thead>
@@ -169,10 +171,11 @@ function Ongoing() {
           </tbody>
         </table>
       </div>
+
       
     </>
   )
   
 }
 
-export default Ongoing;
+export default Global;
