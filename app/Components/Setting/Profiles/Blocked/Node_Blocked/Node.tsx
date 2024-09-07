@@ -25,6 +25,7 @@ function Node() {
   ];
 
   const [activePopup, setActivePopup] = useState<number | null>(null);
+  const [data,setData] = useState(members)
 
   const handleDotsClick = (id: number) => {
     setActivePopup((prev) => (prev === id ? null : id));
@@ -34,6 +35,13 @@ function Node() {
     setActivePopup(null);
   };
 
+  const handleDelete = (id:number)=>{
+
+    members.splice(id,1)
+    setData(members)
+
+  }
+
 
 
   
@@ -41,7 +49,7 @@ function Node() {
 
   return (
     <div className={styles.cardContainer}>
-    {members.map((member) => (
+    {data.map((member) => (
       <div key={member.id} className={styles.card}>
         {/* Image container */}
         <div className={styles.imageContainer}>
@@ -65,9 +73,9 @@ function Node() {
           {activePopup === member.id && (
             <div className={styles.popupMenu}>
               <ul>
-                <li onClick={handleClosePopup}>Unblock</li>
+                <li onClick={()=>{handleDelete(member.id - 1)}}>Unblock</li>
                 <li onClick={handleClosePopup}>Copy link</li>
-                <li onClick={handleClosePopup}>Report Node</li>
+                <li onClick={handleClosePopup} style={{color:'red'}}>Report Node</li>
               </ul>
             </div>
           )}

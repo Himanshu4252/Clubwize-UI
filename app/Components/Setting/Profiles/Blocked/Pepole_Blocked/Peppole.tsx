@@ -14,14 +14,25 @@ function Peppole() {
   ];
 
   const [activePopup, setActivePopup] = useState<number | null>(null);
+  const [data,setData] = useState(members)
 
   const handleDotsClick = (id: number) => {
     setActivePopup((prev) => (prev === id ? null : id));
+    console.log(id);
+    
   };
 
   const handleClosePopup = () => {
     setActivePopup(null);
   };
+
+  const handledelete = (id:number)=>{
+    console.log(id);
+    members.splice(id,1)
+    setData(members)
+
+    
+  }
 
 
   return (
@@ -37,7 +48,7 @@ function Peppole() {
         </tr>
       </thead>
       <tbody>
-        {members.map((member, index) => (
+        {data.map((member, index) => (
           <tr key={index}>
             <td>
               <div className={styles.memberInfo}>
@@ -65,9 +76,9 @@ function Peppole() {
               {activePopup === member.id && (
             <div className={styles.popupMenu}>
               <ul>
-                <li onClick={handleClosePopup}>Unblock</li>
+                <li onClick={()=>{handledelete(member.id - 1)}}>Unblock</li>
                 <li onClick={handleClosePopup}>Copy link</li>
-                <li onClick={handleClosePopup}>Report Node</li>
+                <li onClick={handleClosePopup} style={{color:'red'}}>Report Node</li>
               </ul>
             </div>
           )}

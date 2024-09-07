@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from './Model_p.module.css'
+import pimg from '../Assets/Group 633852.svg'
 
 interface ChildComponentProps {
 

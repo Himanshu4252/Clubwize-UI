@@ -50,6 +50,7 @@ import Nodes from './Profiles/Nodes/Nodes'
 import Club from './Profiles/Club/Club'
 import Blocked from './Profiles/Blocked/Blocked'
 import Side_Bar from '../Sub_Componet/Side_Bar'
+import Chat from './Chat/Chat'
 
 
 
@@ -142,7 +143,7 @@ function Setting() {
   
         {/* Team Section */}
         <div className="w-3/12">
-          <Team />
+          <Chat />
         </div>
       </div>
     </div>
