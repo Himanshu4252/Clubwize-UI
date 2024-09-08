@@ -1,11 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Ongoing from "./Ongoing";
 import All from "./All";
 import Global from "./Global";
 import CreateDebate from "./Create_Debate";
 import My from "./My";
+import filter from "../../../public/assets/debate/icons/filter.png"
+import sort from "../../../public/assets/debate/icons/sort.png"
 
 function Debate() {
   const [activeTab, setActiveTab] = useState("ongoing");
@@ -94,12 +97,13 @@ function Debate() {
         <input
           type="text"
           placeholder="Search for debates..."
-          className="border p-2 rounded-lg w-96 focus:ring-2  focus:ring-green-500"
+          className="border-2 border-gray-400 p-2 rounded-lg w-96 focus:ring-2  focus:ring-green-500"
         />
-        <button className="bg-gray-200 p-2 rounded-lg">Filter</button>
+        <button className="bg-white border-gray-400 border-2 p-2 rounded-lg"><Image src={filter} alt="filter" /></button>
+        <button className="bg-white border-gray-400 border-2 p-2 rounded-lg"><Image src={sort} alt="sort"/></button>
       </div>
       <div className="mt-4">{renderContent()}</div>
-      <div className="flex items-center justify-between mt-4">
+      <div className="flex items-center justify-center mt-4 space-x-4">
         <p>Total 85 items</p>
         <div className="flex items-center space-x-2">
           <button className="px-3 py-1 bg-gray-200 rounded">1</button>
