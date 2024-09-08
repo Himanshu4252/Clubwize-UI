@@ -6,7 +6,8 @@ import TruncatedText from "../Utils/TrunckedText";
 const ProfileFeed = () => {
   const [toggleAbout, setToggleAbout] = useState(false);
   const [leaveNode, setLeaveNode] = useState(false);
-  const [inviteMember, setInviteMember] = useState(true);
+  const [inviteMember, setInviteMember] = useState(false);
+  const [copyBtn, setCopyBtn] = useState(false);
 
   const about =
     "Our mission is simple but crucial: to protect and promote the well-being of trees and forests. Together, we can make a positive impact on our environment and leave a legacy for generations to come.Our mission is simple but crucial: to protect and promote the well-being of trees and forests. Together, we can make a positive impact on our environment and leave a legacy for generations ssion is simple but crucial: to protect and promote the well-being of trees and forests. Together, we can make a positive impact on our environment and leave a legacy for generations to come.Our mission is simple but crucial: to protect and promote the well-being of trees and forests. Together, we can make a positive impact on our environment and leave a legacy for generations ssion is simple but crucial: to protect and promote the well-being of trees and forests. Together, we can make a positive impact on our environment and leave a legacy for generations to come.Our mission is simple but crucial: to protect and promote the well-being of trees and forests. Together, we can make a positive impact on our environment and leave a legacy for generations to come.Our mission is simple but crucial: to protect and promote the well-being of trees and forests. Together, we can make a positive impact on our environment and leave a legacy for generations to come. Hide";
@@ -59,7 +60,7 @@ const ProfileFeed = () => {
           <div className="w-max py-2 px-3 text-white bg-black rounded-lg cursor-pointer" onClick={()=> setInviteMember(!inviteMember)}>
             + Invite
           </div>
-          <div className="inline-flex items-center gap-2 w-max py-2 px-3 bg- border border-b-gray-300 rounded-lg cursor-pointer">
+          <div className="inline-flex items-center gap-2 w-max py-2 px-3 bg- border border-b-gray-300 rounded-lg cursor-pointer " onClick={() => setCopyBtn(false)}>
             <svg
               width="16"
               height="20"
@@ -120,7 +121,7 @@ const ProfileFeed = () => {
       <div className="inline-flex gap-8 justify-start items-center">
         <div className="flex flex-col">
           <p>Modules</p>
-          <p className=" underline text-green-500 text-sm">12 Moules</p>
+          <p className=" underline text-green-500 text-sm ">12 Moules</p>
         </div>
         <div className="flex h-6 border"></div>
         <div className="flex  flex-col">
@@ -157,7 +158,7 @@ const ProfileFeed = () => {
             </>
           ) : (
             <>
-              <TruncatedText text={about} maxLines={4} />
+              <TruncatedText  text={about} maxLines={4} />
               <span
                 className="underline cursor-pointer text-blue-500"
                 onClick={() => setToggleAbout(!toggleAbout)}
@@ -168,6 +169,10 @@ const ProfileFeed = () => {
           )}
         </p>
       </div>
+
+
+
+{/* Popus are here  */}
 
       {leaveNode && (
         <>
@@ -184,8 +189,8 @@ const ProfileFeed = () => {
           </p>
           <hr />
           <div className="inline-flex gap-3 justify-end">
-              <div className="rounded-md text-sm px-3 py-1 cursor-pointer border border-gray-300">Cancel</div>
-              <div className="rounded-md text-sm px-3 py-1 cursor-pointer  bg-red-500 text-white">Yes, Leave</div>
+              <div className="rounded-md text-sm px-3 py-1 cursor-pointer border border-gray-300 hover:bg-gray-300">Cancel</div>
+              <div className="rounded-md text-sm px-3 py-1 cursor-pointer  bg-red-500 text-white hover:bg-red-600">Yes, Leave</div>
           </div>
         </div>
         </>
@@ -203,16 +208,26 @@ const ProfileFeed = () => {
           <hr />
             <div className="inline-flex justify-between items-center gap-4">
               <input className="bg-gray-100 outline-none rounded-md text-xs border border-gray-300 w-[70%] py-2 pl-3" type="text" placeholder="Enter email" />
-              <div className="rounded-md text-xs px-3 py-2   cursor-pointer justify-center  items-center border w-[30%] border-gray-300 flex-nowrap text-red-500">X Close</div>
+              <div className="rounded-md text-xs px-3 py-2   cursor-pointer justify-center  items-center border w-[30%] border-gray-300 flex-nowrap text-red-500 text-center hover:text-white hover:bg-red-500">X Close</div>
             </div>
           <hr />
-          <div className="inline-flex gap-3 justify-end">
-              <div className="rounded-md text-sm px-3 py-1 cursor-pointer border border-gray-300">Cancel</div>
-              <div className="rounded-md text-sm px-6 py-1 cursor-pointer  bg-green-500  text-white">Send</div>
+          <div className="inline-flex gap-3 justify-end realtiev">
+              <div className="rounded-md text-slhrv m px-3 py-1 cursor-pointer border border-gray-300 hover:bg-gray-300">Cancel</div>
+              <div className="rounded-md text-sm px-6 py-1 cursor-pointer  bg-green-500  text-white hover:bg-green-600">Send</div>
           </div>
         </div>
+        
         </>
       )}
+
+
+      {/* Copy link Button */}
+      <>
+      {
+          copyBtn &&  <div className="absolute text-green-500 text-xl">Copied</div>
+      }   
+
+       </>
 
     </div>
   );
