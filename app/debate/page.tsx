@@ -1,9 +1,9 @@
 import React from "react";
 
-import Team from "../../Components/Create_Team/Team";
-import Profile from "../../Components/Profile/Profile";
-import Side_Bar from "../../Components/Sub_Componet/Side_Bar";
-import SearchBar from "../../Components/searchPanel/SearchBar";
+import Team from "../Components/Create_Team/Team";
+import Profile from "../Components/Profile/Profile";
+import Side_Bar from "../Components/Sub_Componet/Side_Bar";
+import SearchBar from "../Components/searchPanel/SearchBar";
 import ModuleBar from "@/app/Components/NewsFeed/ModuleBar/ModuleBar";
 import All from "@/app/Components/Debate/All";
 import Debate from "@/app/Components/Debate/Debate";
