@@ -32,21 +32,21 @@ const PostCardHeader = () => {
 
           {/* Role Category and times */}
           <div className="flex flex-row gap-2 w-fit h-fit items-center mt-1 ">
-            <p className="leading-none text-base text-gray-500">
+            <p className="leading-none text-base text-gray-500 sm:text-sm">
               UI UX Designer
             </p>{" "}
             <div className=" w-1 h-1 bg-gray-700  rounded-full"></div>
             <a href="#" className="underline text-green-500">
-              <p className="leading-none text-base ">News & events</p>
+              <p className="leading-none text-base sm:text-sm">News & events</p>
             </a>{" "}
-            <div className=" w-1 h-1 bg-gray-700  rounded-full"></div>
-            <p className="leading-none text-base text-gray-500">2 mins ago</p>
+            <div className=" w-1 h-1 bg-gray-700  rounded-full sm:text-sm"></div>
+            <p className="leading-none text-base text-gray-500 sm:text-sm">2 mins ago</p>
           </div>
         </div>
       </div>
 
       {/* Right two */}
-      <div className="  inline-flex gap-9 cursor-pointer ">
+      <div className="  inline-flex gap-9 cursor-pointer sm:gap-6">
         {/* Eye */}
         <div className="relative hover:fill-green-500">
           <svg
