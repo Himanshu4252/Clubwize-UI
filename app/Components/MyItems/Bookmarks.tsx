@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
+import PostsList from './Posts';
 
 const bookmarksData = [
   { title: 'Lorem ipsum', postsCount: 256, dateInfo: 'Before 2 days', bgColor: 'bg-[#F8F7FD]', borderColor: 'border-[#F0EDFF]' },
@@ -16,6 +17,7 @@ const Bookmarks: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [folderName, setFolderName] = useState<string>('');
+  const [viewPosts, setViewPosts] = useState<boolean>(false);
 
   const toggleMenu = (index: number) => {
     setActiveMenu(activeMenu === index ? null : index);
@@ -34,47 +36,70 @@ const Bookmarks: React.FC = () => {
 
   const isButtonDisabled = !folderName.trim();
 
-  return (
-    <div className="bg-white h-screen rounded-lg ">
-      <div className="border-b border-gray-300 p-5 flex items-center justify-between">
-        <div>
-          <h2 className="text-xl font-bold">Bookmark</h2>
-          <p className="text-sm mt-2 text-gray-600">Below is a preview of the entire bookmarks feed that you can customise.</p>
-        </div>
-        <button
-          className="text-sm text-black py-1 px-4 border rounded hover:bg-gray-600 hover:text-white"
-          onClick={openModal}
-        >
-          + Create folder
-        </button>
-      </div>
+  const handleOpenPosts = () => {
+    setViewPosts(true);
+  };
 
-      <div className="flex flex-wrap gap-8 p-4 mt-2 ml-2">
-        {bookmarksData.map((bookmark, index) => (
-          <div 
-            key={index} 
-            className={`relative flex justify-between items-start border p-4 rounded-md ${bookmark.bgColor} ${bookmark.borderColor} w-10vh h-20vh`}
+  return (
+    <div className="bg-white h-screen rounded-lg flex">
+      {viewPosts ? (
+        <div className="flex-1 p-4">
+          <button
+            className="text-sm text-gray-700 py-1 px-4 mb-4"
+            onClick={() => setViewPosts(false)}
           >
+          <span className="underline text-black">My Items</span>  &gt; Posts
+          </button>
+          <PostsList />
+        </div>
+      ) : (
+        <div className="flex-1">
+          <div className="border-b border-gray-300 p-5 flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold">{bookmark.title}</h3>
-              <p className="text-sm text-gray-400">{bookmark.postsCount} Posts • {bookmark.dateInfo}</p>
+              <h2 className="text-xl font-bold">Bookmark</h2>
+              <p className="text-sm mt-2 text-gray-600">Below is a preview of the entire bookmarks feed that you can customise.</p>
             </div>
-            <div className="cursor-pointer" onClick={() => toggleMenu(index)}>
-              <Image src="/BmarkImg/more.png" alt="More options" width={4} height={16} />
-            </div>
-            {activeMenu === index && (
-              <div className="absolute top-10 right-0 w-32 bg-white border rounded shadow-md z-50">
-                <ul className="text-sm">
-                  <li className="px-4 py-1 hover:bg-gray-100 cursor-pointer">Open</li>
-                  <li className="px-4 py-1 hover:bg-gray-100 cursor-pointer">Rename</li>
-                  <li className="px-4 py-1 hover:bg-gray-100 cursor-pointer">Share</li>
-                  <li className="px-4 py-1 hover:bg-gray-100 text-red-500 cursor-pointer">Delete</li>
-                </ul>
-              </div>
-            )}
+            <button
+              className="text-sm text-black py-1 px-4 border rounded hover:bg-gray-600 hover:text-white"
+              onClick={openModal}
+            >
+              + Create folder
+            </button>
           </div>
-        ))}
-      </div>
+
+          <div className="flex flex-wrap gap-8 p-4 mt-2 ml-2">
+            {bookmarksData.map((bookmark, index) => (
+              <div 
+                key={index} 
+                className={`relative flex justify-between items-start border p-4 rounded-md ${bookmark.bgColor} ${bookmark.borderColor} w-10vh h-20vh`}
+              >
+                <div>
+                  <h3 className="text-lg font-semibold">{bookmark.title}</h3>
+                  <p className="text-sm text-gray-400">{bookmark.postsCount} Posts • {bookmark.dateInfo}</p>
+                </div>
+                <div className="cursor-pointer" onClick={() => toggleMenu(index)}>
+                  <Image src="/BmarkImg/more.png" alt="More options" width={4} height={16} />
+                </div>
+                {activeMenu === index && (
+                  <div className="absolute top-10 right-0 w-32 bg-white border rounded shadow-md z-50">
+                    <ul className="text-sm">
+                      <li 
+                        className="px-4 py-1 hover:bg-gray-100 cursor-pointer"
+                        onClick={handleOpenPosts}
+                      >
+                        Open
+                      </li>
+                      <li className="px-4 py-1 hover:bg-gray-100 cursor-pointer">Rename</li>
+                      <li className="px-4 py-1 hover:bg-gray-100 cursor-pointer">Share</li>
+                      <li className="px-4 py-1 hover:bg-gray-100 text-red-500 cursor-pointer">Delete</li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-20 z-50">

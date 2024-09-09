@@ -9,7 +9,10 @@ import A6 from "../../../public/assets/debate/Avatar6.png";
 import A7 from "../../../public/assets/debate/Avatar7.png";
 import A8 from "../../../public/assets/debate/Avatar8.png";
 import A9 from "../../../public/assets/debate/Avatar9.png";
-
+import bp from "../../../public/assets/debate/icons/bp.png";
+import rp from "../../../public/assets/debate/icons/rp.png";
+import bs from "../../../public/assets/debate/icons/bs.png";
+import rs from "../../../public/assets/debate/icons/rs.png";
 
 const debates = [
   {
@@ -17,6 +20,7 @@ const debates = [
     description: "Addressing the impact of human activity on th...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "Jan 13, 2022",
@@ -29,6 +33,7 @@ const debates = [
     description: "Addressing income inequality and automation...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "November 7, 2017",
@@ -41,6 +46,7 @@ const debates = [
     description: "Exploring the social and economic impacts of c...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ended",
     statusColor: "gray",
     date: "July 24, 2013",
@@ -53,6 +59,7 @@ const debates = [
     description: "Addressing gun violence and Second Amend...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "July 14, 2015",
@@ -65,6 +72,7 @@ const debates = [
     description: "Balancing public health conserns with persona...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ended",
     statusColor: "gray",
     date: "May 6, 2012",
@@ -77,6 +85,7 @@ const debates = [
     description: "Addressing data production and online suveill...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ended",
     statusColor: "gray",
     date: "August 7, 2017",
@@ -89,6 +98,7 @@ const debates = [
     description: "Examining the fairness and efficancy of the curr...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
@@ -101,6 +111,7 @@ const debates = [
     description: "Discussing ethical implications of AI developm...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ended",
     statusColor: "gray",
     date: "OCtober 30, 2017",
@@ -113,6 +124,7 @@ const debates = [
     description: "Exploring healthcare accessibility and affordab...",
     for: 18,
     against: 18,
+    fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
@@ -121,42 +133,59 @@ const debates = [
   },
 ];
 
-function Global(){
-
+function Global() {
   return (
     <>
-
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white">
           <thead>
             <tr>
-              <th className="text-left p-4 text-gray-400 font-normal">No.</th>
-              <th className="text-left p-4 text-gray-400 font-normal">
+              <th className="text-left text-gray-400 font-normal">No.</th>
+              <th className="text-left px-4 text-gray-400 font-normal">
                 Debates
               </th>
-              <th className="text-left p-4 text-gray-400 font-normal">For</th>
-              <th className="text-left p-4 text-gray-400 font-normal">
+              <th className="text-center px-4 text-gray-400 font-normal">
+                For
+              </th>
+              <th className="text-center px-4 text-gray-400 font-normal">
                 Against
               </th>
-              
-              <th className="text-left p-4 text-gray-400 font-normal">
+              <th className="text-left  text-gray-400 font-normal">
                 Posted Date
               </th>
-              <th className="text-left p-4 text-gray-400 font-normal">
+              <th className="text-left px-4 text-gray-400 font-normal">
                 Posted by
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {debates.map((debate, index) => (
               <tr key={index} className="border-b">
-                <td className="p-4 text-sm">{index + 1}</td>
-                <td className="p-4">
+                <td className=" text-sm">{index + 1}</td>
+                <td className="">
                   <p className="text-sm font-semibold">{debate.title}</p>
                   <p className="text-gray-600 text-xs">{debate.description}</p>
                 </td>
-                <td className="p-4 text-blue-600 text-xs">{debate.for}</td>
-                <td className="p-4 text-red-600 text-xs">{debate.against}</td>
+                <td className="space-y-5 pl-2 pt-5">
+                  <div className="flex gap-1">
+                    <Image src={bp} alt="bp" width={15} />
+                    <p className="text-xs text-gray-400 font-medium">{debate.for} </p>
+                  </div>
+                  <div className="flex gap-1 mt-0 ">
+                    <Image src={bs} alt="bs" width={15} />
+                    <p className="text-xs text-gray-400 font-medium">{debate.fors}</p>
+                  </div>
+                </td>
+                <td className="space-y-5 pt-5 pl-5">
+                  <div className="flex gap-1">
+                    <Image src={rp} alt="rp" width={15} />
+                    <p className="text-xs text-gray-400 font-medium">{debate.for} </p>
+                  </div>
+                  <div className="flex gap-1 mt-0">
+                    <Image src={rs} alt="rs" width={15} />
+                    <p className="text-xs text-gray-400 font-medium">{debate.fors}</p>
+                  </div>
+                </td>
                 <td className="p-4 text-xs">{debate.date}</td>
                 <td className="p-4 flex items-center space-x-2">
                   <Image
@@ -171,11 +200,8 @@ function Global(){
           </tbody>
         </table>
       </div>
-
-      
     </>
-  )
-  
+  );
 }
 
 export default Global;

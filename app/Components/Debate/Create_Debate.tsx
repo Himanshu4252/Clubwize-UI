@@ -140,7 +140,7 @@ const CreateDebate: React.FC<CreateDebateProps> = ({ onClose }) => {
         >
           Save draft
         </button>
-        <a href="/debate/all">
+        <a href="/debate">
           <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
             Publish
           </button>

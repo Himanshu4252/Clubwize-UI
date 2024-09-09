@@ -28,8 +28,8 @@ const PostInteractionButtons = ({svgIcon, countColor, interactionTitle, count} :
     <div className="inline-flex gap-1 justify-center items-center">
         <span dangerouslySetInnerHTML={{__html: svgIcon}} />
 
-        <span className={`font-semibold  ${countColor}`  }> {count ? count+ "+" : ""} </span>
-        <span className=" text-gray-500">{interactionTitle}</span>
+        <span className={`font-semibold sm:text-sm ${countColor}`  }> {count ? count+ "+" : ""} </span>
+        <span className=" text-gray-500 sm:text-sm">{interactionTitle}</span>
     </div>
   );
 };
