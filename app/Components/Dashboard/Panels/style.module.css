@@ -222,7 +222,7 @@
 }
 
 .widthFixer{
-    width: 205px;
+    width: 55%;
 }
 
 .contributionText{
@@ -265,8 +265,8 @@
 .leftContent{
     display: flex;
     flex-direction: row;
-    width: 60%;
     gap: 2%;
+    width: 80%;
 }
 
 .VisitedSection{
@@ -307,3 +307,4 @@
  .contributions{
     background-color: white;
  }
+ 
