@@ -21,7 +21,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projectId }) => {
     case 'Project Wall':
       return (
         <div className="bg-white rounded-lg shadow-md p-4">
-          {/* Content for Project Wall tab */}
+          {/*return <ProjectWall/>*/}
         </div>
       );
     case 'FAQs':
