@@ -1,5 +1,6 @@
-import React from "react";
-import Image from "next/image";
+"use client"
+import React ,{useState} from "react";
+import Image, { StaticImageData } from "next/image";
 import A1 from "../../../public/assets/debate/Avatar1.png";
 import A2 from "../../../public/assets/debate/Avatar2.png";
 import A3 from "../../../public/assets/debate/Avatar3.png";
@@ -13,8 +14,22 @@ import bp from "../../../public/assets/debate/icons/bp.png";
 import rp from "../../../public/assets/debate/icons/rp.png";
 import bs from "../../../public/assets/debate/icons/bs.png";
 import rs from "../../../public/assets/debate/icons/rs.png";
+import DebatePage from "./Debate_Page";
 
-const debates = [
+interface Debate {
+  title: string;
+  description: string;
+  for: number;
+  against: number;
+  fors: number;
+  status: string;
+  statusColor: string;
+  date: string;
+  posterName: string;
+  posterImage: StaticImageData; 
+}
+
+const debates: Debate[] = [
   {
     title: "Climate Change Regulations",
     description: "Addressing the impact of human activity on th...",
@@ -134,6 +149,26 @@ const debates = [
 ];
 
 function All() {
+  const [isDebatePageOpen, setIsDebatePageOpen] = useState(false);
+  const [selectedDebate, setSelectedDebate] = useState<Debate | null>(null);
+
+  const handleDebateClick = (debate: Debate) => { 
+    setSelectedDebate(debate);
+    setIsDebatePageOpen(true);
+  };
+
+  if (isDebatePageOpen && selectedDebate) {
+    return (
+      <DebatePage
+        title={selectedDebate.title}
+        description={selectedDebate.description}
+        date={selectedDebate.date}
+        posterName={selectedDebate.posterName}
+        posterImage={selectedDebate.posterImage}
+      />
+    );
+  }
+
   return (
     <>
       <div className="overflow-x-auto">
@@ -161,7 +196,9 @@ function All() {
           </thead>
           <tbody>
             {debates.map((debate, index) => (
-              <tr key={index} className="border-b">
+              <tr key={index}
+              onClick={() => handleDebateClick(debate)}
+              className="border-b">
                 <td className=" text-sm">{index + 1}</td>
                 <td className="">
                   <p className="text-sm font-semibold">{debate.title}</p>
