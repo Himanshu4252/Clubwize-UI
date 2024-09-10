@@ -3,6 +3,7 @@ import Comments from '../NewsFeed/Comments/Comments';
 import ProjectDetailsTab from './ProjectDetailsTab';
 import Leaderboard from './Leaderboard';
 import ProjectFAQs from './ProjectFAQs';
+import ProjectsWall from './ProjectWall';
 
 interface ProjectDetailsProps {
   projectId: number;
@@ -10,6 +11,9 @@ interface ProjectDetailsProps {
 
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projectId }) => {
     const [activeTab, setActiveTab] = useState('Project Details');
+    const handleGoBack = () => {
+         window.history.back();
+      };
     const renderTabContent = () => {
   switch (activeTab) {
     case 'Project Details':
@@ -19,11 +23,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projectId }) => {
       return <Leaderboard/>
 
     case 'Project Wall':
-      return (
-        <div className="bg-white rounded-lg shadow-md p-4">
-          {/*return <ProjectWall/>*/}
-        </div>
-      );
+      return <ProjectsWall/>
+      
     case 'FAQs':
       return <ProjectFAQs/>
     default:
@@ -33,7 +34,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projectId }) => {
 
   return (
     <div className="max-w-full">
-      <nav className="flex space-x-4 text-green-600 text-sm font-semibold mb-4">
+      <nav className="flex space-x-4 text-green-600 text-sm  mb-4 border-b">
   {['Project Details', 'Leaderboard', 'Project Wall', 'FAQs'].map(tab => (
     <button
       key={tab}
@@ -46,7 +47,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projectId }) => {
 </nav>
 {renderTabContent()}
 <div className="flex justify-between items-center mt-4">
-        <button className="border border-gray-300 text-xs rounded-md px-4 py-1">
+        <button onClick={handleGoBack} className="border border-gray-300 text-xs rounded-md px-4 py-1">
           &lt; Previous Project
         </button>
         <button className="border border-gray-300 text-xs rounded-md px-4 py-1">
