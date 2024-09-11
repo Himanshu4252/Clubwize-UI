@@ -1,5 +1,6 @@
+"use client"
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React,{useState} from "react";
 import lock from "../../../public/assets/debate/page/lock1.svg";
 import more from "../../../public/assets/debate/page/more1.svg";
 import like from "../../../public/assets/debate/page/Like1.svg";
@@ -10,6 +11,8 @@ import p1 from "../../../public/assets/debate/page/p1.png";
 import p2 from "../../../public/assets/debate/page/p2.png";
 import p3 from "../../../public/assets/debate/page/p3.png";
 import p4 from "../../../public/assets/debate/page/p4.png";
+import For from "./popup/For";
+import Against from "./popup/Against";
 
 interface DebatePageProps {
   title: string;
@@ -32,6 +35,18 @@ export default function DebatePage({
   posterName,
   posterImage,
 }: DebatePageProps) {
+
+  const [isForOpen, setIsForOpen] = useState(false);
+
+  const openFor = () => setIsForOpen(true);
+  const closeFor = () => setIsForOpen(false);
+
+  const [isAgainstOpen, setIsAgainstOpen] = useState(false);
+
+  const openAgainst = () => setIsAgainstOpen(true);
+  const closeAgainst = () => setIsAgainstOpen(false);
+
+
   return (
     <div className="min-h-screen">
       {/* Header Section */}
@@ -133,7 +148,9 @@ export default function DebatePage({
         {/* For Section */}
         <div className=" ">
           <h3 className="text-lg font-medium">For (182)</h3>
-          <button className="mt-4 bg-blue-100 border border-blue-300 text-blue-500 hover:bg-slate-900 py-2 px-4 w-full rounded-md">
+          <button 
+          onClick={openFor}
+          className="mt-4 bg-blue-100 border border-blue-300 text-blue-500 hover:bg-slate-900 py-2 px-4 w-full rounded-md">
             + Add a point for
           </button>
 
@@ -356,7 +373,9 @@ export default function DebatePage({
         {/* Against Section */}
         <div className="">
           <h3 className="text-lg font-medium">Against (45)</h3>
-          <button className="mt-4 bg-red-100 border border-red-300 text-red-500 hover:bg-slate-900 py-2 px-4 rounded-md w-full">
+          <button 
+          onClick={openAgainst}
+          className="mt-4 bg-red-100 border border-red-300 text-red-500 hover:bg-slate-900 py-2 px-4 rounded-md w-full">
             + Add a point against
           </button>
 
@@ -576,6 +595,14 @@ export default function DebatePage({
           </div>
         </div>
       </div>
+      <For
+      isOpen={isForOpen}
+      onClose={closeFor}
+      />
+      <Against
+      isOpen={isAgainstOpen}
+      onClose={closeAgainst}
+      />
     </div>
   );
 }
