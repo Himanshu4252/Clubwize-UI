@@ -193,9 +193,9 @@ const anyday = [
       <div className={`${styles.lower_cnt} no-scrollbar `}>
 
 <div className={styles.box_cnt}>
-       {anydays.map((data)=>(
+       {anydays.map((data,index)=>(
  
- <div className={styles.text_box}>
+ <div className={styles.text_box} key={index}>
  <div className={styles.img_cnt}>
  <Image src={data.img} alt='img' width={40} height={40}/>
  </div>
@@ -241,9 +241,9 @@ const anyday = [
       <h1>Today</h1>
  
       <div className={styles.box_cnt}>
-       {today.map((data)=>(
+       {today.map((data,index)=>(
  
- <div className={styles.text_box}>
+ <div className={styles.text_box} key={index}>
  <div className={styles.img_cnt}>
    <Image src={data.img} alt='img' width={40} height={40}/> 
  </div>
@@ -279,9 +279,9 @@ const anyday = [
       <h1>Yastaday</h1>
  
       <div className={styles.box_cnt}>
-       {yestadays.map((data)=>(
+       {yestadays.map((data,index)=>(
  
- <div className={styles.text_box}>
+ <div className={styles.text_box} key={index}>
  <div className={styles.img_cnt}>
  <Image src={data.img} alt='img' width={40} height={40}/> 
  </div>
@@ -315,9 +315,9 @@ const anyday = [
  
       <h1>Before yestaday</h1>
       <div className={styles.box_cnt}>
-       {anydays.map((data)=>(
+       {anydays.map((data,index)=>(
  
- <div className={styles.text_box}>
+ <div className={styles.text_box} key={index}>
  <div className={styles.img_cnt}>
  <Image src={data.img} alt='img' width={40} height={40}/>
  </div>
