@@ -1,5 +1,6 @@
-import React from "react";
-import Image from "next/image";
+"use client"
+import React,{useState} from "react";
+import Image,{StaticImageData} from "next/image";
 import A1 from "../../../public/assets/debate/Avatar1.png";
 import A2 from "../../../public/assets/debate/Avatar2.png";
 import A3 from "../../../public/assets/debate/Avatar3.png";
@@ -13,43 +14,70 @@ import bp from "../../../public/assets/debate/icons/bp.png";
 import rp from "../../../public/assets/debate/icons/rp.png";
 import bs from "../../../public/assets/debate/icons/bs.png";
 import rs from "../../../public/assets/debate/icons/rs.png";
+import DebatePage from "./Debate_Page";
 
-const debates = [
+
+interface Debate {
+  title: string;
+  description: string;
+  tag:string;
+  tags:string;
+  for: number;
+  against: number;
+  fors: number;
+  status: string;
+  statusColor: string;
+  date: string;
+  end:string;
+  posterName: string;
+  posterImage: StaticImageData; 
+}
+
+const debates: Debate[] = [
   {
     title: "Climate Change Regulations",
     description: "Addressing the impact of human activity on th...",
+    tag:"Environmental & Climate",
+    tags:"Environmental",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "Jan 13, 2022",
-    posterName: "Marvin McKinney",
+    end:"March 25, 2023",
+    posterName: "Marvin",
     posterImage: A1,
   },
 
   {
     title: "Universal Basic Income (UBI)",
     description: "Addressing income inequality and automation...",
+    tag:"Economics and Basic Income",
+    tags:"Economics",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "November 7, 2017",
-    posterName: "Arlene McCoy",
+    end:"Jan 13, 2022",
+    posterName: "Arlene",
     posterImage: A2,
   },
 
   {
     title: "Legalization of Marijuana",
     description: "Exploring the social and economic impacts of c...",
+    tag:"Law & Implimentation",
+    tags:"Law",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ended",
     statusColor: "gray",
     date: "July 24, 2013",
+    end:"November 7, 2015",
     posterName: "Guy Hawkins",
     posterImage: A3,
   },
@@ -57,38 +85,47 @@ const debates = [
   {
     title: "Gun Control Measures",
     description: "Addressing gun violence and Second Amend...",
+    tag:"Law and Precaution",
+    tags:"Law",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "July 14, 2015",
-    posterName: "Devon Lane",
+    end:"November 7, 2015",
+    posterName: "Devon",
     posterImage: A4,
   },
 
   {
     title: "Mandatory Vaccination Policies",
     description: "Balancing public health conserns with persona...",
+    tag:"Politics & State",
+    tags:"politics",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ended",
     statusColor: "gray",
     date: "May 6, 2012",
-    posterName: "Savannah Nguyen",
+    end:"July 24, 2013",
+    posterName: "Savannah",
     posterImage: A5,
   },
 
   {
     title: "Internet Privacy Laws",
     description: "Addressing data production and online suveill...",
+    tag:"Law & Privacy",
+    tags:"Privacy",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ended",
     statusColor: "gray",
     date: "August 7, 2017",
+    end:"September 24, 2018",
     posterName: "Cody Fisher",
     posterImage: A6,
   },
@@ -96,44 +133,75 @@ const debates = [
   {
     title: "Electoral College Reform",
     description: "Examining the fairness and efficancy of the curr...",
+    tag:"Reforms & Teens",
+    tags:"Reforms",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
-    posterName: "Kristin Watson",
+    end:"May 14, 2015",
+    posterName: "Kristin",
     posterImage: A7,
   },
 
   {
     title: "Artificial Intelligence Ethics",
     description: "Discussing ethical implications of AI developm...",
+    tag:"Artificial Intelligence",
+    tags:"AI",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ended",
     statusColor: "gray",
     date: "OCtober 30, 2017",
-    posterName: "Cameron Williamson",
+    end:"November 10, 2019",
+    posterName: "Cameron",
     posterImage: A8,
   },
 
   {
     title: "Universal Healthcare",
     description: "Exploring healthcare accessibility and affordab...",
+    tag:"Health & Global",
+    tags:"Health",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
+    end:"April 16, 2016",
     posterName: "Floyd Miles",
     posterImage: A9,
   },
 ];
 
 function Ongoing() {
+  const [isDebatePageOpen, setIsDebatePageOpen] = useState(false);
+  const [selectedDebate, setSelectedDebate] = useState<Debate | null>(null);
+
+  const handleDebateClick = (debate: Debate) => { 
+    setSelectedDebate(debate);
+    setIsDebatePageOpen(true);
+  };
+
+  if (isDebatePageOpen && selectedDebate) {
+    return (
+      <DebatePage
+        title={selectedDebate.title}
+        description={selectedDebate.description}
+        tag={selectedDebate.tag}
+        tags={selectedDebate.tags}
+        date={selectedDebate.date}
+        end={selectedDebate.end}
+        posterName={selectedDebate.posterName}
+        posterImage={selectedDebate.posterImage}
+      />
+    );
+  }
   return (
     <>
       <div className="overflow-x-auto">
@@ -160,7 +228,9 @@ function Ongoing() {
           </thead>
           <tbody>
             {debates.map((debate, index) => (
-              <tr key={index} className="border-b">
+              <tr key={index} 
+              onClick={() => handleDebateClick(debate)}
+              className="border-b hover:bg-gray-100 cursor-pointer">
                 <td className=" text-sm">{index + 1}</td>
                 <td className="">
                   <p className="text-sm font-semibold">{debate.title}</p>
