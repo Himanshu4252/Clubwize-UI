@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Model_p.module.css'
 import pimg from '../Assets/Group 633852.svg'
+import Image from 'next/image';
 
 interface ChildComponentProps {
 
@@ -16,6 +17,7 @@ interface ChildComponentProps {
   const Model_p: React.FC<ChildComponentProps> = ({ closeModal2, setDat }) => {
   const [image, setImage] = useState<File | null>(null);
   const [preview, setPreview] = useState<string>('');
+  const [img1,setimg] = useState(pimg)
 
   const [image2, setImage2] = useState<File | null>(null);
   const [preview2, setPreview2] = useState<string>('');
@@ -72,7 +74,7 @@ interface ChildComponentProps {
             {/* First Image */}
             <div className={styles.pic_cnt_1}>
               <div className={styles.img_show}>
-                {preview ? <img src={preview} alt="Image Preview" className={styles.image} /> : <p>No Image</p>}
+                {preview ? <img src={preview} alt="Image Preview" className={styles.image} /> : <Image src={img1} alt="Image Preview" className={styles.image} width={80} height={80} />}
               </div>
               <div className={styles.fileld_cnt}>
                 <input type="file" accept="image/*" onChange={handleImageChange} className={styles.input} />
@@ -82,7 +84,7 @@ interface ChildComponentProps {
             {/* Second Image */}
             <div className={styles.pic_cnt_1}>
               <div className={styles.img_show}>
-                {preview2 ? <img src={preview2} alt="Image Preview" className={styles.image} /> : <p>No Image</p>}
+                {preview2 ? <img src={preview2} alt="Image Preview" className={styles.image} /> : <Image src={img1} alt="Image Preview" className={styles.image} width={80} height={80} />}
               </div>
               <div className={styles.fileld_cnt}>
                 <input type="file" accept="image/*" onChange={handleImageChange2} className={styles.input} />
