@@ -19,6 +19,8 @@ import DebatePage from "./Debate_Page";
 interface Debate {
   title: string;
   description: string;
+  tag:string;
+  tags:string;
   for: number;
   against: number;
   fors: number;
@@ -33,6 +35,8 @@ const debates: Debate[] = [
   {
     title: "Climate Change Regulations",
     description: "Addressing the impact of human activity on th...",
+    tag:"Environmental & Climate",
+    tags:"Environmental",
     for: 18,
     against: 18,
     fors: 167,
@@ -46,6 +50,8 @@ const debates: Debate[] = [
   {
     title: "Universal Basic Income (UBI)",
     description: "Addressing income inequality and automation...",
+    tag:"Economics and Basic Income",
+    tags:"Economics",
     for: 18,
     against: 18,
     fors: 167,
@@ -59,6 +65,8 @@ const debates: Debate[] = [
   {
     title: "Legalization of Marijuana",
     description: "Exploring the social and economic impacts of c...",
+    tag:"Law & Implimentation",
+    tags:"Law",
     for: 18,
     against: 18,
     fors: 167,
@@ -72,6 +80,8 @@ const debates: Debate[] = [
   {
     title: "Gun Control Measures",
     description: "Addressing gun violence and Second Amend...",
+    tag:"Law and Precaution",
+    tags:"Law",
     for: 18,
     against: 18,
     fors: 167,
@@ -85,6 +95,8 @@ const debates: Debate[] = [
   {
     title: "Mandatory Vaccination Policies",
     description: "Balancing public health conserns with persona...",
+    tag:"Politics & State",
+    tags:"politics",
     for: 18,
     against: 18,
     fors: 167,
@@ -98,6 +110,8 @@ const debates: Debate[] = [
   {
     title: "Internet Privacy Laws",
     description: "Addressing data production and online suveill...",
+    tag:"Law & Privacy",
+    tags:"Privacy",
     for: 18,
     against: 18,
     fors: 167,
@@ -111,6 +125,8 @@ const debates: Debate[] = [
   {
     title: "Electoral College Reform",
     description: "Examining the fairness and efficancy of the curr...",
+    tag:"Reforms & Teens",
+    tags:"Reforms",
     for: 18,
     against: 18,
     fors: 167,
@@ -124,6 +140,8 @@ const debates: Debate[] = [
   {
     title: "Artificial Intelligence Ethics",
     description: "Discussing ethical implications of AI developm...",
+    tag:"Artificial Intelligence",
+    tags:"AI",
     for: 18,
     against: 18,
     fors: 167,
@@ -137,6 +155,8 @@ const debates: Debate[] = [
   {
     title: "Universal Healthcare",
     description: "Exploring healthcare accessibility and affordab...",
+    tag:"Health & Global",
+    tags:"Health",
     for: 18,
     against: 18,
     fors: 167,
@@ -162,6 +182,8 @@ function All() {
       <DebatePage
         title={selectedDebate.title}
         description={selectedDebate.description}
+        tag={selectedDebate.tag}
+        tags={selectedDebate.tags}
         date={selectedDebate.date}
         posterName={selectedDebate.posterName}
         posterImage={selectedDebate.posterImage}
