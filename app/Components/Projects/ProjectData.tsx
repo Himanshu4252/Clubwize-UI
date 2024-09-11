@@ -22,7 +22,16 @@ export interface ProjectData {
 }
 
 export const ongoingProjects: ProjectData[] = [
-  
+    {
+        id: 0,
+        title: 'Blood Donation',
+        description: '-',
+        traction: '-',
+        postedBy: '-',
+        relevanceScore1: '-',
+        relevanceScore2: '-',
+        avatar: avatar1,
+      },
     {
         id: 1,
         title: 'Grow Together: Cultivating Community Gardens',

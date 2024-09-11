@@ -11,7 +11,7 @@ const CommentBox = () => {
         </div>
 
         {/* Name and Date */}
-        <div className="flex flex-col justify-start ml-4">
+        <div className="flex flex-col justify-start ml-4 ">
           {/* Name */}
           <div className="w-fit h-6 ">
             <p className="leading-none font-semibold">Cameron Williamson</p>
@@ -21,11 +21,11 @@ const CommentBox = () => {
           <div className="flex flex-row gap-2 w-fit h-fit items-center mt-1 ">
         
             <a href="#" className=" ">
-              <p className="leading-none text-base w-full text-gray-600"> <span className="text-green-500 font-medium">@Cameron Williamson</span> Loving your work and profile always be on top up.</p>
+              <p className="leading-none text-base w-full text-gray-600 sm:text-xs"> <span className="text-green-500 font-medium">@Cameron Williamson</span> Loving your work and profile always be on top up.</p>
             </a>
             <div className="inline-flex items-center gap-2  w-1/3">
             <div className=" w-1 h-1  bg-gray-400 rounded-full"></div>
-            <p className="leading-none text-base text-gray-500">1 days ago</p>
+            <p className="leading-none text-base text-gray-500 sm:text-xs">1 days ago</p>
             </div>
           </div>
         </div>

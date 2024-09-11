@@ -12,12 +12,15 @@ import relevanceIcon2 from '@/public/ProjectsImg/rel2.png';
 import moreIcon from '@/public/ProjectsImg/more.png';
 import upDownImg from '@/public/ProjectsImg/updown.png';
 import CreateProject from './CreateProject';
+import ProjectDetails from './ProjectDetails';
 import { ongoingProjects, allProjects, globalProjects, myProjects, ProjectData } from './ProjectData';
 
 const Project: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('Ongoing Projects (182)');
   const [projects, setProjects] = useState<ProjectData[]>([]);
+  const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+
 
   const handleCreateNewProject = () => setShowForm(true);
   const handleCancel = () => setShowForm(false);
@@ -27,10 +30,14 @@ const Project: React.FC = () => {
 
     const handleIconClick = () => setIsOpen(!isOpen);
 
-    const handleOptionClick = (option: string) => {
-      console.log(`${option} clicked`);
-      setIsOpen(false);
-    };
+    const handleOptionClick = (option: string, projectId?: number) => {
+        if (option === 'Select' && projectId !== undefined) {
+          setSelectedProjectId(projectId);
+        }
+        console.log(`${option} clicked`);
+        setIsOpen(false);
+      };
+      
    
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
@@ -61,7 +68,7 @@ const Project: React.FC = () => {
             className="absolute mt-1 z-50 right-0 w-[20vh] bg-white border border-gray-300 rounded-lg shadow-lg"
           >
             <ul className="">
-              <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Select')}>
+              <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Select', 0)}>
                 Select
               </li>
               <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Edit')}>
@@ -118,6 +125,8 @@ const Project: React.FC = () => {
       </div>
       {showForm ? (
         <CreateProject onCancel={handleCancel} />
+      )  : selectedProjectId !== null ? (
+        <ProjectDetails projectId={selectedProjectId} />
       ) : (
         <>
          <div className="flex space-x-4 mb-6 border-b-2 border-gray-300">

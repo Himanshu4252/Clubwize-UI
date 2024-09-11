@@ -259,7 +259,13 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
           />
          
         </div>
-      </div>
+        </div>
+        <div className="flex justify-center">
+  <button className="text-green-500 text-[0.7rem] hover:text-black">
+    +Add New
+  </button>
+</div>
+
     </form>
     <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md max-w-4xl mt-2 mx-auto">
       <p className="text-xs mb-6 text-gray-400">Celebrity champions</p>
@@ -281,16 +287,16 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
         </div>
         </form>
         <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md max-w-4xl mt-2 mx-auto">
-  <p className="text-xs mb-6 text-gray-400">Target and Tracking Parameters</p>
-  <div className="space-y-6">
+            <p className="text-xs mb-6 text-gray-400">Target and Tracking Parameters</p>
+            <div className="space-y-6">
     
-    <div className="grid grid-cols-3 gap-4 mb-6">
-      <div>
-        <label htmlFor="name1" className="block text-xs font-medium text-gray-700 mb-1">
+            <div className="grid grid-cols-3 gap-4 mb-6">
+            <div>
+         <label htmlFor="name1" className="block text-xs font-medium text-gray-700 mb-1">
           Name
           <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
-        </label>
-        <input
+         </label>
+            <input
           type="text"
           name="name1"
           id="name1"
@@ -384,6 +390,12 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
         </select>
       </div>
     </div>
+    <div className="flex justify-center">
+  <button className="text-green-500 text-[0.7rem] hover:text-black">
+    +Add New
+  </button>
+</div>
+
 </div></form>
 <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md max-w-4xl mt-2 mx-auto">
 <p className="text-xs mb-6 text-gray-400">Others</p>
@@ -480,6 +492,12 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
             className="w-full border border-gray-300 text-xs rounded-md mb-2 p-2 focus:ring focus:ring-blue-200"
             placeholder="Add an answer"
           />
+          <div className="flex justify-center">
+  <button className="text-green-500 text-[0.7rem] hover:text-black">
+    +Add New
+  </button>
+</div>
+
         </div>
         </form>
         <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md max-w-4xl mt-2 mx-auto">
@@ -516,7 +534,7 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
   </div>
 
   <div className="flex justify-end space-x-2">
-    <button type="button" className="px-8 py-1 text-xs bg-white text-red-500 rounded-md">Cancel</button>
+    <button type="button" className="px-8 py-1 text-xs bg-white text-red-500 rounded-md" onClick={onCancel}>Cancel</button>
     <button type="button" className="px-8 py-1 text-xs bg-white text-black border rounded-md">Save draft</button>
     <button type="submit" className="px-8 py-1 text-xs bg-[#22B573] text-white rounded-md">Publish</button>
   </div>
