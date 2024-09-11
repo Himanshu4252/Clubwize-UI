@@ -27,6 +27,7 @@ interface Debate {
   status: string;
   statusColor: string;
   date: string;
+  end:string;
   posterName: string;
   posterImage: StaticImageData; 
 }
@@ -43,6 +44,7 @@ const debates: Debate[] = [
     status: "Ongoing",
     statusColor: "green",
     date: "Jan 13, 2022",
+    end:"March 25, 2023",
     posterName: "Marvin",
     posterImage: A1,
   },
@@ -58,6 +60,7 @@ const debates: Debate[] = [
     status: "Ongoing",
     statusColor: "green",
     date: "November 7, 2017",
+    end:"Jan 13, 2022",
     posterName: "Arlene",
     posterImage: A2,
   },
@@ -73,6 +76,7 @@ const debates: Debate[] = [
     status: "Ended",
     statusColor: "gray",
     date: "July 24, 2013",
+    end:"November 7, 2015",
     posterName: "Guy Hawkins",
     posterImage: A3,
   },
@@ -88,6 +92,7 @@ const debates: Debate[] = [
     status: "Ongoing",
     statusColor: "green",
     date: "July 14, 2015",
+    end:"November 7, 2015",
     posterName: "Devon",
     posterImage: A4,
   },
@@ -103,6 +108,7 @@ const debates: Debate[] = [
     status: "Ended",
     statusColor: "gray",
     date: "May 6, 2012",
+    end:"July 24, 2013",
     posterName: "Savannah",
     posterImage: A5,
   },
@@ -118,6 +124,7 @@ const debates: Debate[] = [
     status: "Ended",
     statusColor: "gray",
     date: "August 7, 2017",
+    end:"September 24, 2018",
     posterName: "Cody Fisher",
     posterImage: A6,
   },
@@ -133,6 +140,7 @@ const debates: Debate[] = [
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
+    end:"May 14, 2015",
     posterName: "Kristin",
     posterImage: A7,
   },
@@ -148,6 +156,7 @@ const debates: Debate[] = [
     status: "Ended",
     statusColor: "gray",
     date: "OCtober 30, 2017",
+    end:"November 10, 2019",
     posterName: "Cameron",
     posterImage: A8,
   },
@@ -163,6 +172,7 @@ const debates: Debate[] = [
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
+    end:"April 16, 2016",
     posterName: "Floyd Miles",
     posterImage: A9,
   },
@@ -185,6 +195,7 @@ function All() {
         tag={selectedDebate.tag}
         tags={selectedDebate.tags}
         date={selectedDebate.date}
+        end={selectedDebate.end}
         posterName={selectedDebate.posterName}
         posterImage={selectedDebate.posterImage}
       />
@@ -220,7 +231,7 @@ function All() {
             {debates.map((debate, index) => (
               <tr key={index}
               onClick={() => handleDebateClick(debate)}
-              className="border-b">
+              className="border-b hover:bg-gray-100 cursor-pointer">
                 <td className=" text-sm">{index + 1}</td>
                 <td className="">
                   <p className="text-sm font-semibold">{debate.title}</p>
