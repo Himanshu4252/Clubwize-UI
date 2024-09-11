@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import bp from "../../../public/assets/debate/icons/bp.png";
 import rp from "../../../public/assets/debate/icons/rp.png";
 import bs from "../../../public/assets/debate/icons/bs.png";
 import rs from "../../../public/assets/debate/icons/rs.png";
+import Joined from "./Joined";
 
 const debates = [
   {
@@ -15,9 +17,7 @@ const debates = [
     status: "Ongoing",
     statusColor: "green",
     date: "Jan 13, 2022",
-
   },
-
   {
     title: "Universal Basic Income (UBI)",
     description: "Addressing income inequality and automation...",
@@ -27,9 +27,7 @@ const debates = [
     status: "Ongoing",
     statusColor: "green",
     date: "November 7, 2017",
-
   },
-
   {
     title: "Legalization of Marijuana",
     description: "Exploring the social and economic impacts of c...",
@@ -39,9 +37,7 @@ const debates = [
     status: "Draft",
     statusColor: "orange",
     date: "July 24, 2013",
-
   },
-
   {
     title: "Gun Control Measures",
     description: "Addressing gun violence and Second Amend...",
@@ -51,21 +47,17 @@ const debates = [
     status: "Draft",
     statusColor: "orange",
     date: "July 14, 2015",
-
   },
-
   {
     title: "Mandatory Vaccination Policies",
-    description: "Balancing public health conserns with persona...",
+    description: "Balancing public health concerns with persona...",
     for: 18,
     against: 18,
     fors: 167,
     status: "Draft",
     statusColor: "orange",
     date: "May 6, 2012",
-
   },
-
   {
     title: "Internet Privacy Laws",
     description: "Addressing data production and online suveill...",
@@ -75,21 +67,17 @@ const debates = [
     status: "Ongoing",
     statusColor: "green",
     date: "August 7, 2017",
-
   },
-
   {
     title: "Electoral College Reform",
-    description: "Examining the fairness and efficancy of the curr...",
+    description: "Examining the fairness and efficiency of the curr...",
     for: 18,
     against: 18,
     fors: 167,
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
-
   },
-
   {
     title: "Artificial Intelligence Ethics",
     description: "Discussing ethical implications of AI developm...",
@@ -98,10 +86,8 @@ const debates = [
     fors: 167,
     status: "Draft",
     statusColor: "orange",
-    date: "OCtober 30, 2017",
-
+    date: "October 30, 2017",
   },
-
   {
     title: "Universal Healthcare",
     description: "Exploring healthcare accessibility and affordab...",
@@ -111,18 +97,60 @@ const debates = [
     status: "Ongoing",
     statusColor: "green",
     date: "March 13, 2014",
-
   },
 ];
 
 function My() {
+  const [activeTab, setActiveTab] = useState("MyD");
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "MyD":
+        return <MyD />;
+      case "Joined":
+        return <Joined />;
+      default:
+        return null;
+    }
+  };
 
   return (
-      <>
+    <>
+      <div className="space-x-5">
+        <button
+          onClick={() => setActiveTab("MyD")}
+          className={`text-sm ${
+            activeTab === "MyD"
+              ? "text-green-600 border-b-2 border-green-600"
+              : "text-gray-500"
+          }`}
+        >
+          My Debates
+        </button>
+
+        <button
+          onClick={() => setActiveTab("Joined")}
+          className={`text-sm ${
+            activeTab === "Joined"
+              ? "text-green-600 border-b-2 border-green-600"
+              : "text-gray-500"
+          }`}
+        >
+          Joined Debates
+        </button>
+        <div className="mt-4">{renderContent()}</div>
+      </div>
+    </>
+  );
+}
+
+function MyD() {
+  return (
+    <>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white">
           <thead>
-          <tr>
+            <tr>
               <th className="text-left text-gray-400 font-normal">No.</th>
               <th className="text-left px-4 text-gray-400 font-normal">
                 Debates
@@ -134,9 +162,7 @@ function My() {
               <th className="text-left px-4 text-gray-400 font-normal">
                 Status
               </th>
-              <th className="text-left  text-gray-400 font-normal">
-                Posted Date
-              </th>
+              <th className="text-left text-gray-400 font-normal">Posted Date</th>
             </tr>
           </thead>
           <tbody>
@@ -145,26 +171,34 @@ function My() {
                 <td className="p-4 text-sm">{index + 1}</td>
                 <td className="p-4">
                   <p className="text-sm font-semibold">{debate.title}</p>
-                  <p className="text-gray-600 text-xs ">{debate.description}</p>
+                  <p className="text-gray-600 text-xs">{debate.description}</p>
                 </td>
                 <td className="space-y-5 pl-2 pt-5">
                   <div className="flex gap-1">
-                    <Image src={bp} alt="bp" width={15}/>
-                    <p className="text-xs text-gray-400 font-medium">{debate.for} </p>
+                    <Image src={bp} alt="bp" width={15} />
+                    <p className="text-xs text-gray-400 font-medium">
+                      {debate.for}
+                    </p>
                   </div>
                   <div className="flex gap-1 mt-0 ">
-                    <Image src={bs} alt="bs" width={15}/>
-                    <p className="text-xs text-gray-400 font-medium">{debate.fors}</p>
+                    <Image src={bs} alt="bs" width={15} />
+                    <p className="text-xs text-gray-400 font-medium">
+                      {debate.fors}
+                    </p>
                   </div>
                 </td>
                 <td className="space-y-5 pt-5 pl-5">
                   <div className="flex gap-1">
-                    <Image src={rp} alt="rp" width={15}/>
-                    <p className="text-xs text-gray-400 font-medium">{debate.for} </p>
+                    <Image src={rp} alt="rp" width={15} />
+                    <p className="text-xs text-gray-400 font-medium">
+                      {debate.against}
+                    </p>
                   </div>
                   <div className="flex gap-1 mt-0">
                     <Image src={rs} alt="rs" width={15} />
-                    <p className="text-xs text-gray-400 font-medium">{debate.fors}</p>
+                    <p className="text-xs text-gray-400 font-medium">
+                      {debate.fors}
+                    </p>
                   </div>
                 </td>
                 <td className="p-4 text-xs">
@@ -181,7 +215,6 @@ function My() {
         </table>
       </div>
     </>
-
   );
 }
 

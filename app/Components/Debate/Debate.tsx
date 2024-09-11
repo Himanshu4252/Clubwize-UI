@@ -11,7 +11,7 @@ import filter from "../../../public/assets/debate/icons/filter.png"
 import sort from "../../../public/assets/debate/icons/sort.png"
 
 function Debate() {
-  const [activeTab, setActiveTab] = useState("ongoing");
+  const [activeTab, setActiveTab] = useState("all");
 
   const renderContent = () => {
     switch (activeTab) {
