@@ -1,0 +1,33 @@
+.model_cnt_1{
+
+    height: max-content;
+    width: 60%;
+    margin-top: 70px;
+    
+    background-color: white;
+}
+
+.cnt{
+
+    width: 100%;
+    height:max-content;
+    
+}
+
+.footer{
+
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid gray;
+    margin-top: 10px;
+    padding-top:20px;
+    background-color: white;
+}
+
+.footer span {
+
+    color: rgb(29, 207, 29);
+    font-weight: bold;
+}

@@ -1,0 +1,23 @@
+.img_cnt{
+
+    width: 100%;
+    height: max-content;
+   
+    padding: 5px 10px;
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    justify-content: space-between;
+    overflow-x: scroll;
+
+}
+
+.model_cnt{
+
+    width: 100%;
+    height: max-content;
+    background-color: rgba(11, 11, 11, 0.388);
+    position: absolute;
+}
