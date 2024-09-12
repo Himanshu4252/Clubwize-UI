@@ -1,0 +1,68 @@
+.cardWrapper{
+    width: 400px;
+    height: 270px;
+    border-radius: 20px;
+    border-top: 4px solid #22B573;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.cardupper{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    justify-content: space-around;
+}
+.cardTitleText{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cardTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.CardHeadline{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cardDesParent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    color: rgb(37, 37, 37);
+}
+
+.cardDescription{
+    font-size: 15px;
+    color: #6C757D;
+}
+
+.bottomDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bottomBtn{
+    border: 1px solid orangered;
+    color: orangered;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 4px;
+}
