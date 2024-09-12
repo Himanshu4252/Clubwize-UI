@@ -17,6 +17,20 @@ interface FormValues {
   files: File | null;
 }
 
+const ToggleSwitch: React.FC<{ checked: boolean, onChange: () => void }> = ({ checked, onChange }) => {
+    return (
+      <label className="relative inline-flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          className="sr-only peer"
+          checked={checked}
+          onChange={onChange}
+        />
+        <div className="w-7 h-3.5 bg-gray-200 rounded-full peer peer-focus:ring-2 peer-focus:ring-[#22B573] peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[1px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-[#22B573]"></div>
+      </label>
+    );
+  };
+
 const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
   const [formValues, setFormValues] = useState<FormValues>({
     title: '',
@@ -53,16 +67,18 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
-
+  const [isPublic, setIsPublic] = useState(false);
+  const [canBeAdopted, setCanBeAdopted] = useState(false);
   return (
+    
     <div className="gap-1">
-        <div className="text-xs"><span className="underline">Project</span> &gt; Create new Project</div>
+        <div className="text-xs mb-2"><span className="underline text-gray-800">Project</span> &gt; Create new Project</div>
     <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md max-w-4xl mx-auto">
       <h2 className="text-lg font-semibold mb-6">create new project</h2>
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div>
           <label htmlFor="title" className="block text-xs font-medium text-gray-700 mb-1">
-            project title <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
+            Project Title <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
           </label>
           <input
             type="text"
@@ -71,13 +87,13 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
             value={formValues.title}
             onChange={handleInputChange}
             className="w-full border border-gray-300 text-xs rounded-md p-2 focus:ring focus:ring-blue-200"
-            placeholder="enter title"
+            placeholder="Enter title"
           />
         </div>
 
         <div>
           <label htmlFor="region" className="block text-xs font-medium text-gray-700 mb-1">
-            project region <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
+            Project Region <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
           </label>
           <select
             name="region"
@@ -94,7 +110,7 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
 
         <div>
           <label htmlFor="budget" className="block text-xs font-medium text-gray-700 mb-1">
-            project budget <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
+            Project budget <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
 
           </label>
           <input
@@ -104,13 +120,13 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
             value={formValues.budget}
             onChange={handleInputChange}
             className="w-full border border-gray-300 text-xs rounded-md p-2 focus:ring focus:ring-blue-200"
-            placeholder="enter budget"
+            placeholder="Enter budget"
           />
         </div>
 
         <div>
           <label htmlFor="deadline" className="block text-xs font-medium text-gray-700 mb-1">
-            deadline if any <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
+            Deadline if any <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
           </label>
           <input
             type="date"
@@ -126,7 +142,7 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div className="col-span-2">
           <label htmlFor="significance" className="block text-xs font-medium text-gray-700 mb-1">
-            significance <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
+            Significance <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
           </label>
           <textarea
             name="significance"
@@ -134,13 +150,13 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
             value={formValues.significance}
             onChange={handleInputChange}
             className="w-full border border-gray-300 text-xs rounded-md p-2 focus:ring focus:ring-blue-200"
-            placeholder="significance"
+            placeholder="Significance"
           />
         </div>
 
         <div>
           <label htmlFor="relatedEvent" className="block text-xs font-medium text-gray-700 mb-1">
-            related event <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
+            Related event <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
           </label>
           <input
             type="text"
@@ -164,14 +180,14 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
             value={formValues.closingRemark}
             onChange={handleInputChange}
             className="w-full border border-gray-300 text-xs rounded-md p-2 focus:ring focus:ring-blue-200"
-            placeholder="enter closing remark"
+            placeholder="Enter closing remark"
           />
         </div>
       </div>
 
       <div className="mb-6">
         <label htmlFor="solutionDetails" className="block text-xs font-medium text-gray-700 mb-1">
-          project solution in details
+          Project solution in details
         </label>
         <textarea
           name="solutionDetails"
@@ -185,7 +201,7 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
 
       <div className="mb-6">
         <label className="block text-xs font-medium text-gray-700 mb-1">
-          files/media <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
+          Files/media <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
         </label>
         <div className="w-full border border-dashed border-gray-300 rounded-md p-4 text-center bg-gray-100">
           <input type="file" name="files" id="files" onChange={handleFileChange} className="hidden" />
@@ -501,44 +517,39 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
         </div>
         </form>
         <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md max-w-4xl mt-2 mx-auto">
-  <div className="mb-6">
-    <label className="block text-xs font-medium text-gray-700 mb-1">
-      Files/media <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
-    </label>
-    <div className="w-full border border-dashed border-gray-300 rounded-md p-4 text-center bg-gray-100">
-      <input type="file" name="files" id="files" onChange={handleFileChange} className="hidden" />
-      <label htmlFor="files" className="cursor-pointer text-xs">
-        + Drag or upload a file
-      </label>
-    </div>
-  </div>
+      <div className="mb-6">
+        <label className="block text-xs font-medium text-gray-700 mb-1">
+          Files/media <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
+        </label>
+        <div className="w-full border border-dashed border-gray-300 rounded-md p-4 text-center bg-gray-100">
+          <input type="file" name="files" id="files" onChange={handleFileChange} className="hidden" />
+          <label htmlFor="files" className="cursor-pointer text-xs">
+            + Drag or upload a file
+          </label>
+        </div>
+      </div>
 
-  <div className="mb-6">
-    <label className="block text-xs font-medium text-gray-700 mb-1">
-      Make this Project public
-    </label>
-    <div className="flex items-center">
-      <input type="checkbox" id="public" name="public" className="toggle-checkbox" />
-      <label htmlFor="public" className="ml-2 text-xs">yes/no</label>
-    </div>
-  </div>
+      <div className="mb-6 flex items-center space-x-2">
+        <label htmlFor="public" className="block text-xs font-medium text-gray-700 flex-1">
+          Make this Project public
+        </label>
+        <ToggleSwitch checked={isPublic} onChange={() => setIsPublic(!isPublic)} />
+      </div>
 
-  <div className="mb-6">
-    <label className="block text-xs font-medium text-gray-700 mb-1">
-      Whether Initiative can be adopted outside the region?
-    </label>
-    <div className="flex items-center">
-      <input type="checkbox" id="adopt" name="adopt" className="toggle-checkbox" />
-      <label htmlFor="adopt" className="ml-2 text-xs">yes/no</label>
-    </div>
-  </div>
+      <div className="mb-6 flex items-center space-x-2">
+        <label htmlFor="adopt" className="block text-xs font-medium text-gray-700 flex-1">
+          Whether Initiative can be adopted outside the region?
+        </label>
+        <ToggleSwitch checked={canBeAdopted} onChange={() => setCanBeAdopted(!canBeAdopted)} />
+      </div>
 
-  <div className="flex justify-end space-x-2">
-    <button type="button" className="px-8 py-1 text-xs bg-white text-red-500 rounded-md" onClick={onCancel}>Cancel</button>
-    <button type="button" className="px-8 py-1 text-xs bg-white text-black border rounded-md">Save draft</button>
-    <button type="submit" className="px-8 py-1 text-xs bg-[#22B573] text-white rounded-md">Publish</button>
-  </div>
-</form>
+      <div className="flex justify-end space-x-2">
+        <button type="button" className="px-8 py-1 text-xs bg-white text-red-500 rounded-md" onClick={onCancel}>Cancel</button>
+        <button type="button" className="px-8 py-1 text-xs bg-white text-black border rounded-md">Save draft</button>
+        <button type="submit" className="px-8 py-1 text-xs bg-[#22B573] text-white rounded-md">Publish</button>
+      </div>
+    </form>
+
 
     </div>
   );

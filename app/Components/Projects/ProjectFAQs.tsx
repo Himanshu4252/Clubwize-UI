@@ -39,7 +39,7 @@ function AccordionItem({ question, answer, isOpen, onClick }: { question: string
                 onClick={onClick}
             >
                 <span className="font-medium">{question}</span>
-                <span className="text-lg">{isOpen ? '-' : '+'}</span>
+                <span className="text-lg font-bold">{isOpen ? '-' : '+'}</span>
             </div>
             {isOpen && <p className="text-gray-400 mb-4 text-xs">{answer}</p>}
         </div>
@@ -102,8 +102,10 @@ function ProjectFAQs() {
                 onClick={() => handleAccordionClick(6)}
             />
             <div className="mt-4 flex justify-center">
-                <button onClick={openModal} className="border border-gray-300 text-green-500 py-1 px-3 rounded-md flex items-center text-xs">
-                    <span className="mr-1 text-base">?</span>
+                <button onClick={openModal} className="border border-gray-300 text-[#22B573] py-1 px-3 rounded-md flex items-center text-sm">
+                <span className="flex items-center justify-center w-4 h-4 bg-[#22B573] text-white rounded-full text-xs mr-1">
+      ?
+    </span>
                     Ask a question
                 </button>
             </div>
