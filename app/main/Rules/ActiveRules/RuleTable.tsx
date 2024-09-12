@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, ChangeEvent, FormEvent  } from 'react';
-import upDownImg from '@/public/ProjectsImg/updown.png';
 import Image, {StaticImageData} from 'next/image';
 import { Lock, prof1 } from '@/app/Components/searchPanel/photos';
 import { Cross } from '@/app/Components/searchPanel/photos';
@@ -125,12 +124,16 @@ const RuleTable: React.FC = () => {
             <th className={style.tableHeadCell} style={{ width: '5%' }}>No.</th>
             <th className={style.tableHeadCell} style={{ width: '25%', display:"flex", alignItems:"center", textWrap:"nowrap" }}>
               Rule Title
-              <Image src={upDownImg} width={7} height={7} className="ml-2" alt="rulesImage" />
+              <svg width="7" height="10" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.219668 4.32265C-0.0732226 4.6047 -0.0732226 5.06198 0.219668 5.34403C0.512566 5.62605 0.987437 5.62605 1.28033 5.34403L4.50001 2.2436L7.71969 5.34403C8.01257 5.62605 8.48747 5.62605 8.78034 5.34403C9.07322 5.06198 9.07322 4.6047 8.78034 4.32265L5.03034 0.711532C4.88971 0.576093 4.69891 0.5 4.50001 0.5C4.30111 0.5 4.11031 0.576093 3.96968 0.711532L0.219668 4.32265ZM8.78034 9.67736C9.07322 9.39533 9.07322 8.93802 8.78034 8.65599C8.48747 8.37397 8.01257 8.37397 7.71969 8.65599L4.50001 11.7564L1.28033 8.65599C0.987437 8.37397 0.512566 8.37397 0.219668 8.65599C-0.0732226 8.93802 -0.0732226 9.39533 0.219668 9.67736L3.96968 13.2885C4.26256 13.5705 4.73746 13.5705 5.03034 13.2885L8.78034 9.67736Z" fill="#6C757D"/>
+  </svg>
             </th>
             <th className={style.tableHeadCell} style={{ width: '50%' }}>Description</th>
             <th className={style.tableHeadCell} style={{ display:"flex", alignItems:"center", textWrap:"nowrap"  }}>
               Posted Date
-              <Image src={upDownImg} width={7} height={7} className="ml-2" alt="rulesImage" />
+              <svg width="7" height="10" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.219668 4.32265C-0.0732226 4.6047 -0.0732226 5.06198 0.219668 5.34403C0.512566 5.62605 0.987437 5.62605 1.28033 5.34403L4.50001 2.2436L7.71969 5.34403C8.01257 5.62605 8.48747 5.62605 8.78034 5.34403C9.07322 5.06198 9.07322 4.6047 8.78034 4.32265L5.03034 0.711532C4.88971 0.576093 4.69891 0.5 4.50001 0.5C4.30111 0.5 4.11031 0.576093 3.96968 0.711532L0.219668 4.32265ZM8.78034 9.67736C9.07322 9.39533 9.07322 8.93802 8.78034 8.65599C8.48747 8.37397 8.01257 8.37397 7.71969 8.65599L4.50001 11.7564L1.28033 8.65599C0.987437 8.37397 0.512566 8.37397 0.219668 8.65599C-0.0732226 8.93802 -0.0732226 9.39533 0.219668 9.67736L3.96968 13.2885C4.26256 13.5705 4.73746 13.5705 5.03034 13.2885L8.78034 9.67736Z" fill="#6C757D"/>
+  </svg>
             </th>
           </tr>
         </thead>
