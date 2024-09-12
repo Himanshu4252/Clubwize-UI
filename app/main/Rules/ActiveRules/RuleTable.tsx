@@ -230,15 +230,20 @@ const RuleTable: React.FC = () => {
           </div>
 
           <div className={style.inputFile}>
-            <label className={style.label}>Proof</label>
+            <label className={style.label} htmlFor='proof'>Proof</label>
+            <div className={style.inputFileParent}>
             <input
+              id='proof'
               type="file"
+              name="proof"
               onChange={handleFileChange}
               accept="application/pdf, image/*"
               required
+              multiple
               className={style.inputFileField}
-              placeholder='+ Upload file'
             />
+            <span className={style.customInputField}>+ Upload Document</span>
+            </div>
           </div>
 
           <div className={style.buttonGroup}>
