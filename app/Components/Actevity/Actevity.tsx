@@ -142,7 +142,7 @@ function Actevity() {
       <div className={styles.upper_cnt}>
               <div className={styles.text_cnt}>
                 <h1>Activity feed</h1>
-                 <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, tempore?</h2>
+                 <h2>Lorem ipsum dolor sit amet . Beatae, tempore?</h2>
               </div>
               <div className={styles.cln_box}>
                  

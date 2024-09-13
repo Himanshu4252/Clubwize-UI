@@ -30,7 +30,7 @@ const Nodes = () => {
       .sort((a, b) => a.name.localeCompare(b.name)); // Sort alphabetically by name
 
     setFilteredNodes(searchResult); // Update the filtered state
-  }, [searchQuery]);
+  }, [searchQuery,nodes]);
 
 
 
@@ -51,14 +51,15 @@ const Nodes = () => {
       </div>
       
       <div className={styles.nodeGrid}>
-        {filteredNodes.map(node => (
-          <div key={node.id} className={styles.nodeCard}>
-            <Image src={node.img} alt={node.name} className={styles.nodeImage} width={50} height={50} />
-            <h3>{node.name}</h3>
-            <p className={styles.members}>{node.members}</p>
-            <p className={styles.location}> <Image src={locations} alt={node.name} />  {node.location}</p>
-          </div>
-        ))}
+      {filteredNodes.map((node, index) => (
+  <div key={node.id} className={styles.nodeCard}>
+    <Image src={node.img} alt={node.name} className={styles.nodeImage} width={50} height={50} />
+    <h3>{node.name}</h3>
+    <p className={styles.members}>{node.members}</p>
+    <p className={styles.location}><Image src={locations} alt={node.name} /> {node.location}</p>
+  </div>
+))}
+
       </div>
     </div>
     </div>

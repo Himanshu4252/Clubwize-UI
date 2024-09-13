@@ -12,10 +12,10 @@ function Model2() {
 
   return (
     <div className={styles.cnt_2}>
-     {arr.map((data)=>{
+     {arr.map((data,index)=>{
           
           return(
-            <div className={styles.box}>
+            <div className={styles.box} key={data}>
             <div className='flex p-1'>
                 <Image src={img} alt='raghu' />
                 <p style={{color:'black',fontSize:'14px',marginLeft:'5px'}}>Lorem, ipsum dolor career?.</p>
