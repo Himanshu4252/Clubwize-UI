@@ -1,4 +1,3 @@
-'use client'
 import React, { useState } from 'react'
 import styles from './Profile.module.css'
 import Image from 'next/image'
@@ -20,11 +19,13 @@ import group8 from './Assets/Group (1).png'
 import group9 from './Assets/Group 633674.png'
 
 
+interface ChildComponentProps {
+    compchange: (ind: number) => void;
+}
 
 
 
-
-function  Profile(){
+const  Profile :  React.FC<ChildComponentProps> = ({ compchange }) => {
 
     const menuItemsData = [
         { menuName: "News Feed", img: group1 },
@@ -42,7 +43,7 @@ function  Profile(){
 
       const handleClick = (index:number) => {
         setActiveIndex(index); // Set the active menu item by index
-     
+        compchange(index)
       };
 
 

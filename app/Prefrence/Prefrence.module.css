@@ -1,0 +1,174 @@
+
+.privecy_cnt{
+    width: 650px;
+    border-radius: 8px;
+    border-radius: 8px;
+    height: max-content;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 9px 9px;
+    box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
+}
+
+.privecy_cnt_2{
+
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 8px;
+    overflow: hidden;
+
+
+
+}
+
+.upper_cnt{
+
+    width: 100%;
+    height: 16%;
+   
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+    padding: 10px 10px;
+    background-color: #F8F9FA;
+    border-bottom: 1px solid gray;
+}
+
+.Lower_cnt{
+
+    width: 100%;
+    height: 88%;
+    
+  
+}
+
+.insider_cnt{
+
+    width: 100%;
+    height: 40px;
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+    padding: 0px 10px;
+    position: relative;
+    
+    
+}
+
+.Boder_cnt{
+
+    width: 100%;
+    height: 2px;
+    
+    padding: 1px 10px;
+
+}
+.boder{
+
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+}
+
+.btn_cnt{
+
+    width: 45px;
+    height: 30px;
+   
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    margin-left: 87%;
+}
+
+.btn_cnt_2{
+
+    width: max-content;
+    height: 30px;
+   
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    margin-left: 75%;
+    
+
+}
+
+
+.select_cnt{
+
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+    padding: 2px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* components/SliderButton.module.css */
+
+/* components/SliderButton.module.css */
+
+.sliderContainer {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .sliderCheckbox {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: grey;
+    border-radius: 20px;
+    transition: 0.4s;
+  }
+  
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+  
+  .slider.on {
+    background-color: green;
+  }
+  
+  .slider.on::before {
+    transform: translateX(20px);
+  }
+  
+  .slider.off {
+    background-color: grey;
+  }
+  
+  .slider.off::before {
+    transform: translateX(0px);
+  }
