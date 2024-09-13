@@ -1,8 +1,12 @@
+
+import GroupChat from '@/app/Other/GroupChat/page'
 import React from 'react'
 
 const ChatPage = () => {
   return (
-    <div>ChatPage</div>
+    <div>
+      <GroupChat />
+    </div>
   )
 }
 

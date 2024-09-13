@@ -3,7 +3,7 @@ import React from 'react'
 
 const FeedPage = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-4">
         <PostCard />
         <PostCard />
         <PostCard />

@@ -18,6 +18,10 @@ const PageNavigation = () => {
     projects: "/main/Projects",
     dashboard: "/Other/Dashboard",
     privacy : "/Other/Dashboard/privacy-policy",
+    feedChapter: "/main/ChapterFeed/Feed",
+    chatChapter: "/main/ChapterFeed/Chat",
+    memberChapter: "/main/ChapterFeed/Member",
+
 
   };
 

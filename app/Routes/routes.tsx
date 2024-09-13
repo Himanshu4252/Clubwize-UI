@@ -12,6 +12,10 @@ const routes = {
     archived: "/Other/Dashboard/a/Archived",
     privacyPolicy: "/Other/Dashboard/privacy-policy",
     membersFeed: "/main/Members",
+    feedChapter: "/main/ChapterFeed/Feed",
+    chatChapter: "/main/ChapterFeed/Chat",
+    memberChapter: "/main/ChapterFeed/Member",
+
   };
 
 export { routes };
