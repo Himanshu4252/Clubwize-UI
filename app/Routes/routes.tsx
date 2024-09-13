@@ -6,6 +6,12 @@ const routes = {
     pictures:"/onboarding/pictures",
     details: "/onboarding/details",
     interest: "/onboarding/interest",
+    projects: "/main/projects",
+    dashboard: "/Other/Dashboard",
+    contributions: "/Other/Dashboard/a/Contributions",
+    archived: "/Other/Dashboard/a/Archived",
+    privacyPolicy: "/Other/Dashboard/privacy-policy",
+    membersFeed: "/main/Members",
   };
 
 export { routes };
