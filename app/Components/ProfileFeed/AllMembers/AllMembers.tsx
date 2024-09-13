@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from "react";
 import PaginationBar from "../PaginationBar/PaginationBar";
+import { routes } from "@/app/Routes/routes";
+import { useRouter } from "next/navigation";
 
 interface Props {
   onSeeAll: () => void;
@@ -61,6 +63,7 @@ const AllMembers = ({ onSeeAll }: Props) => {
   const [sortOpen, setSortOpen] = useState(false)
   const [filterOpen, setFilterOpen] = useState(false)
 
+
   const handleFilterClick = () => {
     setFilterOpen(!filterOpen);
   };
@@ -82,8 +85,15 @@ const AllMembers = ({ onSeeAll }: Props) => {
     "Moderator",
     "Member"
   ]
+
+
+
+
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-md">
+
+ 
+
       <div className="inline-flex  w-full justify-between p-6  border-b-2 border-b-gray-300">
         <p className="text-2xl font-medium " >
           All Members
