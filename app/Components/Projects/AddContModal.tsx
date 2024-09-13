@@ -9,7 +9,7 @@ const AddContModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-20">
-            <div className="bg-white rounded-lg shadow-lg  w-[55vh]">
+            <div className="bg-white rounded-md shadow-lg  w-[50vh]">
                 <div className="flex justify-between items-center mb-4 p-1 pl-3 border-b">
                     <h2 className="text-md font-semibold ">Add Contribution</h2>
                     <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
@@ -17,7 +17,7 @@ const AddContModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     </button>
                 </div>
                 <div className=" p-3">
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-2">
                         Volunteers <span className="inline-flex text-[0.5rem] items-center justify-center w-3 h-3 border border-black rounded-full text-black">i</span>
                     </label>
                     <input
@@ -31,12 +31,12 @@ const AddContModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         <div>
                     <span className="text-[#22B573] text-xs">128</span>  <span className="text-[0.5rem] align-baseline">/1000</span>
                     </div>
-                    <div className="w-[28vh] bg-gray-200 rounded-full h-1">
-                        <div className="bg-[#22B573] h-1 w-[12vh] rounded-full" ></div>
+                    <div className="w-[26vh] bg-gray-200 rounded-full h-1">
+                        <div className="bg-[#22B573] h-1 w-[10vh] rounded-full" ></div>
                     </div>
                     <div className="flex items-center space-x-1 p-1">
-                    <span className="text-[#22B573] text-xs">+11.01%</span>
-                    <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <span className="text-[#22B573] text-[0.5rem]">+11.01%</span>
+                    <svg width="11" height="7" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.28825 2.10777L12.8334 0.5L11.4532 6.1061L9.73141 4.4532L6.95407 7.34627C6.85978 7.44448 6.72952 7.5 6.59337 7.5C6.45723 7.5 6.32697 7.44448 6.23268 7.34627L4.19337 5.22199L1.19407 8.34627C1.00283 8.54547 0.686314 8.55193 0.487109 8.36069C0.287903 8.16946 0.281444 7.85294 0.472681 7.65373L3.83268 4.15373C3.92697 4.05552 4.05723 4 4.19337 4C4.32952 4 4.45978 4.05552 4.55407 4.15373L6.59337 6.27801L9.01002 3.76067L7.28825 2.10777Z" fill="#22B573"/>
 </svg>
 

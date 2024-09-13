@@ -1,0 +1,33 @@
+.cnt_2{
+
+    width: 100%;
+    height: 220px;
+    
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.box{
+
+    width: 269px;
+    height: 60px;
+   
+}
+.footer{
+
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid gray;
+    margin-top: 10px;
+    padding-top:20px;
+}
+
+.footer span {
+
+    color: rgb(29, 207, 29);
+    font-weight: bold;
+}

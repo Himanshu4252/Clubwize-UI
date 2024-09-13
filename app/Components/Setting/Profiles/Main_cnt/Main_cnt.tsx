@@ -70,6 +70,7 @@ function Main_cnt() {
      if (img1) {
       setPImg(img1); 
      }// Update profile image correctly
+    
     console.log(firstName);
     setFname(firstName)
     console.log(lastName);
@@ -134,7 +135,7 @@ function Main_cnt() {
     <div className={styles.profile_cnt}>
       <div className={styles.profile_card}>
          <div className={styles.bg_image}>
-           <Image src={Bimg} alt='image'  />
+           <Image src={Bimg} alt='image'   />
          </div>
          <div className={styles.profile_img}>
          <Image src={pimg} alt='image' width={80} height={80} />
