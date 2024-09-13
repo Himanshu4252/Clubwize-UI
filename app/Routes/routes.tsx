@@ -15,6 +15,8 @@ const routes = {
     feedChapter: "/main/ChapterFeed/Feed",
     chatChapter: "/main/ChapterFeed/Chat",
     memberChapter: "/main/ChapterFeed/Member",
+    approvals : "/main/ApprovalFeed",
+    approvalsReuqests: "/main/ApprovalFeed/Requests",
 
   };
 

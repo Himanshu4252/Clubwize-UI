@@ -1,18 +1,27 @@
 "use client";
 import React, { useState } from "react";
 
-const PostCardHeader = () => {
+var  threeDotMenus = {
+  "Send a message": "#",
+  "Copy link": "#",
+  "Visit module": "#",
+  "Not intrested": "#",
+  Archive: "#",
+  "Report this feed": "#",
+};
+
+const PostCardHeader = ({threeDotLinks = threeDotMenus} : any) => {
   const [threeDotOpen, setThreeDotOpen] = useState(false);
   const [eysMouseOver, setEyesMouseOver] = useState(false);
 
-  const threeDotLinks = {
-    "Send a message": "#",
-    "Copy link": "#",
-    "Visit module": "#",
-    "Not intrested": "#",
-    Archive: "#",
-    "Report this feed": "#",
-  };
+  // threeDotLinks = {
+  //   "Send a message": "#",
+  //   "Copy link": "#",
+  //   "Visit module": "#",
+  //   "Not intrested": "#",
+  //   Archive: "#",
+  //   "Report this feed": "#",
+  // };
 
   return (
     <div className="w-full h-fit flex flex-row items-center justify-between border-b pb-6 ">
