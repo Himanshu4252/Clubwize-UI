@@ -157,7 +157,7 @@ export default function Verify({ isOpen, onClose, onThen }: ModuleProps){
                 <option>Select document</option>
                 <option>Aadhar</option>
                 <option>Passport</option>
-                <option>Driver's License</option>
+                <option>Driver`&apos;`s License</option>
                 <option>Voter ID</option>
               </select>
             </div>

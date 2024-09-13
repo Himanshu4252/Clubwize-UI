@@ -53,7 +53,7 @@ export default function Status({ isOpen, onClose, onNext }: ModuleProps) {
 
           {!isVerified && (
             <p className="text-sm text-orange-500 bg-orange-50 p-2 rounded mb-4">
-              <strong>Note:</strong> You haven't verified your pin code. Please
+              <strong>Note:</strong> You haven`&apos;`t verified your pin code. Please
               verify to get started with Clubwize.
             </p>
           )}
