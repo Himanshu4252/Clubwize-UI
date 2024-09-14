@@ -1,13 +1,20 @@
 'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { ongoingProjects, allProjects, globalProjects, myProjects, ProjectData} from '@/app/Components/Projects/ProjectData'
+import style from './style.module.css'
 
-const Project: React.FC = () => {
+const GlobalRules: React.FC = () => {
+  const [showForm, setShowForm] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('Ongoing Projects (182)');
   const [projects, setProjects] = useState<ProjectData[]>([]);
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+  const [selectedTab, setSelectedTab] = useState<Number>(1);
 
+
+  const handleCreateNewProject = () => setShowForm(true);
+  const handleCancel = () => setShowForm(false);
   const PopupMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
     const popupRef = useRef<HTMLDivElement>(null);
@@ -17,7 +24,6 @@ const Project: React.FC = () => {
     const handleOptionClick = (option: string, projectId?: number) => {
         if (option === 'Select' && projectId !== undefined) {
           setSelectedProjectId(projectId);
-          //logic for checkmark can be added here !
         }
         console.log(`${option} clicked`);
         setIsOpen(false);
@@ -51,17 +57,17 @@ const Project: React.FC = () => {
             className="absolute mt-1 z-50 text-start right-[70vh] w-[20vh] bg-white border border-gray-300 rounded-lg shadow-lg"
           >
             <ul className="">
-              <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Select', 0)}>
-                Select
-              </li>
-              <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Edit')}>
-                Edit
-              </li>
-              <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Copy Link')}>
+              <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Copy Link', 0)}>
                 Copy Link
               </li>
-              <li className="p-2 text-red-500 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Delete')}>
-                Delete
+              <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Adopt Rule')}>
+                Adopt Rule
+              </li>
+              <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Send Message')}>
+                Send a message
+              </li>
+              <li className="p-2 text-red-500 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Report This Rule')}>
+                Report this Rule
               </li>
             </ul>
           </div>
@@ -92,19 +98,19 @@ const Project: React.FC = () => {
     }
   };
 
+const handleBtnClick = (id:Number) =>{
+  console.log("button clicked" + id);
+  setSelectedTab(id);
+}
 
   return (
         <>
           <div className="flex items-center justify-between mb-6">
-            <button className="flex items-center bg-[#22B573] text-white px-8 py-1.5 rounded-md text-sm hover:bg-black" >
-              <span className="">+ Create rules</span>
-            </button>
-
             <div className="flex items-center flex-1 mx-4">
               <div className="flex items-center border rounded-md px-3 py-1.5 bg-white flex-1">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.5 16.5005C11.2879 16.5005 12.0682 16.3453 12.7961 16.0438C13.5241 15.7423 14.1855 15.3003 14.7427 14.7431C15.2998 14.186 15.7418 13.5246 16.0433 12.7966C16.3448 12.0687 16.5 11.2884 16.5 10.5005C16.5 9.71257 16.3448 8.93236 16.0433 8.2044C15.7418 7.47645 15.2998 6.81501 14.7427 6.25786C14.1855 5.70071 13.5241 5.25875 12.7961 4.95723C12.0682 4.6557 11.2879 4.5005 10.5 4.5005C8.90872 4.5005 7.38259 5.13264 6.25737 6.25786C5.13216 7.38308 4.50002 8.9092 4.50002 10.5005C4.50002 12.0918 5.13216 13.6179 6.25737 14.7431C7.38259 15.8684 8.90872 16.5005 10.5 16.5005ZM16.82 15.4065L20.4 18.9865C20.4955 19.0788 20.5716 19.1892 20.6239 19.3113C20.6762 19.4333 20.7037 19.5645 20.7048 19.6973C20.7058 19.8301 20.6804 19.9618 20.63 20.0846C20.5797 20.2075 20.5053 20.3191 20.4114 20.4129C20.3174 20.5067 20.2057 20.5809 20.0828 20.6311C19.9599 20.6813 19.8282 20.7065 19.6954 20.7052C19.5626 20.704 19.4314 20.6763 19.3095 20.6238C19.1875 20.5713 19.0772 20.4951 18.985 20.3995L15.405 16.8195C13.7975 18.0674 11.7748 18.6557 9.74877 18.4647C7.72273 18.2737 5.84562 17.3178 4.49957 15.7916C3.15351 14.2653 2.4397 12.2834 2.50344 10.2494C2.56718 8.2154 3.40368 6.28213 4.84266 4.84315C6.28164 3.40417 8.21492 2.56767 10.2489 2.50393C12.283 2.44019 14.2648 3.154 15.7911 4.50005C17.3173 5.84611 18.2732 7.72322 18.4642 9.74926C18.6552 11.7753 18.0669 13.798 16.819 15.4055L16.82 15.4065Z" fill="#6C757D"/>
-</svg>
+              <path d="M10.5 16.5005C11.2879 16.5005 12.0682 16.3453 12.7961 16.0438C13.5241 15.7423 14.1855 15.3003 14.7427 14.7431C15.2998 14.186 15.7418 13.5246 16.0433 12.7966C16.3448 12.0687 16.5 11.2884 16.5 10.5005C16.5 9.71257 16.3448 8.93236 16.0433 8.2044C15.7418 7.47645 15.2998 6.81501 14.7427 6.25786C14.1855 5.70071 13.5241 5.25875 12.7961 4.95723C12.0682 4.6557 11.2879 4.5005 10.5 4.5005C8.90872 4.5005 7.38259 5.13264 6.25737 6.25786C5.13216 7.38308 4.50002 8.9092 4.50002 10.5005C4.50002 12.0918 5.13216 13.6179 6.25737 14.7431C7.38259 15.8684 8.90872 16.5005 10.5 16.5005ZM16.82 15.4065L20.4 18.9865C20.4955 19.0788 20.5716 19.1892 20.6239 19.3113C20.6762 19.4333 20.7037 19.5645 20.7048 19.6973C20.7058 19.8301 20.6804 19.9618 20.63 20.0846C20.5797 20.2075 20.5053 20.3191 20.4114 20.4129C20.3174 20.5067 20.2057 20.5809 20.0828 20.6311C19.9599 20.6813 19.8282 20.7065 19.6954 20.7052C19.5626 20.704 19.4314 20.6763 19.3095 20.6238C19.1875 20.5713 19.0772 20.4951 18.985 20.3995L15.405 16.8195C13.7975 18.0674 11.7748 18.6557 9.74877 18.4647C7.72273 18.2737 5.84562 17.3178 4.49957 15.7916C3.15351 14.2653 2.4397 12.2834 2.50344 10.2494C2.56718 8.2154 3.40368 6.28213 4.84266 4.84315C6.28164 3.40417 8.21492 2.56767 10.2489 2.50393C12.283 2.44019 14.2648 3.154 15.7911 4.50005C17.3173 5.84611 18.2732 7.72322 18.4642 9.74926C18.6552 11.7753 18.0669 13.798 16.819 15.4055L16.82 15.4065Z" fill="#6C757D"/>
+              </svg>
 
                 <input
                   type="text"
@@ -129,6 +135,10 @@ const Project: React.FC = () => {
 
               </div>
             </div>
+          </div>
+          <div className={style.topBtns}>
+          <button className={`${selectedTab ===1 ? style.selected: style.globalBtn }`} onClick={()=>{handleBtnClick(1)}} >All Global Rules</button>
+          <button className={`${selectedTab ===2 ? style.selected: style.globalBtn }`} onClick={()=>{handleBtnClick(2)}}>Suggested Rules</button> 
           </div>
 
           <table className="w-full bg-white rounded-lg shadow">
@@ -157,8 +167,7 @@ const Project: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-  {projects && projects.length > 0 ? (
-    projects.map(project => (
+  {projects.map(project => (
       <tr key={project.id} className="border-b">
         <td className="p-3 text-gray-500 text-xs">{project.id}</td>
         <td className="p-3 w-[10vh] text-xs">
@@ -199,12 +208,7 @@ const Project: React.FC = () => {
         </td>
         <PopupMenu />
       </tr>
-    ))
-  ) : (
-    <tr>
-      <td colSpan={6} className="p-3 text-center text-gray-500">No projects available</td>
-    </tr>
-  )}
+    ))}
 </tbody>
 
           </table>
@@ -212,4 +216,4 @@ const Project: React.FC = () => {
   );
 };
 
-export default Project;
+export default GlobalRules;
