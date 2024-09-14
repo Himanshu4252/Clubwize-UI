@@ -1,9 +1,12 @@
 "use client"
 import React, { forwardRef } from 'react'
+import { useRouter } from 'next/navigation';
 import style from './style.module.css'
 import Image, {StaticImageData} from 'next/image'
 import { Contributions, Impressions, GraphCont, GraphImp, RVClub, RVNode, DebateIcon, RulesIcon, Mplace, ForwardIcon} from '../photo'
 import PostCard from '../../NewsFeed/PostCard/PostCard'
+import { routes } from '@/app/Routes/routes';
+
 
 interface VisitedItem {
   id: number;
@@ -56,6 +59,13 @@ const visitedItems: VisitedItem[] = [
   },
 ];
 const LeftPanel = () => {
+
+  const router = useRouter();
+  
+  const handleContribution = () => {
+    router.push(routes.contributions)
+  }
+
   return (
   <div className={style.leftPanelWrapper} >
 
@@ -74,7 +84,7 @@ const LeftPanel = () => {
         <Image src={GraphImp} alt='impressions Graph' className={style.widthFixer} />
       </div>
       
-      <div className={style.Contributions}>
+      <div className={`${style.Contributions} cursor-pointer`} onClick={handleContribution}>
         <div className={style.contriCountBox}>
           <div className={style.contriCounts}>
             <div className={style.contricount}>

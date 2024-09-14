@@ -148,7 +148,7 @@ export default function Team() {
           teamMessages={selectedTeam.messages}
         />
       )}
-    <div className="max-w-md mx-auto p-4 pb-0 bg-white rounded-lg shadow-lg sticky top-[8vh]">
+  <div className="max-w-md mx-auto p-4 pb-0 bg-white rounded-lg shadow-lg sticky top-[8vh] z-10">
 
       <div className="flex justify-between items-center mb-4">
         <div className="flex w-auto">

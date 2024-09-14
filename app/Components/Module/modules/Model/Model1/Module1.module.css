@@ -1,0 +1,36 @@
+.tab_cnt{
+    width: 100%;
+    height: 400px;
+    
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.img_cnt{
+
+    width: 100%;
+    height: 50%;
+  
+    display: flex;
+    padding-left: 10px;
+    
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer{
+
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid gray;
+    margin-top: 10px;
+    padding-top:20px;
+}
+
+.footer span {
+
+    color: rgb(29, 207, 29);
+    font-weight: bold;
+}

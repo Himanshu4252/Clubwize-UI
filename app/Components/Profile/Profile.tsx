@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import styles from './Profile.module.css'
 import Image from 'next/image'
 import backG from './Assets/image 1.png'
@@ -20,7 +21,33 @@ import group9 from './Assets/Group 633674.png'
 
 
 
-function Profile() {
+
+
+
+function  Profile(){
+
+    const menuItemsData = [
+        { menuName: "News Feed", img: group1 },
+        { menuName: "Module", img: group2 },
+        { menuName: "Profile", img: group3 },
+        { menuName: "Chapters", img: group4 },
+        { menuName: "Members", img: group5 },
+        { menuName: "Approval", img: group6 },
+        { menuName: "Insights", img: group7 },
+        { menuName: "Activity", img: group8 },
+        { menuName: "Performance", img: group9 },
+      ];
+
+      const [activeIndex, setActiveIndex] = useState<number | null>(0);// to track which menu is active
+
+      const handleClick = (index:number) => {
+        setActiveIndex(index); // Set the active menu item by index
+     
+      };
+
+
+
+
   return (
     <div className='sticky top-[8vh]'>
     <div className={styles.profile_card}>
@@ -50,98 +77,26 @@ function Profile() {
             <button className={styles.joining_btn}>Joined</button>
 
             <div className={styles.text_cnt_box}>
-             
-             <div className={styles.textBox} style={{backgroundColor:'#22b57374',border:'1px solid green'}}>
-                <div className={styles.img_cnt}>
-                <Image src={group1} alt='Images' />
-                </div>
-                <p>News Feed</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
+            
 
-             <div className={styles.textBox}>
-                <div className={styles.img_cnt}>
-                <Image src={group2} alt='Images' />
-                </div>
-                <p>module</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
-
-
-             <div className={styles.textBox}>
-                <div className={styles.img_cnt}>
-                <Image src={group3} alt='Images' />
-                </div>
-                <p>Profile</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
-
-             <div className={styles.textBox}>
-                <div className={styles.img_cnt}>
-                <Image src={group4} alt='Images' />
-                </div>
-                <p>Chapters</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
-
-             <div className={styles.textBox}>
-                <div className={styles.img_cnt}>
-                <Image src={group5} alt='Images' />
-                </div>
-                <p>Members</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
-
-             <div className={styles.textBox}>
-                <div className={styles.img_cnt}>
-                <Image src={group6} alt='Images' />
-                </div>
-                <p>Approval</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
-
-             <div className={styles.textBox}>
-                <div className={styles.img_cnt}>
-                <Image src={group7} alt='Images' />
-                </div>
-                <p>Insights</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
-
-             <div className={styles.textBox}>
-                <div className={styles.img_cnt}>
-                <Image src={group8} alt='Images' />
-                </div>
-                <p>Activity</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
-
-             <div className={styles.textBox}>
-                <div className={styles.img_cnt}>
-                <Image src={group9} alt='Images' />
-                </div>
-                <p>Performance</p>
-                <div className={styles.arrow_left}>
-                    <Image src={icon} alt='image' />
-                </div>
-             </div>
-
+          
+             {menuItemsData.map((item, index) => (
+        <div
+          key={index}
+          onClick={() => handleClick(index)}
+          className={`${styles.textBox} ${
+            activeIndex === index ? `${styles.bg_color} ${styles.border_green}` : ""
+          }`}
+        >
+          <div className={styles.img_cnt}>
+            <Image src={item.img} alt={item.menuName} />
+          </div>
+          <p>{item.menuName}</p>
+          <div className={styles.arrow_left}>
+            <Image src={icon} alt="arrow" />
+          </div>
+        </div>
+      ))}
              
 
              

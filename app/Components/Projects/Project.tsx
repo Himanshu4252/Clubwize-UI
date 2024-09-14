@@ -15,6 +15,7 @@ const Project: React.FC = () => {
 
   const handleCreateNewProject = () => setShowForm(true);
   const handleCancel = () => setShowForm(false);
+  
   const PopupMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
     const popupRef = useRef<HTMLDivElement>(null);
@@ -75,6 +76,7 @@ const Project: React.FC = () => {
       </td>
     );
   };
+
   useEffect(() => {
     handleTabChange('Ongoing Projects (182)');
   }, []);

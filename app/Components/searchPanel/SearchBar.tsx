@@ -169,7 +169,7 @@ const handleMessageClick =() =>{
 
   return (
 <>
-<div className={style.searchWrapper}>
+<div className={`${style.searchWrapper} z-10` }>
     <div className={style.searchBar} >
       {searchIcon? (<Image src={SearchIcon} alt='searchICon' className={style.magnifyingGlass} />):(null)}
       {selectedButton?(<button className={`${style.selectedButton} ${style.inputFieldButton}`}>
