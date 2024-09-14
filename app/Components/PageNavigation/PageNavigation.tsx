@@ -21,7 +21,8 @@ const PageNavigation = () => {
     feedChapter: "/main/ChapterFeed/Feed",
     chatChapter: "/main/ChapterFeed/Chat",
     memberChapter: "/main/ChapterFeed/Member",
-    approvalFeed : "/main/ApprovalFeed"
+    approvalFeed : "/main/ApprovalFeed",
+    issues: "/Issues"
 
 
   };
