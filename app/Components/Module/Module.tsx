@@ -102,8 +102,8 @@ function Module() {
 
 
   return (
-    <div className="flex gap-4 ">
-    <div>
+    <div className="flex gap-4 " >
+    <div style={{zIndex:'1000'}} >
     <Side_Bar />  
     </div>
 

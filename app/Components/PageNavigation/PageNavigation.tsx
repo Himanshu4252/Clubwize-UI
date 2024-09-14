@@ -8,7 +8,7 @@ const PageNavigation = () => {
   const routes = {
     home: "/",
     onboarding: "/onboarding",
-    feed : "/main/Feed",
+    feed : "/modules/",
     MembersFeed : "/main/Members",
     groupChat: "/Other/GroupChat",
     message: "/Other/Message",
