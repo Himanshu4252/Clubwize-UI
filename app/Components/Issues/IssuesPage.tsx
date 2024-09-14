@@ -295,7 +295,7 @@ const IssuesPage: React.FC = () => {
       <select className="border rounded px-2 py-1">
         <option>10 / page</option>
         <option>20 / page</option>
-        <option>50 / page</option>
+        <option>30 / page</option>
       </select>
       <span>Go to</span>
       <input type="text" className="border rounded px-2 py-1 w-12" />

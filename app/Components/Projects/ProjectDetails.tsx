@@ -34,7 +34,9 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projectId }) => {
 
   return (
     <div className="max-w-full">
-         <div className="text-sm text-gray-400 mb-3"><span className="underline text-gray-800">Project</span> &gt; Blood Donation</div>
+         <div className="text-sm text-gray-400 mb-3"><span className="underline text-gray-800">
+    <a href="/main/Projects" className="text-gray-800 hover:text-blue-600">Projects</a>
+  </span> &gt; Blood Donation</div>
       <nav className="flex space-x-4 text-green-600 text-sm  mb-4 border-b">
   {['Project Details', 'Leaderboard', 'Project Wall', 'FAQs'].map(tab => (
     <button
