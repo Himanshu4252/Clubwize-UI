@@ -72,7 +72,9 @@ const CreateProject: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
   return (
     
     <div className="gap-1">
-        <div className="text-xs mb-2"><span className="underline text-gray-800">Project</span> &gt; Create new Project</div>
+        <div className="text-xs mb-2"><span className="underline text-gray-800">
+    <a href="/main/Projects" className="text-gray-800 hover:text-blue-600">Projects</a>
+  </span> &gt; Create new Project</div>
     <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md max-w-4xl mx-auto">
       <h2 className="text-lg font-semibold mb-6">create new project</h2>
       <div className="grid grid-cols-2 gap-4 mb-6">
