@@ -5,7 +5,6 @@ import Profile from "@/app/Components/Profile/Profile";
 import Side_Bar from "@/app/Components/Sub_Componet/Side_Bar";
 import SearchBar from "@/app/Components/searchPanel/SearchBar";
 import ModuleBar from "@/app/Components/NewsFeed/ModuleBar/ModuleBar";
-import All from "@/app/Components/Debate/All";
 
 const Feed = () => {
   return (

@@ -80,7 +80,7 @@ const Nodeprofiles: NodeProfileData[] = [
         connections: '1.2k',
         isPrivate: true,
       }
-  ];
+  ];  
 
 const RightPanel = () => {
   return (<div className={style.RightPanelWrapper}>

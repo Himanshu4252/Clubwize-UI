@@ -23,7 +23,7 @@ export default function RootLayout({
         {children}
 
 
-<div className="fixed bottom-0 opacity-70 bg-orange-300 rounded-lg z-[99999]">
+<div className="fixed bottom-0 opacity-90 bg-orange-300 rounded-lg z-[99999]">
 <PageNavigation />
 </div>
       </body>

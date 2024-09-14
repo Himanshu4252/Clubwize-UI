@@ -1,0 +1,249 @@
+.activity_cnt{
+
+    height: 74vh;
+    width: 100%;
+    padding: 10px 0px;
+    box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
+    
+}
+
+.upper_cnt{
+
+    width: 100%;
+    height: 16%;
+    display: flex;
+    padding: 4px 10px;
+    border-bottom: 1px solid #E9ECEF;
+    background: #F8F9FA;
+
+    
+}
+
+
+
+.text_cnt{
+
+    width: 75%;
+    height: 100%;
+
+    padding: 10px 10px;
+    border-radius: 8px;
+
+
+}
+
+.text_cnt h1{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.cln_box{
+
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.date_picker{
+
+  
+    width: 150px;
+    height: 30px;
+    border-radius: 16px;
+}
+
+
+
+.text_main_box p{
+
+    font-size: 10px;
+}
+
+
+.date_range_picker {
+    width: 200px; /* Set the overall width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .date_picker_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 6px;
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+  }
+  
+  .date_picker_wrapper span {
+    margin: 0 4px;
+    font-size: 12px;
+  }
+  
+  .date_picker_wrapper input {
+    width: 60px;
+    font-size: 12px;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 4px;
+  }
+  
+  .calendar_icon {
+    color: #28a745;
+    margin-right: 6px;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  
+  .close_icon {
+    color: #0a0a0a;
+    cursor: pointer;
+    margin-left: 6px;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  
+  .selected_range {
+    font-size: 12px;
+    color: #41d330;
+    text-align: center;
+  }
+
+
+  .lower_cnt{
+
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    padding: 20px 20px;
+    overflow-y: scroll;
+  }
+
+  .box_cnt{
+
+    width: 100%;
+    height: max-content;
+    
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+  
+
+  }
+
+  .text_box{
+
+    width: 100%;
+    height: 80px;
+    
+    display: flex;
+    position: relative;
+    padding: 10px 10px;
+    border-bottom: 1px solid #E9ECEF;
+    background: #F8F9FA;
+
+
+  }
+
+  .img_cnt{
+ 
+    width: 6%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+
+  }
+
+  .text_main_box{
+
+    width: 90%;
+    margin-left: 10px;
+    padding: 5px 4px;
+    text-align: left;
+    height: 100%;
+  }
+
+  .text_main_box p{
+
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+  }
+
+  .span_1{
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .dot{
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .span_2{
+
+    font-size: 12px;
+    color: rgba(39, 182, 39, 0.965);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .icon_txt{
+
+    width: 10%;
+    height: 70%;
+    margin-left: 85%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1px 10px;
+  }
+
+  .delete_cnt{
+
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    position: absolute;
+    margin-left: 83%;
+    margin-top: 50px;
+
+  }
+
+.delete_pop_up{
+  width: 120px;
+  height: 40px;
+  margin-left: 83%;
+ 
+  position: absolute;
+  margin-top: 35px;
+  z-index: 100;
+}

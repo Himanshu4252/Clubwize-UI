@@ -1,0 +1,61 @@
+.review_cnt{
+
+    width: 100%;
+    height: max-content;
+   
+    padding: 10px 20px;
+    text-align: left;
+    
+    
+}
+
+.box_cnt{
+
+    width: 100%;
+    height: 184px;
+    
+    background-color: rgba(199, 189, 189, 0.421);
+    margin-top: 10px;
+    border-radius: 8px;
+    
+}
+
+.upper_cnt{
+
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
+    padding: 0px 10px;
+    border-bottom: 1px solid gray;
+}
+
+.logo_cnt{
+
+    width: 40%;
+    height: 100%;
+   
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 2px 5px;
+    
+
+}
+
+.img_text_cnt{
+
+    width: 150px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+
+}

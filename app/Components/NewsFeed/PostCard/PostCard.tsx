@@ -7,7 +7,7 @@ const PostCard = () => {
 
   
   return (
-    <div className="  p-6 flex flex-col border rounded-lg shadow-md">
+    <div className="  p-6 flex flex-col border rounded-lg bg-white shadow-md">
       <PostCardHeader />
       <PostCardContent />   
       <EngagementBar  />
