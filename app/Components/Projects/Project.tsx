@@ -5,6 +5,7 @@ import Image from 'next/image';
 import CreateProject from './CreateProject';
 import ProjectDetails from './ProjectDetails';
 import { ongoingProjects, allProjects, globalProjects, myProjects, ProjectData } from './ProjectData';
+import MyProjects from './MyProjectsTab';
 
 const Project: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
@@ -172,7 +173,8 @@ const Project: React.FC = () => {
               </div>
             </div>
           </div>
-
+          {activeTab === 'My Projects (2.36k)' ?(<MyProjects />):(
+            <div>
           <table className="w-full bg-white rounded-lg shadow">
             <thead className="bg-[#F8F9FA] border border-[EAECF0]">
               <tr className='text-gray-500 text-xs font-light-medium'>
@@ -270,9 +272,8 @@ const Project: React.FC = () => {
     </tr>
   )}
 </tbody>
-
+          
           </table>
-
           <div className="mt-6 text-center flex items-center justify-center">
             <span className="text-gray-500 text-xs">Total 85 items</span>
             <div className="flex items-center ml-4 hover:bg-[#FFFFFF00]">
@@ -306,6 +307,9 @@ const Project: React.FC = () => {
               />
             </div>
           </div>
+        </div>)}
+
+          
         </>
       )}
     </div>
