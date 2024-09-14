@@ -17,6 +17,7 @@ const routes = {
     memberChapter: "/main/ChapterFeed/Member",
     approvals : "/main/ApprovalFeed",
     approvalsReuqests: "/main/ApprovalFeed/Requests",
+    rule : "/main/Rules"
 
   };
 
