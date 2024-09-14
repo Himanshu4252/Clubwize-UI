@@ -18,6 +18,9 @@ import Actevity from '../Actevity/Actevity'
 import Nodes from './Nodes/Nodes'
 import Members from '../Create_Team/TeamPopup/Members'
 import Profile from '../Profile2/Profile'
+import MembersFeed from '../MembersFeed/MembersFeed'
+import Approvals from '../Approvals/Approvals'
+import InsightsFeed from '../InsightsFeed/InsightsFeed'
 
 
 function Module() {
@@ -51,10 +54,6 @@ function Module() {
   const compchange = (ind:number)=>{
 
     setCompindex(ind)
-    
-      
-    
-
   }
 
   
@@ -76,15 +75,15 @@ function Module() {
          break;
 
       case 4:
-        return(' ')
+        return(<MembersFeed />)
         break;
 
       case 5:
-        return(' ')
+        return(<Approvals />)
         break;
 
       case 6:
-       return(' ')
+       return(<InsightsFeed />)
        break;
 
       case 7:
@@ -103,8 +102,8 @@ function Module() {
 
 
   return (
-    <div className="flex gap-4 ">
-    <div>
+    <div className="flex gap-4 " >
+    <div style={{zIndex:'1000'}} >
     <Side_Bar />  
     </div>
 

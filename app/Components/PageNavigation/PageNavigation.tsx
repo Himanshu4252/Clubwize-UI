@@ -8,7 +8,7 @@ const PageNavigation = () => {
   const routes = {
     home: "/",
     onboarding: "/onboarding",
-    feed : "/main/Feed",
+    feed : "/modules/",
     MembersFeed : "/main/Members",
     groupChat: "/Other/GroupChat",
     message: "/Other/Message",
@@ -21,9 +21,9 @@ const PageNavigation = () => {
     feedChapter: "/main/ChapterFeed/Feed",
     chatChapter: "/main/ChapterFeed/Chat",
     memberChapter: "/main/ChapterFeed/Member",
+    rule: "/main/Rules",
     approvalFeed : "/main/ApprovalFeed",
     issues: "/Issues"
-
 
   };
 
