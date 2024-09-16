@@ -7,13 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full flex">
-      <div className="w-5/12">
-        <OnBoardLeft />
-      </div>
-      <div className="w-7/12">
+    <div className="">
+      
         {children}
-      </div>
+      
     </div>
   );
 }

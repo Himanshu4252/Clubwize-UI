@@ -53,10 +53,10 @@ export default function Pictures() {
   return (
     <>
       <div className="min-h-screen flex flex-col justify-center items-center">
-        <div className="absolute top-20 right-20 text-green-500">
+        <div className="absolute top-20 right-20 sm:right-10 sm:top-10 text-green-500">
           <a href="/onboarding/node">Skip Flow</a>
         </div>
-        <div className="w-8/12">
+        <div className="w-8/12 md:w-10/12">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
               <Image src={Logo} alt="Logo" width={40} height={40} />
@@ -81,7 +81,7 @@ export default function Pictures() {
                 </div>
                 <span className="ml-2 text-gray-500">Details</span>
               </div>
-              <span className="mx-4 text-gray-300">—</span>
+              <span className="mx-4 md:mx-2 text-gray-300">—</span>
 
    
               <div className="flex items-center">
@@ -90,7 +90,7 @@ export default function Pictures() {
                 </div>
                 <span className="ml-2 text-green-500">Picture</span>
               </div>
-              <span className="mx-4 text-gray-300">—</span>
+              <span className="mx-4 md:mx-2 text-gray-300">—</span>
 
     
               <div className="flex items-center">
@@ -99,7 +99,7 @@ export default function Pictures() {
                 </div>
                 <span className="ml-2 text-gray-500">Interest</span>
               </div>
-              <span className="mx-4 text-gray-300">—</span>
+              <span className="mx-4 md:mx-2 text-gray-300">—</span>
 
        
               <div className="flex items-center">
@@ -128,6 +128,8 @@ export default function Pictures() {
                   <Image
                     src={URL.createObjectURL(profilePhoto)}
                     alt="Profile Preview"
+                    width={20}
+                    height={20}
                     className="h-20 w-20 object-cover rounded-md"
                   />
                   <button
@@ -157,6 +159,8 @@ export default function Pictures() {
                   <Image
                     src={URL.createObjectURL(coverPhoto)}
                     alt="Cover Preview"
+                    width={20}
+                    height={20}
                     className="h-20 w-20 object-cover rounded-md"
                   />
                   <button
