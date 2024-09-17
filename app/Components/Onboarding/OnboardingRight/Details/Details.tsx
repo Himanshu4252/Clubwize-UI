@@ -50,7 +50,7 @@ export default function Details() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
-      <div className="w-8/12">
+      <div className="w-8/12 md:w-10/12">
         {/* Logo */}
         <div className="flex justify-center mb-6">
           <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
@@ -75,21 +75,21 @@ export default function Details() {
               </div>
               <span className="ml-2 text-green-500">Details</span>
             </div>
-            <span className="mx-4 text-gray-300">—</span>
+            <span className="mx-4 md:mx-2 text-gray-300">—</span>
             <div className="flex items-center">
               <div className="w-6 h-6 bg-gray-300 rounded-full flex justify-center items-center text-gray-500">
                 2
               </div>
               <span className="ml-2 text-gray-500">Picture</span>
             </div>
-            <span className="mx-4 text-gray-300">—</span>
+            <span className="mx-4 md:mx-2 text-gray-300">—</span>
             <div className="flex items-center">
               <div className="w-6 h-6 bg-gray-300 rounded-full flex justify-center items-center text-gray-500">
                 3
               </div>
               <span className="ml-2 text-gray-500">Interest</span>
             </div>
-            <span className="mx-4 text-gray-300">—</span>
+            <span className="mx-4 md:mx-2 text-gray-300">—</span>
             <div className="flex items-center">
               <div className="w-6 h-6 bg-gray-300 rounded-full flex justify-center items-center text-gray-500">
                 4

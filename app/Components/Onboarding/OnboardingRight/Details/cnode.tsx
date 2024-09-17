@@ -36,7 +36,7 @@ export default function CNode() {
   return (
     <>
       <div className="min-h-screen flex flex-col justify-center items-center">
-        <div className="w-8/12">
+        <div className="w-8/12 md:w-10/12">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
               <Image src={Logo} alt="Logo" width={40} height={40} />
@@ -58,7 +58,7 @@ export default function CNode() {
                 </div>
                 <span className="ml-2 text-gray-500">Details</span>
               </div>
-              <span className="mx-4 text-gray-300">—</span>
+              <span className="mx-4 md:mx-2 text-gray-300">—</span>
 
               <div className="flex items-center">
                 <div className="w-6 h-6 bg-gray-300 rounded-full flex justify-center items-center text-gray-500">
@@ -66,7 +66,7 @@ export default function CNode() {
                 </div>
                 <span className="ml-2 text-gray-500">Picture</span>
               </div>
-              <span className="mx-4 text-gray-300">—</span>
+              <span className="mx-4 md:mx-2 text-gray-300">—</span>
 
               <div className="flex items-center">
                 <div className="w-6 h-6 bg-gray-300 rounded-full flex justify-center items-center text-gray-500">
@@ -74,7 +74,7 @@ export default function CNode() {
                 </div>
                 <span className="ml-2 text-gray-500">Interest</span>
               </div>
-              <span className="mx-4 text-gray-300">—</span>
+              <span className="mx-4 md:mx-2 text-gray-300">—</span>
 
               <div className="flex items-center">
                 <div className="w-6 h-6 bg-green-500 rounded-full flex justify-center items-center text-white">
@@ -104,7 +104,7 @@ export default function CNode() {
             </div>
             <div className="border rounded-lg p-4">
               <Image src={rect} alt="Node 1" className=" rounded" />
-              <h3 className="mt-2 font-medium text-gray-700">AI_Next_Gen</h3>
+              <h3 className="mt-2 font-medium text-gray-700 text-base md:text-sm">AI_Next_Gen</h3>
               <p className=" text-gray-400 text-sm">
                 <span role="img" aria-label="users">
                   👥
@@ -120,7 +120,7 @@ export default function CNode() {
             </div>
             <div className="border rounded-lg p-4">
               <Image src={rect} alt="Node 2" className=" rounded" />
-              <h3 className="mt-2 font-medium text-gray-700">AI_Next_Genre</h3>
+              <h3 className="mt-2 font-medium text-gray-700 text-base md:text-sm">AI_Next_Genre</h3>
               <p className=" text-gray-500 text-sm">
                 <span role="img" aria-label="users">
                   👥

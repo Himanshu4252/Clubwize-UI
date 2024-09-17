@@ -22,7 +22,7 @@ function Success() {
         </p>
 
        
-          <a href="/">
+          <a href="/onboarding">
             <button
               className="w-full bg-button hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg"
             >
