@@ -10,35 +10,39 @@ import Debate from "@/app/Components/Debate/Debate";
 
 const Feed = () => {
   return (
-    <div className="flex gap-4">
-      <div>
-      <Side_Bar />  
+    <div className="flex gap-4 " >
+    <div style={{zIndex:'1000'}} >
+    <Side_Bar />  
+    </div>
+    
+
+    <div className="flex flex-col w-full" >
+      <SearchBar />
+
+      <div className="flex flex-row justify-evenly " style={{zIndex:"1"}} >
+      <div className="w-2/12" >
+         <Profile />
       </div>
-      
+       
 
-      <div className="flex flex-col">
-        <SearchBar />
-
-        <div className="flex flex-row justify-evenly" >
-        <div className="w-2/12">
-           <Profile />
+        {/* Feed */}
+        <div className='flex flex-col  gap-4 h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
+          <div className="w-full flex space-x-2">
+            <ModuleBar />
+             <Team />
+          </div>
+          <div className="w-full lg:w-8/12 ">
+            <Debate/>
+          </div>
         </div>
+
+        {/* Team */}
+        {/* <div className="w-3/12 ">
          
-
-          {/* Feed */}
-          <div className='flex flex-col w-6/12 gap-4 items-center my-1 '>
-            <div className="w-full">
-              <ModuleBar />
-              <Debate />
-            </div>
-          </div>
-          {/* Team */}
-          <div className="w-3/12 ">
-            <Team />
-          </div>
-        </div>
+        </div> */}
       </div>
     </div>
+  </div>
   );
 };
 

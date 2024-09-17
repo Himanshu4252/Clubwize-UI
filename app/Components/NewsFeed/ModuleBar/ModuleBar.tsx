@@ -45,7 +45,7 @@ const AddSvg = `<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmln
 
 
   return (
-    <div className='flex flex-row border border-1 items-center rounded-lg shadow-md'>
+    <div className='flex flex-row w-8/12 border border-1 items-center rounded-lg shadow-md'>
 
     <div className='w-full border-r flex items-center rounded-lg overflow-scroll'>
         <ModuleBox notifyCount="1" moduleIcon={RulesSvg} moduleTitle='Rules'  />

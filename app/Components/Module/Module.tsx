@@ -125,19 +125,20 @@ function Module() {
        
 
         {/* Feed */}
-        <div className='flex flex-col w-6/12 gap-4 items-center h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
-          <div className="w-full">
+        <div className='flex flex-col  gap-4 h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
+          <div className="w-full flex space-x-2">
             <ModuleBar />
+             <Team />
           </div>
-          <div className="w-full">
+          <div className="w-full lg:w-8/12 ">
             {changecomps()}
           </div>
         </div>
 
         {/* Team */}
-        <div className="w-3/12 ">
-          <Team />
-        </div>
+        {/* <div className="w-3/12 ">
+         
+        </div> */}
       </div>
     </div>
   </div>

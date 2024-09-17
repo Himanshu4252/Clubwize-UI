@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex gap-4" style={{zIndex:'1000'}}>
-    <div>
+    <div className="flex gap-4 " >
+    <div style={{zIndex:'1000'}} >
     <Side_Bar />  
     </div>
     
@@ -24,26 +24,27 @@ export default function RootLayout({
     <div className="flex flex-col w-full" >
       <SearchBar />
 
-      <div className="flex flex-row justify-evenly" >
-      <div className="w-2/12" style={{zIndex:'-1'}}>
-         <Profile />
+      <div className="flex flex-row justify-evenly " style={{zIndex:"1"}} >
+      <div className="w-2/12" >
+         <Profile/>
       </div>
        
 
         {/* Feed */}
-        <div className='flex flex-col w-6/12 gap-4 items-center h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
-          <div className="w-full">
+        <div className='flex flex-col w-9/12 gap-4 h-screen bg-[url("/img/FeedBackground.png")] my-1 '>
+          <div className="w-full flex space-x-2">
             <ModuleBar />
+             <Team />
           </div>
-          <div className="w-full">
+          <div className="w-full lg:w-8/12 ">
             {children}
           </div>
         </div>
 
         {/* Team */}
-        <div className="w-3/12 ">
-          <Team />
-        </div>
+        {/* <div className="w-3/12 ">
+         
+        </div> */}
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import logo from "../../../public/assets/Team/logo.png";
+import logo from "../../../public/assets/Team/logo.svg";
 import pg from "../../../public/assets/Team/pg.png";
 import des from "../../../public/assets/Team/des.png";
 import divi from "../../../public/assets/Team/divi.png";
@@ -15,6 +15,9 @@ import Picture from "./TeamPopup/Picture";
 import Created from "./TeamPopup/Created";
 import Chat from "./Chat";
 import Side_Bar from "../Sub_Componet/Side_Bar";
+import up from "../../../public/assets/Team/up.svg"
+import down from "../../../public/assets/Team/down.svg"
+
 
 interface Team {
   name: string;
@@ -87,6 +90,9 @@ export default function Team() {
   const [isNameOpen, setIsNameOpen] = useState(false);
   const [isImgOpen, setIsImgOpen] = useState(false);
   const [isCreatedOpen, setIsCreatedOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [selectedTeam, setSelectedTeam] = useState<Team | null>(null);
+  const [isTeamsVisible, setIsTeamsVisible] = useState(true); // State for showing/hiding teams
 
   const openCreated = () => setIsCreatedOpen(true);
   const closeCreated = () => setIsCreatedOpen(false);
@@ -97,11 +103,10 @@ export default function Team() {
   const openImg = () => setIsImgOpen(true);
   const closeImg = () => setIsImgOpen(false);
 
-
-  const handleCreateClick = ()=>{
+  const handleCreateClick = () => {
     closeChat();
     openMember();
-  }
+  };
 
   const handleNextClick = () => {
     closeMember();
@@ -128,14 +133,16 @@ export default function Team() {
     openMember();
   };
 
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const [selectedTeam, setSelectedTeam] = useState<Team | null>(null);
-
   const openChat = (team: Team) => {
     setSelectedTeam(team);
     setIsChatOpen(true);
   };
   const closeChat = () => setIsChatOpen(false);
+
+  // Toggle the visibility of the teams list
+  const toggleTeamsVisibility = () => {
+    setIsTeamsVisible((prev) => !prev);
+  };
 
   return (
     <>
@@ -148,77 +155,88 @@ export default function Team() {
           teamMessages={selectedTeam.messages}
         />
       )}
-  <div className="max-w-md mx-auto p-4 pb-0 bg-white rounded-lg shadow-lg sticky top-[8vh] z-10">
 
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex w-auto">
-          <Image src={logo} alt="logo" width={20} />
-          <h2 className="text-sm font-semibold pl-3">Gretchen Team</h2>
-        </div>
-        <button
-          onClick={handleCreateClick}
-          className="flex items-center px-3 py-1 text-sm font-medium text-green-500 border border-green-500 rounded"
-        >
-          + Create team
-        </button>
-      </div>
-      <div>
-        {teams.map((team, index) => (
-          <div
-            key={index}
-            className="flex justify-between items-center py-2 hover:bg-gray-100 cursor-pointer"
-            onClick={() => openChat(team)}
-          >
-            <div className="flex items-center space-x-2">
-              <Image
-                src={team.image}
-                alt={team.name}
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
-              <div>
-                <div className="text-sm font-semibold">{team.name}</div>
-                <div className="text-xs text-gray-500">{team.status}</div>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              {team.members && (
-                <div
-                  className={`flex items-center justify-center text-xs w-8 h-5 rounded-full bg-${team.memberCount}-500 text-white`}
-                >
-                  {team.members}
-                </div>
-              )}
-              <button className="text-gray-500 hover:text-gray-700">•••</button>
-            </div>
+      <div className="w-4/12 relative bg-white rounded-t-lg shadow-lg">
+        <div className="flex w-full flex-col justify-between lg:flex-row space-x-2 items-center gap-2 py-2 lg:py-5 px-2">
+          <div className="flex w-fit ">
+            <Image src={logo} alt="logo" width={20}  className=""/>
+            <h2 className=" text-xs w-full md:text-sm font-medium lg:font-semibold pl-3 ">Gretchen Team</h2>
           </div>
-        ))}
+          <div className="flex items-center  space-x-1">
+            
+            <button
+              onClick={handleCreateClick}
+              className="flex items-center p-1 lg:px-3 lg:py-1 text-xs lg:text-sm font-normal lg:font-medium text-green-500 border border-green-500 rounded"
+            >
+              + Create team
+            </button>
+            <button
+              onClick={toggleTeamsVisibility} // Button to toggle teams visibility
+              className="flex items-center px-3 py-1 mr-2"
+            >
+              {isTeamsVisible ?<Image src={up} alt="up" width={20} height={20}/>  : <Image src={down} alt="down" width={20} height={20}/>}
+            </button>
+          </div>
+        </div>
+
+        {/* Render the teams only if isTeamsVisible is true */}
+        {isTeamsVisible && (
+          <div className="absolute right-0 w-full bg-white shadow-md p-2 z-10">
+            {teams.map((team, index) => (
+              <div
+                key={index}
+                className="flex justify-between items-center py-2 hover:bg-gray-100 cursor-pointer"
+                onClick={() => openChat(team)}
+              >
+                <div className="flex items-center space-x-2">
+                  <Image
+                    src={team.image}
+                    alt={team.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                  <div>
+                    <div className="text-sm font-semibold">{team.name}</div>
+                    <div className="text-xs text-gray-500">{team.status}</div>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  {team.members && (
+                    <div
+                      className={`flex items-center justify-center text-xs w-8 h-5 rounded-full bg-${team.memberCount}-500 text-white`}
+                    >
+                      {team.members}
+                    </div>
+                  )}
+                  <button className="text-gray-500 hover:text-gray-700">•••</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        <Members
+          isOpen={isMemberOpen}
+          onClose={closeMember}
+          onNext={handleNextClick}
+        />
+
+        <Name
+          isOpen={isNameOpen}
+          onClose={closeName}
+          onAfter={handleAfterClick}
+          closeAfter={closeAfterClick}
+        />
+
+        <Picture
+          isOpen={isImgOpen}
+          onClose={closeImg}
+          onThen={handleThenClick}
+          closeThen={closeThenClick}
+        />
+
+        <Created isOpen={isCreatedOpen} onClose={closeCreated} />
       </div>
-      <Members
-        isOpen={isMemberOpen}
-        onClose={closeMember}
-        onNext={handleNextClick}
-      />
-
-      <Name
-        isOpen={isNameOpen}
-        onClose={closeName}
-        onAfter={handleAfterClick}
-        closeAfter={closeAfterClick}
-      />
-
-      <Picture
-        isOpen={isImgOpen}
-        onClose={closeImg}
-        onThen={handleThenClick}
-        closeThen={closeThenClick}
-      />
-
-      <Created isOpen={isCreatedOpen} onClose={closeCreated} />
-
-      
-    </div>
     </>
   );
 }
