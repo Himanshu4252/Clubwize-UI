@@ -457,7 +457,7 @@ font-weight: 400;
 /* Responsive styles */
 @media (max-width: 768px) {
   .sidebar {
-    width: 200px;
+    /* width: 200px; */
   }
 
   .images {

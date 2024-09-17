@@ -32,6 +32,7 @@ import icon2 from './Assets/Icon ionic-ios-arrow-forward (2).png'
 import Profile from '../Profile/Profile'
 import node21 from './Assets/Node (2).png'
 import pin from './Assets/push_pin.png'
+import {useRouter} from 'next/navigation'
 
 function Side_Bar() {
 
@@ -40,6 +41,18 @@ function Side_Bar() {
   const [isModel3,setIsModel3] = useState(false)
   const [changeBg,setChangeBg] = useState(false)
   const [isExpend,setIsExpend] = useState(false)
+
+  const router = useRouter();
+
+  const handleSettingClick = () => {
+    console.log('Setting Clicked')
+    router.push('/Setting')
+  }
+
+  const handleHomeClick = () => {
+    console.log('Home Clicked')
+    router.push('/main/Feed')
+  }
 
   return (
     <div className='sticky top-0'>
@@ -57,11 +70,11 @@ function Side_Bar() {
         {isExpend ?  <Image src={icon2} alt='image'  /> :  <Image src={arrow} alt='image'  />}
         </div>
      </div>
-     <div className={styles.home_nav_cnt}>
+     <div className={styles.home_nav_cnt} onClick={handleHomeClick}>
   <Image src={logo} alt='imge' />
   <div className={`${isExpend ? styles.text_cnt_home : styles.text_cnt_not_home}`}>Dashboard</div>
      </div>
-     <div className={styles.home_lines}>
+     <div className={styles.home_lines} >
       <div className={styles.lines}></div>
      </div>
 
@@ -324,7 +337,7 @@ function Side_Bar() {
       </div> : " "}
       </button>
 
-      <button className={styles.img_box}>
+      <button className={styles.img_box} onClick={handleSettingClick}>
       <Image src={btn2} alt='image' />
       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>Setting</div>
      

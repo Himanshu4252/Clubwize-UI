@@ -222,7 +222,7 @@ const MembersFeed = () => {
 
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-md">
-      <div className="inline-flex  w-full justify-between p-6  border-b-2 border-b-gray-300">
+      <div className="inline-flex  w-full justify-between p-3 lg:p-6  border-b-2 border-b-gray-300">
         <p className="text-2xl font-medium ">All Members</p>
         <div onClick={() => setInviteMember(!inviteMember)} className="inline-flex rounded-lg gap-2 py-1 px-3 border border-gray-300 text-gray-600 cursor-pointer hover:bg-gray-300">
           + Invite
@@ -333,6 +333,7 @@ const MembersFeed = () => {
       </div>
 
       {/* Member Table */}
+      <div className="w-full overflow-scroll">
       <table className="w-full bg-white rounded-lg shadow px-6">
         <thead className="bg-[#F8F9FA] border border-[EAECF0] space-bne">
           <tr>
@@ -461,6 +462,7 @@ const MembersFeed = () => {
           )}
         </tbody>
       </table>
+      </div>
       
 
       <PaginationBar />

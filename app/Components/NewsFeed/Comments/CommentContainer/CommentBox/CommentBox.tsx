@@ -3,12 +3,16 @@ import CommentInteractions from "../CommentInteractions/CommentInteractions";
 
 const CommentBox = () => {
   return (
-    <div className="inline-flex">
-      <div className="flex items-center">
+    <div className="inline-flex ">
+      <div className="flex md:items-start lg:items-center">
         {/* Avatar */}
         <div className="flex flex-col ">
           <div className="w-10 h-10 bg-orange-300 rounded-md"></div>
         </div>
+
+
+      <div className="flex flex-col lg:flex-row">
+
 
         {/* Name and Date */}
         <div className="flex flex-col justify-start ml-4 ">
@@ -17,7 +21,7 @@ const CommentBox = () => {
             <p className="leading-none font-semibold">Cameron Williamson</p>
           </div>
 
-          {/* Role Category and times */}
+          {/*  Comments and time */}
           <div className="flex flex-row gap-2 w-fit h-fit items-center mt-1 ">
         
             <a href="#" className=" ">
@@ -28,9 +32,12 @@ const CommentBox = () => {
             <p className="leading-none text-base text-gray-500 sm:text-xs">1 days ago</p>
             </div>
           </div>
+
         </div>
-      </div>
       <CommentInteractions />
+      </div>
+      </div>
+
     </div>
   );
 };

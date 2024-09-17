@@ -40,7 +40,7 @@ const EngagementBar = () => {
   return (
     <div className="flex flex-col">
       {/* like save share */}
-      <div className="py-6 w-full flex flex-row justify-around border-b gap-2 ">
+      <div className="py-2 lg:py-6 w-full flex flex-row justify-around border-b gap-2 flex-wrap ">
         <PostInteractionButtons
           count={`5k`}
           svgIcon={likeSvg}

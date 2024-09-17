@@ -24,9 +24,9 @@ const PostCardHeader = ({threeDotLinks = threeDotMenus} : any) => {
   // };
 
   return (
-    <div className="w-full h-fit flex flex-row items-center justify-between border-b pb-6 ">
+    <div className="w-full h-fit flex flex-row items-center justify-between border-b md:pb-2 lg:pb-6 ">
       {/* Left two  */}
-      <div className="flex">
+      <div className="flex ">
         {/* Avatar */}
         <div className="flex flex-col ">
           <div className="w-12 h-12 bg-gray-500 rounded-md"></div>
@@ -40,7 +40,7 @@ const PostCardHeader = ({threeDotLinks = threeDotMenus} : any) => {
           </div>
 
           {/* Role Category and times */}
-          <div className="flex flex-row gap-2 w-fit h-fit items-center mt-1 ">
+          <div className="flex flex-row  w-fit h-fit items-center mt-1 gap-1  lg:gap-2  md:flex-wrap lg:flex-nowrap ">
             <p className="leading-none text-base text-gray-500 sm:text-sm">
               UI UX Designer
             </p>{" "}
@@ -55,16 +55,10 @@ const PostCardHeader = ({threeDotLinks = threeDotMenus} : any) => {
       </div>
 
       {/* Right two */}
-      <div className="  inline-flex gap-9 cursor-pointer sm:gap-6">
+      <div className=" cursor-pointer gap-2 lg:gap-6 justify-center items-center  flex mdd:flex-col-reverse lg:inline-flex">
         {/* Eye */}
         <div className="relative hover:fill-green-500">
-          <svg
-            className="group"
-            width="25"
-            height="25"
-            viewBox="0 0 25 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <svg className="group" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"
             onMouseEnter={() => {
               console.log("Mouse");
               setEyesMouseOver(true);

@@ -4,7 +4,7 @@ import ClubwizeGreenLogo from '../../../../../public/img/ClubwizeGreenLogo.png'
 
 const PostCard2Header = () => {
   return (
-    <div className="w-full h-fit flex flex-row items-center justify-between border-b p-6  pb-6 ">
+    <div className="w-full h-fit flex flex-row items-center justify-between border-b p-3 pb-2 lg:p-6  lg:pb-6 ">
     {/* Left two  */}
     <div className="flex">
       {/* Avatar */}

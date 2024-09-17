@@ -34,7 +34,7 @@ function HandleClicked(ind:number){
 
   return (
     <div>
-      <div className={styles.setting_cnt}>
+      <div className={styles.setting_cnt} style={{ borderRadius:"10px"} }>
         <div className={styles.upper_cnt}>
           <Image src={Setting_logo} alt='Image' />
           <h1>Settings</h1>
