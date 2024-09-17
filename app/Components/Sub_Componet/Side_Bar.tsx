@@ -45,15 +45,25 @@ function Side_Bar() {
   const router = useRouter();
 
   const handleSettingClick = () => {
-    console.log('Setting Clicked')
+    // console.log('Setting Clicked')
     router.push('/Setting')
   }
 
   const handleHomeClick = () => {
-    console.log('Home Clicked')
+    // console.log('Home Clicked')
     router.push('/main/Feed')
   }
 
+  const handleBookMarkClick = () => {
+    // console.log('BookMark Clicked');
+    setIsModel3(!isModel3)
+    router.push('/Other/BookMarks') 
+  }
+
+  const handleActivityClick = () => {
+    // console.log('Activity clicked.')
+    router.push('/Activity')
+  }
   return (
     <div className='sticky top-0'>
  
@@ -323,15 +333,15 @@ function Side_Bar() {
      </div>
 
     <div className={styles.nav_footer}>
-      <button className={styles.img_box}>
+      <button className={styles.img_box} onClick={handleActivityClick}>
       <Image src={btn1} alt='image' />
       <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>My&nbsp;Activity</div>
       </button>
 
 
-      <button onClick={()=>{setIsModel3(!isModel3)}} className={styles.img_box}>
-      <Image src={btn3} alt='image' />
-      <div className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>My&nbsp;Items</div>
+      <button onClick={handleBookMarkClick} className={styles.img_box}>
+      <Image src={btn3} alt='image' onClick={handleBookMarkClick} />
+      <div onClick={handleBookMarkClick} className={`${isExpend ? styles.text_box : styles.text_cnt_not_home }`}>My&nbsp;Items</div>
       {isModel3 ?  <div className={styles.model_2_cnt2}>
       <Image src={popup2} alt='image' />
       </div> : " "}
