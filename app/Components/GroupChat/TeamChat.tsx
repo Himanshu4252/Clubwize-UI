@@ -37,56 +37,61 @@ const TeamList: React.FC<TeamListProps> = ({ teams, onSelectTeam }) => {
 
 
   return (
-    <div className="w-[400px] bg-white flex flex-col border border-gray-300 shadow-[0px_2px_4px_0px_#00000013] rounded-[10px]">
-      <div className="font-semibold text-l flex justify-between items-center p-4 border-b border-gray-200">
+    <div className="w-[380px] lg:w-[380px] sm:w-[250px] bg-white flex flex-col border border-gray-300 shadow-[0px_2px_4px_0px_#00000013] rounded-[10px]">
+      <div className="font-semibold text-l flex justify-between items-center p-4 lg:p-4 sm:p-1 sm:pt-2 sm:pb-2 border-b border-gray-200">
         <div className="flex items-center">
-          <div className="w-[28px] h-[28px] ml-2 flex items-center justify-center border border-gray-300 rounded-lg">
-            <Image
-              src="/GrpChatImg/backicon.png"
-              alt="Back Icon"
-              width={6}
-              height={6}
-            />
+          <div className="w-[28px] h-[28px] lg:w-[28px] lg:h-[28px] sm:w-[18px] sm:h-[18px] ml-2 flex items-center justify-center border border-gray-300 rounded-lg lg:rounded-lg sm:rounded-md">
+          <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.34336 5.5018L6.19905 9.35468C6.48421 9.63985 6.48421 10.101 6.19905 10.3831C5.91389 10.6653 5.45279 10.6653 5.16763 10.3831L0.79926 6.01754C0.523205 5.74147 0.517137 5.29854 0.778024 5.01336L5.1646 0.617443C5.30718 0.474858 5.49526 0.40508 5.68031 0.40508C5.86536 0.40508 6.05344 0.474858 6.19602 0.617444C6.48118 0.902616 6.48118 1.36375 6.19602 1.64589L2.34336 5.5018Z" fill="#212529"/>
+</svg>
+
           </div>
           <div className="flex items-center">
-            <Image
-              src="/GrpChatImg/node.png"
-              alt="Node Icon"
-              width={14}
-              height={14}
-              className="m-2"
-            />
-            <p className="m-0">Gretchen Team</p>
+          <svg width="15" height="15" className='ml-2 mr-2 lg:ml-2 lg:mr-2 sm:ml-1 sm:mr-1' viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.6849 14.5629C3.17311 14.5629 2.73808 14.3838 2.37983 14.0256C2.02158 13.6673 1.84245 13.2323 1.84245 12.7205C1.84245 12.2087 2.02158 11.7737 2.37983 11.4154C2.73808 11.0572 3.17311 10.8781 3.6849 10.8781C3.8282 10.8781 3.96126 10.8934 4.08409 10.9241C4.20692 10.9548 4.32464 10.9958 4.43723 11.0469L5.31239 9.95683C5.02579 9.63949 4.82619 9.28125 4.7136 8.88204C4.601 8.48283 4.57541 8.08366 4.63683 7.68445L3.39318 7.2699C3.21917 7.5258 2.9991 7.73051 2.73296 7.88407C2.46683 8.0376 2.16999 8.11438 1.84245 8.11438C1.33066 8.11438 0.895635 7.93522 0.537381 7.57699C0.179127 7.21871 0 6.78369 0 6.27193C0 5.76013 0.179127 5.32511 0.537381 4.96684C0.895635 4.6086 1.33066 4.42948 1.84245 4.42948C2.35424 4.42948 2.78926 4.6086 3.14752 4.96684C3.50577 5.32511 3.6849 5.76013 3.6849 6.27193V6.39477L4.92855 6.82463C5.13327 6.45614 5.40707 6.14396 5.74997 5.88806C6.09287 5.63216 6.47928 5.46842 6.90918 5.39677V4.06095C6.50998 3.94836 6.17988 3.73088 5.91886 3.40841C5.65785 3.08602 5.52734 2.70988 5.52734 2.27995C5.52734 1.76815 5.70647 1.33313 6.06473 0.974894C6.42298 0.616618 6.858 0.4375 7.36979 0.4375C7.88158 0.4375 8.31661 0.616618 8.67486 0.974894C9.03311 1.33313 9.21224 1.76815 9.21224 2.27995C9.21224 2.70988 9.07918 3.08602 8.81304 3.40841C8.54691 3.73088 8.21937 3.94836 7.83041 4.06095V5.39677C8.26031 5.46842 8.64671 5.63216 8.98961 5.88806C9.33251 6.14396 9.60632 6.45614 9.81104 6.82463L11.0547 6.39477V6.27193C11.0547 5.76013 11.2338 5.32511 11.5921 4.96684C11.9503 4.6086 12.3853 4.42948 12.8971 4.42948C13.4089 4.42948 13.844 4.6086 14.2022 4.96684C14.5605 5.32511 14.7396 5.76013 14.7396 6.27193C14.7396 6.78369 14.5605 7.21871 14.2022 7.57699C13.844 7.93522 13.4089 8.11438 12.8971 8.11438C12.5696 8.11438 12.2702 8.0376 11.9989 7.88407C11.7277 7.73051 11.5102 7.5258 11.3464 7.2699L10.1028 7.68445C10.1642 8.08366 10.1386 8.48026 10.026 8.87435C9.9134 9.26847 9.7138 9.62923 9.42719 9.95683L10.3024 11.0316C10.4149 10.9804 10.5327 10.942 10.6555 10.9164C10.7783 10.8908 10.9114 10.8781 11.0547 10.8781C11.5665 10.8781 12.0015 11.0572 12.3598 11.4154C12.718 11.7737 12.8971 12.2087 12.8971 12.7205C12.8971 13.2323 12.718 13.6673 12.3598 14.0256C12.0015 14.3838 11.5665 14.5629 11.0547 14.5629C10.5429 14.5629 10.1079 14.3838 9.74962 14.0256C9.39137 13.6673 9.21224 13.2323 9.21224 12.7205C9.21224 12.5157 9.24551 12.3187 9.31204 12.1294C9.37857 11.94 9.46814 11.7686 9.58073 11.615L8.70557 10.5249C8.2859 10.7603 7.83808 10.8781 7.36212 10.8781C6.88615 10.8781 6.43833 10.7603 6.01866 10.5249L5.15886 11.615C5.27145 11.7686 5.36101 11.94 5.42755 12.1294C5.49408 12.3187 5.52734 12.5157 5.52734 12.7205C5.52734 13.2323 5.34822 13.6673 4.98996 14.0256C4.63171 14.3838 4.19669 14.5629 3.6849 14.5629Z" fill="#ADB5BD"/>
+</svg>
+
+            <p className="m-0 text-base lg:text-base sm:text-xs">Gretchen Team</p>
           </div>
         </div>
-        <button  onClick={handleCreateTeamClick} className="bg-white text-gray-800 text-sm py-1 px-4 border border-gray-200 rounded-md hover:bg-black hover:text-white transition-colors duration-200">
-          + Create team
-        </button>
+        <button 
+  onClick={handleCreateTeamClick} 
+  className="bg-white text-gray-800 text-sm lg:text-sm sm:text-xs py-1 px-4 lg:px-4 sm:px-1 border border-gray-200 rounded-md hover:bg-black hover:text-white transition-colors duration-200 flex items-center"
+>
+  <span className="block sm:hidden">+</span>
+  <span className="hidden sm:block">+ Create team</span>
+</button>
+
+
       </div>
 
-      <div className="w-full pt-4 pr-4 pl-4 pb-2 flex items-center border-b border-gray-200">
+      <div className="w-full pl-4 pr-4 pt-4 pb-2 flex items-center ">
       <div className="relative w-full flex items-center">
-  <Image
-    src="/GrpChatImg/searchicon.png"
-    alt="Search Icon"
-    width={16}
-            height={16}
-    className="absolute left-3 w-5 h-5"
-  />
+  <svg
+    className="absolute left-3 top-1/2 transform -translate-y-1/2"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.5 16.5005C11.2879 16.5005 12.0682 16.3453 12.7961 16.0438C13.5241 15.7423 14.1855 15.3003 14.7427 14.7431C15.2998 14.186 15.7418 13.5246 16.0433 12.7966C16.3448 12.0687 16.5 11.2884 16.5 10.5005C16.5 9.71257 16.3448 8.93236 16.0433 8.2044C15.7418 7.47645 15.2998 6.81501 14.7427 6.25786C14.1855 5.70071 13.5241 5.25875 12.7961 4.95723C12.0682 4.6557 11.2879 4.5005 10.5 4.5005C8.90872 4.5005 7.38259 5.13264 6.25737 6.25786C5.13216 7.38308 4.50002 8.9092 4.50002 10.5005C4.50002 12.0918 5.13216 13.6179 6.25737 14.7431C7.38259 15.8684 8.90872 16.5005 10.5 16.5005ZM16.82 15.4065L20.4 18.9865C20.4955 19.0788 20.5716 19.1892 20.6239 19.3113C20.6762 19.4333 20.7037 19.5645 20.7048 19.6973C20.7058 19.8301 20.6804 19.9618 20.63 20.0846C20.5797 20.2075 20.5053 20.3191 20.4114 20.4129C20.3174 20.5067 20.2057 20.5809 20.0828 20.6311C19.9599 20.6813 19.8282 20.7065 19.6954 20.7052C19.5626 20.704 19.4314 20.6763 19.3095 20.6238C19.1875 20.5713 19.0772 20.4951 18.985 20.3995L15.405 16.8195C13.7975 18.0674 11.7748 18.6557 9.74877 18.4647C7.72273 18.2737 5.84562 17.3178 4.49957 15.7916C3.15351 14.2653 2.4397 12.2834 2.50344 10.2494C2.56718 8.2154 3.40368 6.28213 4.84266 4.84315C6.28164 3.40417 8.21492 2.56767 10.2489 2.50393C12.283 2.44019 14.2648 3.154 15.7911 4.50005C17.3173 5.84611 18.2732 7.72322 18.4642 9.74926C18.6552 11.7753 18.0669 13.798 16.819 15.4055L16.82 15.4065Z"
+      fill="#6C757D"
+    />
+  </svg>
+
   <input
     type="text"
     placeholder="Search for..."
-    className="pl-10 p-2 border border-gray-300 rounded-lg w-full text-sm bg-gray-100"
+    className="pl-10 p-1 h-9 sm:h-7 lg:h-9 border border-gray-300 rounded-md w-full text-sm sm:text-xs bg-gray-100"
   />
 </div>
 
         <div className="w-8 h-8 flex items-center justify-center bg-gray-200 border border-gray-300 rounded-lg ml-3">
-          <Image
-            src="/GrpChatImg/search.png"
-            alt="Search icon"
-            width={16}
-            height={16}
-          />
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.00077 0C0.735344 0 0.480799 0.120413 0.293115 0.334736C0.105441 0.549071 0 0.839761 0 1.14287C0 1.44599 0.105441 1.73668 0.293115 1.95101C0.480799 2.16533 0.735344 2.28575 1.00077 2.28575H12.0092C12.2746 2.28575 12.5292 2.16533 12.7168 1.95101C12.9045 1.73668 13.01 1.44599 13.01 1.14287C13.01 0.839761 12.9045 0.549071 12.7168 0.334736C12.5292 0.120413 12.2746 0 12.0092 0H1.00077ZM1.00077 4.57149C0.735344 4.57149 0.480799 4.69191 0.293115 4.90623C0.105441 5.12056 0 5.41125 0 5.71437C0 6.01748 0.105441 6.30817 0.293115 6.52251C0.480799 6.73683 0.735344 6.85724 1.00077 6.85724H8.00614C8.27154 6.85724 8.52613 6.73683 8.71378 6.52251C8.90142 6.30817 9.0069 6.01748 9.0069 5.71437C9.0069 5.41125 8.90142 5.12056 8.71378 4.90623C8.52613 4.69191 8.27154 4.57149 8.00614 4.57149H1.00077ZM1.00077 9.14299C0.735344 9.14299 0.480799 9.26345 0.293115 9.47774C0.105441 9.69203 0 9.98277 0 10.2859C0 10.589 0.105441 10.8797 0.293115 11.094C0.480799 11.3083 0.735344 11.4287 1.00077 11.4287H5.00383C5.26926 11.4287 5.5238 11.3083 5.71149 11.094C5.89916 10.8797 6.0046 10.589 6.0046 10.2859C6.0046 9.98277 5.89916 9.69203 5.71149 9.47774C5.5238 9.26345 5.26926 9.14299 5.00383 9.14299H1.00077ZM13.01 5.71437C13.01 5.41125 12.9045 5.12056 12.7168 4.90623C12.5292 4.69191 12.2746 4.57149 12.0092 4.57149C11.7438 4.57149 11.4892 4.69191 11.3016 4.90623C11.1139 5.12056 11.0084 5.41125 11.0084 5.71437V12.0985L9.71445 10.6207C9.5257 10.4125 9.27291 10.2973 9.01051 10.2999C8.74811 10.3025 8.49711 10.4228 8.31157 10.6347C8.12603 10.8466 8.02075 11.1332 8.01845 11.4328C8.01614 11.7325 8.11702 12.0212 8.29936 12.2367L11.3017 15.6654C11.4893 15.8797 11.7438 16 12.0092 16C12.2746 16 12.5291 15.8797 12.7167 15.6654L15.719 12.2367C15.9014 12.0212 16.0023 11.7325 16 11.4328C15.9977 11.1332 15.8924 10.8466 15.7068 10.6347C15.5213 10.4228 15.2703 10.3025 15.0079 10.2999C14.7455 10.2973 14.4927 10.4125 14.304 10.6207L13.01 12.0985V5.71437Z" fill="#6C757D"/>
+</svg>
         </div>
       </div>
 
@@ -94,7 +99,7 @@ const TeamList: React.FC<TeamListProps> = ({ teams, onSelectTeam }) => {
         {teams.map((team) => (
           <li
             key={team.id}
-            className={`flex items-center p-4 cursor-pointer border-b border-gray-200 ${
+            className={`flex items-center p-4 lg:p-4 sm:p-2 cursor-pointer border-b border-gray-200 ${
               activeTeamId === team.id ? 'bg-[#22B57314]' : 'hover:bg-[#22B57314]'
             }`}
             onClick={() => handleClick(team.id)}
@@ -102,13 +107,13 @@ const TeamList: React.FC<TeamListProps> = ({ teams, onSelectTeam }) => {
             <Image
               src={team.avatar}
               alt={team.name}
-              width={50}
-              height={50}
-              className="mr-4"
+              width={40}
+              height={40}
+              className="mr-4 lg:mr-4 sm:mr-2 w-10 h-10 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
             />
             <div className="flex-1">
-              <div className="font-bold text-sm">{team.name}</div>
-              <div className={`text-gray-600 text-xs ${
+              <div className="font-bold text-sm lg:text-sm sm:text-xs">{team.name}</div>
+              <div className={`text-gray-600 text-xs lg:text-xs sm:text-[0.7rem] truncate text-overflow:ellipsis w-[35vh] lg:w-[25vh] sm:w-[10vh] ${
                 team.id === 1 || team.id === 2 ? 'font-bold' : ''
               }`}>
                 {renderMessageWithAtSymbol(team.lastMessage)}
@@ -117,24 +122,21 @@ const TeamList: React.FC<TeamListProps> = ({ teams, onSelectTeam }) => {
             <div className="flex items-center ml-4">
               {team.id === 1 && (
                 <div className="w-8 h-8 flex items-center justify-center mr-2">
-                  <div className="flex items-center justify-center w-38px] h-[26px] p-1.5 bg-[#22B573]  rounded-[43px] text-white text-xs hover:bg-gray-800 hover:text-white ">15+</div>
+                  <div className="flex items-center justify-center w-[38px] h-[26px] lg:w-[38px] lg:h-[26px] sm:w-[28px] sm:h-[16px] p-1.5 bg-[#22B573]  rounded-[43px] text-white text-xs lg:text-xs sm:text-[0.7rem] hover:bg-gray-800 hover:text-white ">15+</div>
                 </div>
               )}
               {team.id === 2 && (
                 <div className="w-8 h-8 flex items-center justify-center mr-2">
-                 <div className="w-[35px] h-[31px] p-1 gap-2 rounded-[43px] bg-[#22B573] text-white flex items-center justify-center text-xs hover:bg-gray-800">
+                 <div className="flex items-center justify-center w-[37px] h-[26px] lg:w-[37px] lg:h-[26px] sm:w-[27px] sm:h-[16px] p-1.5 bg-[#22B573]  rounded-[43px] text-white text-xs lg:text-xs sm:text-[0.7rem] hover:bg-gray-800 hover:text-white">
   8+
 </div>
 
                 </div>
               )}
               <div className="w-8 h-8 flex items-center justify-center">
-                <Image
-                  src="/GrpChatImg/more.png"
-                  alt="More options"
-                  width={4}
-                  height={16}
-                />
+              <svg width="4" height="16" viewBox="0 0 5 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.49982 6.90839C1.34943 6.90839 0.408203 7.84961 0.408203 9C0.408203 10.1504 1.34943 11.0916 2.49982 11.0916C3.6502 11.0916 4.59143 10.1504 4.59143 9C4.59143 7.84961 3.6502 6.90839 2.49982 6.90839ZM2.49982 0.633545C1.34943 0.633545 0.408203 1.57477 0.408203 2.72516C0.408203 3.87555 1.34943 4.81677 2.49982 4.81677C3.6502 4.81677 4.59143 3.87555 4.59143 2.72516C4.59143 1.57477 3.6502 0.633545 2.49982 0.633545ZM2.49982 13.1832C1.34943 13.1832 0.408203 14.1245 0.408203 15.2748C0.408203 16.4252 1.34943 17.3665 2.49982 17.3665C3.6502 17.3665 4.59143 16.4252 4.59143 15.2748C4.59143 14.1245 3.6502 13.1832 2.49982 13.1832Z" fill="#495057"/>
+          </svg>
               </div>
             </div>
           </li>
