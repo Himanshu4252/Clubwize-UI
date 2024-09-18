@@ -17,7 +17,7 @@ import Chat from "./Chat";
 import Side_Bar from "../Sub_Componet/Side_Bar";
 import up from "../../../public/assets/Team/up.svg"
 import down from "../../../public/assets/Team/down.svg"
-
+import more from "../../../public/assets/Team/more.svg"
 
 interface Team {
   name: string;
@@ -192,24 +192,26 @@ export default function Team() {
                   <Image
                     src={team.image}
                     alt={team.name}
-                    width={40}
-                    height={40}
-                    className="rounded-full"
+                    // width={40}
+                    // height={40}
+                    className="rounded-full w-5 h-5 lg:w-10 lg:h-10"
                   />
                   <div>
-                    <div className="text-sm font-semibold">{team.name}</div>
+                    <div className="text-xs lg:text-sm font-semibold">{team.name}</div>
                     <div className="text-xs text-gray-500">{team.status}</div>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   {team.members && (
                     <div
-                      className={`flex items-center justify-center text-xs w-8 h-5 rounded-full bg-${team.memberCount}-500 text-white`}
+                      className={`flex items-center justify-center text-xs lg:w-8 w-6 h-5 rounded-full bg-${team.memberCount}-500 text-white`}
                     >
                       {team.members}
                     </div>
                   )}
-                  <button className="text-gray-500 hover:text-gray-700">•••</button>
+                  <button className="text-gray-500 hover:text-gray-700">
+                    <Image src={more} alt="more" width={5} height={5}/>
+                  </button>
                 </div>
               </div>
             ))}
