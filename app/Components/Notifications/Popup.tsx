@@ -78,12 +78,12 @@ const Popup: React.FC<PopupProps> = ({ isVisible, onClose }) => {
     <div className="fixed inset-0 bg-black bg-opacity-20 flex items-start justify-end z-50">
       <div className="bg-white relative mt-24 mr-4 sm:mr-6 md:mr-8 lg:mr-12 xl:mr-16 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 max-w-screen-sm rounded-t-lg shadow-lg">
         <div className="border-b ml-5 border-gray-300">
-          <div className="flex flex-wrap space-x-4 sm:space-x-2 overflow-x-auto text-sm">
+          <div className="flex flex-wrap space-x-4 sm:space-x-2 overflow-x-auto text-sm lg:text-sm sm:text-xs md:text-xs">
             {['All', 'Comment', 'Invite', '@Mentioned', 'Message Request'].map((tab) => (
               <div
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`cursor-pointer p-2 pt-4 text-base ${activeTab === tab ? 'text-green-500 border-b-4 border-green-500' : 'text-gray-500'}`}
+                className={`cursor-pointer p-2 pt-4 text-base lg:text-base sm:text-sm ${activeTab === tab ? 'text-green-500 border-b-4 border-green-500' : 'text-gray-500'}`}
               >
                 {tab}
               </div>
@@ -98,25 +98,25 @@ const Popup: React.FC<PopupProps> = ({ isVisible, onClose }) => {
             filteredNotifications.map((notification) => (
               <div
                 key={notification.id}
-                className={`p-4 pl-5 pr-0 border-b border-gray-200 flex items-start space-x-4 hover:bg-[#F8F9FA] ${
+                className={`p-4 lg:p-4 sm:p-2 pl-5 pr-0 border-b border-gray-200 flex items-start space-x-4 hover:bg-[#F8F9FA] ${
                   notification.read ? '' : 'bg-[#CEEFE0] border-[#A3CFBB] hover:bg-[#A3CFBB]'
                 }`}
               >
-                <Image src={notification.profile} alt={`${notification.user} profile`} width={40} height={40} />
+                <Image src={notification.profile} alt={`${notification.user} profile`} className='h-10 w-10 lg:h-10 lg:w-10 sm:h-8 sm:w-8' width={40} height={40} />
                 <div className="flex flex-grow items-center">
                   <div className="flex-1">
                     <p>
                       <span className="font-bold">{notification.user} </span>
                       <span className="text-gray-400">{notification.action}</span>
                     </p>
-                    <p className="text-gray-500 text-sm flex items-center space-x-1">
+                    <p className="text-gray-500 text-sm lg:text-sm sm:text-xs flex items-center space-x-1">
                       {(activeTab !== 'Invite' && activeTab !== 'Message Request') && (
                         <>
-                          <span className="text-[#22B573] underline text-sm flex items-center space-x-1 gap-1 mr-1">
+                          <span className="text-[#22B573] underline text-sm lg:text-sm sm:text-xs flex items-center space-x-1 gap-1 mr-1">
                             <Image src={notification.nodeImage} alt={notification.node} width={15} height={15} />
                             {notification.node}
                           </span>
-                          • <span className="text-[#22B573] underline text-sm pr-1">{notification.group}</span>
+                          • <span className="text-[#22B573] underline text-sm lg:text-sm sm:text-xs pr-1">{notification.group}</span>
                           <span className="pr-1">•</span>
                         </>
                       )}

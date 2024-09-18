@@ -23,7 +23,7 @@ const PageNavigation = () => {
     memberChapter: "/main/ChapterFeed/Member",
     rule: "/main/Rules",
     approvalFeed : "/main/ApprovalFeed",
-    issues: "/Issues"
+    issues: "/main/Issues"
 
   };
 

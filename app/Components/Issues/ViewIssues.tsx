@@ -36,7 +36,7 @@ const ViewIssues: React.FC = () => {
         <div >
              <div className="text-sm text-gray-400 mb-3">
   <span className="underline text-gray-800">
-    <a href="/Issues" className="text-gray-800 hover:text-blue-600">Issues</a>
+    <a href="/main/Issues" className="text-gray-800 hover:text-blue-600">Issues</a>
   </span>
  &gt; Seeking Strategies for Success </div>
            <Tabs onTabChange={handleTabChange} />

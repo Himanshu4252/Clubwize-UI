@@ -108,7 +108,7 @@ const IssuesPage: React.FC = () => {
   };
 
   return (
-    <div className="p-2 overflow-x max-w-full">
+    <div className="p-2 overflow-x-auto max-w-full">
       <div className="mb-4 mt-2">
         <h1 className="text-xl font-bold text-gray-800 flex items-center">
           Community Issues
