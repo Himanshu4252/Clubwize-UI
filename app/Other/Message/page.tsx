@@ -95,7 +95,7 @@ const Message = () => {
   const selectedContactDetails = contacts.find(contact => contact.id === selectedContact);
 
   return (
-    <div className="flex h-screen gap-5">
+    <div className="flex max-h-screen lg:max-h-screen sm:max-h-screen overflow-y-auto max-w-screen overflow-x-auto lg:gap-5 sm:gap-2">
       <MessageList contacts={contacts} onSelectContact={handleSelectContact} />
       {selectedContact !== null && selectedContactDetails && (
         <Chat 

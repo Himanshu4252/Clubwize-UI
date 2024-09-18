@@ -43,10 +43,10 @@ const ViewTeam: React.FC<ViewTeamProps> = ({ selectedMembers, groupName, imageUp
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white w-[28%] max-h-fit rounded-lg shadow-lg flex flex-col">
-        <div className="flex justify-between items-center p-2 mb-2 border-b border-gray-300">
-          <h2 className="text-lg font-semibold flex-1">View Team</h2>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center lg:items-center sm:items-start sm:pt-[10vh] md:items-start md:pt-[10vh] z-50">
+      <div className="bg-white w-[28%] lg:w-[28%] md:w-[40%] sm:w-[42%] max-h-fit rounded-lg shadow-lg flex flex-col">
+        <div className="flex justify-between items-center p-2 mb-2 lg:p-2 lg:mb-2 sm:p-1 sm:mb-1 border-b border-gray-300">
+          <h2 className="text-lg lg:text-lg sm:text-sm font-semibold flex-1">View Team</h2>
           <button
             onClick={onClose}
             className="text-gray-600 text-2xl font-bold"
@@ -55,23 +55,23 @@ const ViewTeam: React.FC<ViewTeamProps> = ({ selectedMembers, groupName, imageUp
           </button>
         </div>
 
-        <div className="flex items-center justify-around p-2 border-b border-gray-300" style={{ height: '60px' }}>
+        <div className="flex items-center justify-around p-2 lg:p-2 sm:p-1 border-b border-gray-300 h-[60px] lg:h-[60px] sm:h-[40px]">
           <div className={`flex items-center ${step >= 1 ? 'text-green-500' : 'text-gray-500'}`}>
             <span className={`flex items-center justify-center w-5 h-5 rounded-full text-white text-xs ${step >= 1 ? 'bg-green-500' : 'bg-gray-300'}`}>
               {step >= 1 ? '✓' : '1'}
             </span>
-            <span className="ml-2 text-sm font-semibold text-black">Members</span>
+            <span className="ml-2 text-sm lg:text-sm sm:text-xs font-semibold text-black">Members</span>
           </div>
           <div className="flex border-t border-gray-200" style={{ width: '18%', marginTop: '6px' }} />
           <span className={`flex items-center justify-center w-5 h-5 rounded-full text-white text-xs ${step >= 2 ? 'bg-green-500' : 'bg-gray-300'}`}>
             {step >= 2 ? '✓' : '2'}
           </span>
-          <div className=" text-sm font-semibold text-black">Name</div>
+          <div className=" text-sm lg:text-sm sm:text-xs font-semibold text-black">Name</div>
           <div className="flex border-t border-gray-200" style={{ width: '18%', marginTop: '6px' }} />
           <span className={`flex items-center justify-center w-5 h-5 rounded-full text-white text-xs ${step >= 3 ? 'bg-green-500' : 'bg-gray-300'}`}>
             {step >= 3 ? '✓' : '3'}
           </span>
-          <div className=" text-sm font-semibold text-black">Picture</div>
+          <div className=" text-sm lg:text-sm sm:text-xs font-semibold text-black">Picture</div>
         </div>
 
         {step === 1 && (
@@ -80,7 +80,7 @@ const ViewTeam: React.FC<ViewTeamProps> = ({ selectedMembers, groupName, imageUp
               <input
                 type="text"
                 placeholder="Search members..."
-                className="w-full p-2 bg-gray-100 text-sm border border-gray-300 rounded"
+                className="w-full p-2 bg-gray-100 text-sm lg:text-sm sm:text-xs border border-gray-300 rounded"
                 disabled
               />
             </div>
@@ -105,14 +105,17 @@ const ViewTeam: React.FC<ViewTeamProps> = ({ selectedMembers, groupName, imageUp
                   key={member.id}
                   className={`flex items-center p-2 cursor-pointer border-b border-gray-200 ${selectedMembers.some(m => m.id === member.id) ? 'bg-gray-100' : ''}`}
                 >
-                  <Image src={member.avatar} alt={member.name} width={40} height={40} className={`mr-2 ${selectedMembers.some(m => m.id === member.id) ? 'opacity-20' : ''}`} />
-                  <div className="text-sm font-semibold flex-1">
+                  <Image src={member.avatar} alt={member.name} width={40} height={40} className={`mr-2 lg:mr-2 sm:mr-2 w-10 h-10 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 ${selectedMembers.some(m => m.id === member.id) ? 'opacity-20' : ''}`} />
+                  <div className="text-sm lg:text-sm sm:text-xs font-semibold flex-1">
                     <div className={`${selectedMembers.some(m => m.id === member.id) ? 'text-gray-500' : ''}`}>{member.name}</div>
-                    <div className={`text-xs ${selectedMembers.some(m => m.id === member.id) ? 'text-gray-500' : ''}`}>{member.role}</div>
+                    <div className={`text-xs lg:text-xs sm:text-[0.7rem] ${selectedMembers.some(m => m.id === member.id) ? 'text-gray-500' : ''}`}>{member.role}</div>
                   </div>
                   {selectedMembers.some(m => m.id === member.id) && (
                     <button>
-                      <Image src="/GrpChatImg/tick.png" alt="selected" width={16} height={16} />
+                      <svg width="31" height="32"className='h-6 w-6 sm:h-4 w-4 lg:h-6 w-6' viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15.5" cy="16" r="15.5" fill="#22B573"/>
+                        <path d="M23.7657 10.0831C23.4533 9.76398 22.9468 9.76398 22.6343 10.0831L13.0498 19.8715L9.3657 16.109C9.0533 15.7899 8.5468 15.79 8.23433 16.109C7.92189 16.4281 7.92189 16.9453 8.23433 17.2644L12.4841 21.6045C12.7964 21.9236 13.3033 21.9234 13.6155 21.6045L23.7657 11.2385C24.0781 10.9194 24.0781 10.4021 23.7657 10.0831Z" fill="white"/>
+                        </svg>
                     </button>
                   )}
                 </div>

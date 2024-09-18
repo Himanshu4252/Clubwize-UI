@@ -69,7 +69,7 @@ const GroupChat = () => {
   const selectedTeamDetails = teams.find(team => team.id === selectedTeam);
 
   return (
-    <div className="flex h-screen gap-5">
+    <div className="flex max-h-screen lg:max-h-screen sm:max-h-screen overflow-y-auto max-w-screen overflow-x-auto lg:gap-5 sm:gap-2">
       <TeamChat teams={teams} onSelectTeam={handleSelectTeam} />
       {selectedTeam !== null && selectedTeamDetails && (
         <Team 
