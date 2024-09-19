@@ -73,7 +73,7 @@ const CreateIssue: React.FC<{ onCancel: () => void }> = ({ onCancel }) => {
     
     <div className="gap-1">
         <div className="text-xs mb-2"><span className="underline text-gray-800">
-    <a href="/Issues" className="text-gray-800 hover:text-blue-600">Issues</a>
+    <a href="/main/Issues" className="text-gray-800 hover:text-blue-600">Issues</a>
   </span> &gt; Create new Issue</div>
     <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md max-w-4xl mx-auto">
    

@@ -1,5 +1,5 @@
 import React from 'react';
-import IssuesPage from '../Components/Issues/IssuesPage';
+import IssuesPage from '../../Components/Issues/IssuesPage';
 const Issues: React.FC = () => {
   return (
     <div>

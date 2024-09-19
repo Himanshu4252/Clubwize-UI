@@ -131,7 +131,7 @@ const Project: React.FC = () => {
     <button
       key={tab}
       onClick={() => handleTabChange(tab)}
-      className={`py-1.5 text-sm ${activeTab === tab ? 'text-[#22B573] border-b-4 border-[#22B573]' : 'text-gray-800'}`}
+      className={`py-1.5 text-sm lg:text-sm sm:text-xs ${activeTab === tab ? 'text-[#22B573] border-b-4 border-[#22B573]' : 'text-gray-800'}`}
     >
       {tab}
     </button>
@@ -140,7 +140,7 @@ const Project: React.FC = () => {
 
           <div className="flex items-center justify-between mb-6">
             <button className="flex items-center bg-[#22B573] text-white px-8 py-1.5 rounded-md text-sm hover:bg-black" onClick={handleCreateNewProject}>
-              <span className="">+ Create New Project</span>
+              <span className="text-md lg:text-md sm:text-sm">+ Create New Project</span>
             </button>
 
             <div className="flex items-center flex-1 mx-4">
