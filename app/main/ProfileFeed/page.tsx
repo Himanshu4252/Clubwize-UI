@@ -3,9 +3,7 @@ import React from 'react'
 
 const ProfileFeedPage = () => {
   return (
-    <div className="">
         <ProfileFeed />
-    </div>
   )
 }
 

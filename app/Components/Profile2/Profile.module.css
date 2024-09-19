@@ -1,4 +1,4 @@
-.profile_card{
+/* .profile_card{
 
     width: auto;
     height: max-content;
@@ -7,7 +7,6 @@
    
     background-color: white;
     border-radius: 10px;   
-    /* overflow: hidden; */
     box-shadow: 0px 0px 5px 0px rgb(158, 153, 153);
     
     position: -webkit-sticky;
@@ -100,13 +99,13 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+    transition: color 0.3s ease, border-color 0.3s ease; 
 }
 
 .joining_btn:hover {
-    color: rgb(218, 211, 211); /* Change text color to black on hover */
+    color: rgb(218, 211, 211); 
     
-    border-color: black; /* Optional: change border color to black on hover */
+    border-color: black; 
     background-color: black;
 }
 
@@ -174,4 +173,4 @@
 
     border:1px solid  rgb(20, 230, 20);
     background-color:'#22b57374';
-}
+} */

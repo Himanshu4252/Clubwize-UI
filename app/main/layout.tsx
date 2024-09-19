@@ -24,7 +24,7 @@ export default function RootLayout({
     <div className="flex flex-col w-full" >
       <SearchBar />
 
-      <div className="flex flex-row justify-evenly " style={{zIndex:"1"}} >
+      <div className="flex flex-row justify-evenly " >
       <div className="w-2/12" >
          <Profile/>
       </div>
