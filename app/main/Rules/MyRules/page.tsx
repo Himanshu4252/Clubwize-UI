@@ -3,10 +3,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { myProjects } from '@/app/Components/Projects/myProjectsData';
 
 
+type PopupMenuProps = {
+  projectStatus: string; 
+};
 
 const MyProjects = () => {
 
-  const PopupMenu = ({ projectId }: { projectId: number }) => {
+  const PopupMenu: React.FC<PopupMenuProps> = ({ projectStatus }) => {
     const [isOpen, setIsOpen] = useState(false);
     const popupRef = useRef<HTMLDivElement>(null);
     const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
@@ -49,13 +52,14 @@ const MyProjects = () => {
                         <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Select') }>
                           Select
                         </li>
-                        <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Edit')}>
+                        <li className="p-2 hover:bg-gray-100 c
+const PopupMenu: React.FC<PopupMenuProps> = ({ projectId }) =>ursor-pointer" onClick={() => handleOptionClick('Edit')}>
                           Edit
                         </li>
                         <li className="p-2 hover:bg-gray-100 cursor-pointer">
-                          status
+                          {projectStatus === 'Draft' ? 'Publish': projectStatus === 'Ongoing' ? 'Unpublish': ''}
                         </li>
-                        <li className="p-2 text-red-500 hover:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Delete')}>
+                        <li className="p-2 text-red-500 ho1ver:bg-gray-100 cursor-pointer" onClick={() => handleOptionClick('Delete')}>
                           Delete
                         </li>
                       </ul>
@@ -147,7 +151,7 @@ const MyProjects = () => {
                 {project.status}
               </span>
             </td>
-            <PopupMenu projectId={project.id} />
+            <PopupMenu projectStatus={project.status} />
 
           </tr>
         ))}

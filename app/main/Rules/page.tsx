@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import ActiveRules from './ActiveRules/page'
 import AllRules from './AllRules/page'
 import GlobalLibrary from './GlobalRules/page';
-import SuggestedRules from './SuggestedRules/page';
 import MyRules from './MyRules/page';
 
 
@@ -28,8 +27,6 @@ const Rules: React.FC = () => {
         return <AllRules />;
       case 'Global Library(2M)':
         return <GlobalLibrary/>;
-      case 'Suggested Rules (2.36k)':
-        return <SuggestedRules/>;
       case 'My rules(36)':
         return <MyRules/>;
       default:
@@ -57,8 +54,8 @@ const Rules: React.FC = () => {
         </p>
       </div>
         <>
-         <div className="flex space-x-4 mb-6 border-b-2 border-gray-300">
-  {['Active Rules(12)', 'All Rules(182)', 'Global Library(2M)', 'Suggested Rules (2.36k)', 'My rules(36)'].map(tab => (
+         <div className="flex space-x-5 mb-6 border-b-2 border-gray-300">
+  {['Active Rules(12)', 'All Rules(182)', 'Global Library(2M)', 'My rules(36)'].map(tab => (
     <button
       key={tab}
       onClick={() => handleTabChange(tab)}
