@@ -7,8 +7,6 @@ import style from './style.module.css'
 
 const GlobalRules: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
-  const [activeTab, setActiveTab] = useState<string>('Ongoing Projects (182)');
-  const [projects, setProjects] = useState<ProjectData[]>([]);
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
   const [selectedTab, setSelectedTab] = useState<Number>(1);
 
@@ -74,28 +72,6 @@ const GlobalRules: React.FC = () => {
         )}
       </td>
     );
-  };
-  useEffect(() => {
-    handleTabChange('Ongoing Projects (182)');
-  }, []);
-  const handleTabChange = (tab: string) => {
-    setActiveTab(tab);
-    switch (tab) {
-      case 'Ongoing Projects (182)':
-        setProjects(ongoingProjects);
-        break;
-      case 'All Projects (652)':
-        setProjects(allProjects);
-        break;
-      case 'Global Projects (45k)':
-        setProjects(globalProjects);
-        break;
-      case 'My Projects (2.36k)':
-        setProjects(myProjects);
-        break;
-      default:
-        setProjects([]);
-    }
   };
 
 const handleBtnClick = (id:Number) =>{
@@ -167,7 +143,7 @@ const handleBtnClick = (id:Number) =>{
               </tr>
             </thead>
             <tbody>
-  {projects.map(project => (
+  {globalProjects.map(project => (
       <tr key={project.id} className="border-b">
         <td className="p-3 text-gray-500 text-xs">{project.id}</td>
         <td className="p-3 w-[10vh] text-xs">

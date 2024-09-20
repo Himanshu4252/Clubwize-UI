@@ -1,11 +1,9 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { ongoingProjects, allProjects, globalProjects, myProjects, ProjectData} from '@/app/Components/Projects/ProjectData'
+import {allProjects } from '@/app/Components/Projects/ProjectData'
 
 const Project: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>('Ongoing Projects (182)');
-  const [projects, setProjects] = useState<ProjectData[]>([]);
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
 
   const PopupMenu = () => {
@@ -69,29 +67,6 @@ const Project: React.FC = () => {
       </td>
     );
   };
-  useEffect(() => {
-    handleTabChange('Ongoing Projects (182)');
-  }, []);
-  const handleTabChange = (tab: string) => {
-    setActiveTab(tab);
-    switch (tab) {
-      case 'Ongoing Projects (182)':
-        setProjects(ongoingProjects);
-        break;
-      case 'All Projects (652)':
-        setProjects(allProjects);
-        break;
-      case 'Global Projects (45k)':
-        setProjects(globalProjects);
-        break;
-      case 'My Projects (2.36k)':
-        setProjects(myProjects);
-        break;
-      default:
-        setProjects([]);
-    }
-  };
-
 
   return (
         <>
@@ -157,8 +132,7 @@ const Project: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-  {projects && projects.length > 0 ? (
-    projects.map(project => (
+  { allProjects.map(project => (
       <tr key={project.id} className="border-b">
         <td className="p-3 text-gray-500 text-xs">{project.id}</td>
         <td className="p-3 w-[10vh] text-xs">
@@ -200,11 +174,7 @@ const Project: React.FC = () => {
         <PopupMenu />
       </tr>
     ))
-  ) : (
-    <tr>
-      <td colSpan={6} className="p-3 text-center text-gray-500">No projects available</td>
-    </tr>
-  )}
+  }
 </tbody>
 
           </table>
